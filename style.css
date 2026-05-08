@@ -2348,10 +2348,10 @@ h1 span {
 
 /* Card Styling */
 .res-card {
-  flex: 0 0 320px;
+  flex: 0 0 350px;
   /* عرض الكارت */
-  height: 480px;
-  border-radius: 40px;
+  height: 320px;
+  border-radius: 20px;
   position: relative;
   overflow: hidden;
   background: #0F3345;
@@ -2365,7 +2365,7 @@ h1 span {
   height: 100%;
   object-fit: cover;
   background: #0b1f2a;
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .res-card:hover {
@@ -2421,7 +2421,11 @@ infinite-results-track {
   .res-card {
     flex: 0 0 220px;
     /* حجم أصغر لشاشات الموبايل الصغيرة */
-    height: 330px;
+    height: 300px;
+  }
+
+  .res-overlay {
+    padding: 15px 10px; /* تقليل البادنج لأن المساحة أصبحت أصغر */
   }
 
   .infinite-results-track {
