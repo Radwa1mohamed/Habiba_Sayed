@@ -2118,34 +2118,25 @@ h1 span {
   transform: scale(1.1);
 }
 
-/* الحاوية الكبيرة لتوسيط القسم */
-/* القالب (المربع الشفاف) اللي جواه كل الصور والنص */
 .social-proof-container {
-    background: rgba(255, 255, 255, 0.1); /* تأثير الزجاج الشفاف */
-    backdrop-filter: blur(10px);         /* تنعيم الخلفية */
-    border-radius: 20px;                 /* انحناء الحواف */
-    padding: 20px 40px;                  /* المسافات الداخلية (تزوديها لو عايزاه أطول) */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
     display: flex;
-    flex-direction: column;              /* العناصر فوق بعض */
-    align-items: center;                 /* توسيط الصور والنص */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 15px;                           /* المسافة بين الصور والنجوم */
+    gap: 15px; 
     border: 1px solid rgba(255, 255, 255, 0.2);
-    max-width: fit-content;              /* يلم نفسه على قد المحتوى */
-    margin: 40px auto;                   /* توسيط المربع في نص الشاشة */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-}
+    
+    /* --- التعديلات المطلوبة للعرض --- */
+    width: 500px;           /* تحديد عرض ثابت وكبير للاب توب */
+    max-width: 90%;         /* عشان لو الشاشة أصغر من 600px ما يحصلش مشكلة */
+    padding: 30px 40px;     /* زيادة الـ padding العلوي والسفلي للفخامة */
+    /* ------------------------------ */
 
-.social-proof-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.03);
-  /* خلفية زجاجية خفيفة جداً */
-  padding: 20px 40px;
-  border-radius: 50px;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 40px auto; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 60px; /* الحواف الدائرية اللي بتفضليها */
 }
 
 /* --- الأفاتارز (Stacked) --- */
@@ -2159,9 +2150,9 @@ h1 span {
 
 .avatars-stack img,
 .more-clients {
-  width: 70px;
+  width: 65px;
   /* تكبير الحجم */
-  height: 70px;
+  height: 65px;
   /* تكبير الحجم */
   border-radius: 50%;
   border: 4px solid #0F3345;
@@ -2187,6 +2178,11 @@ h1 span {
   border-color: var(--accent-pink);
   /* يلون الحدود */
 }
+
+
+
+
+
 /* --- تعديل دائرة الرقم لتكون بنفس حجم الصور --- */
 .more-clients {
     /* جعل الحجم ثابتًا ومساويًا لقطر الصور الأخرى (مثلاً 50px) */
@@ -2215,6 +2211,8 @@ h1 span {
     
     /* إزالة أي z-index زائد قد يؤثر على تداخلها */
     z-index: 1;
+
+    
 }
 /* --- النص والنجوم --- */
 .proof-text {
@@ -2254,18 +2252,36 @@ h1 span {
 
 @media (max-width: 768px) {
   .social-proof-container {
-    margin: 30px 0;
-    padding: 15px 20px;
-    /* تقليل الـ padding */
-    width: 90%;
-    /* عشان ميبقاش لازق في حواف الشاشة */
+    /* تثبيت العرض تماماً كما هو في اللابتوب أو برقم ثابت */
+    width: 380px;         /* جربي الرقم ده، هو مناسب جداً لعرض أغلب الموبايلات */
+    max-width: 90%;       /* حماية عشان لو الموبايل قديم وصغير ما يحصلش Scroll عرضي */
+    
+    margin: 20px auto;    /* التوسيط الإلزامي */
+    padding: 25px 30px;   /* الحفاظ على مساحة القالب */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* التأكد من عدم وجود إزاحة جانبية */
+    position: relative;
+    left: 0;
+    transform: none;
   }
 
+  .avatars-stack {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 15px; /* تعويض الـ margin السالب لآخر صورة عشان التوسيط يظبط */
+  }
+}
   .avatars-stack img,
   .more-clients {
-    width: 50px;
+    width: 55px;
     /* تصغير قطر الدوائر */
-    height: 45px;
+    height: 55px;
     margin-left: -12px;
     /* تقليل التداخل ليناسب الحجم الأصغر */
     border-width: 3px;
@@ -2273,17 +2289,17 @@ h1 span {
   }
 
   .proof-text p {
-    font-size: 13px;
+    font-size: 16px;
     /* تصغير الخط عشان يكفي سطرين */
     max-width: 250px;
   }
 
   .proof-text .stars {
-    font-size: 14px;
+    font-size: 16px;
     /* تصغير حجم النجوم */
   }
 
-}
+
 
 /* Container & Alignment */
 .results-slider-section {
