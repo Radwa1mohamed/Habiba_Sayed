@@ -1602,6 +1602,14 @@ h1 span {
 
   }
 
+   .card-details span {
+        font-size: 0.8rem !important; /* تصغير الخط للإيميل */
+        word-break: break-all !important; /* السماح بكسر النص لو طويل */
+        white-space: normal !important; /* السماح للنص بالنزول لسطر جديد لو احتاج */
+        line-height: 1.2;
+        display: block;
+    }
+
 }
 
 .contact-premium {
@@ -1665,6 +1673,7 @@ h1 span {
 }
 
 .contact-card-item {
+  text-decoration: none !important;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
