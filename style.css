@@ -1541,7 +1541,13 @@ h1 span {
 .contact-card-item:hover {
     transform: scale(1.02) translateX(-5px);
 }
+
+
+
+
 @media (max-width: 768px) {
+
+
   .consulting-grid-s2 {
     grid-template-columns: 1fr;
   }
@@ -1576,6 +1582,16 @@ h1 span {
 
     .time-separator-s2 {
       font-size: 20px !important;
+    }
+
+    .email-text {
+        font-size: 0.85rem !important; /* تصغير الخط قليلاً ليناسب عرض الموبايل */
+        word-break: break-all; /* يمنع خروج النص عن الكارت */
+        display: block;
+    }
+    
+    .email-card {
+        padding: 15px 10px; /* مساحة أنسب للمس بالإصبع */
     }
 
     /* أهم سطر 👇 يمنع أي overflow */
