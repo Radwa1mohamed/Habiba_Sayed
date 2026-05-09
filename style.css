@@ -1982,16 +1982,22 @@ h1 span {
 }
 
 .portfolio-img {
-  width: 100%;
-  height: 220px;
+  width: 100% !important;
+  height: 300px;
   overflow: hidden;
   position: relative;
+  padding: 0 !important;        /* تأكدي إن مفيش مسافات داخلية */
+    margin: 0;
 }
 
 .portfolio-img img {
-  width: 100%;
-  height: 100%;
-object-fit: contain;}
+  width: 100% !important ;
+  height: 100% !important;
+object-fit: cover !important; /* بيخلي الصورة تملأ الكارت بشكل مهندم */
+object-position: center; /* عشان يركز على نص الصورة */
+    transition: transform 0.5s ease;
+    display: block;
+}
 
 .portfolio-info {
   padding: 25px;
