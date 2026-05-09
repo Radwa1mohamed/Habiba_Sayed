@@ -1525,7 +1525,22 @@ h1 span {
   color: #2ecc71;
   margin-left: 8px;
 }
+/* كلاس مخصص لخلفية أيقونة الإيميل */
+.email-bg {
+    background: linear-gradient(135deg, #FF9A8B, #FF6A88); /* لون وردي برتقالي مميز */
+}
 
+/* للتأكد من أن الروابط تعمل وقابلة للنقر */
+.contact-card-item {
+    cursor: pointer !important;
+    position: relative;
+    z-index: 5; /* لضمان ظهورها فوق أي لمعة أو خلفية */
+}
+
+/* تعديل بسيط لضمان المسافات في الـ Hover */
+.contact-card-item:hover {
+    transform: scale(1.02) translateX(-5px);
+}
 @media (max-width: 768px) {
   .consulting-grid-s2 {
     grid-template-columns: 1fr;
