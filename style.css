@@ -48,7 +48,7 @@ body {
 
 /* Navbar */
 .navbar {
-  position: fixed;
+   position: fixed;
   top: 15px;
   left: 50%;
   transform: translateX(-50%);
@@ -92,6 +92,27 @@ body {
   position: relative;
   transition: 0.3s;
 }
+/* 3. تأثير على النص عند الهفر */
+.logo-wrapper:hover .logo-text {
+    color: var(--primary); /* يتغير اللون للون البراند الأخضر */
+    text-shadow: 0 0 10px rgba(98, 190, 172, 0.3);
+}
+
+/* إضافة خط سفلي يظهر عند الهفر تحت الاسم فقط */
+.logo-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary); /* لون الخط السفلي */
+    transition: width 0.3s ease;
+}
+
+.logo-wrapper:hover .logo-text::after {
+    width: 100%; /* الخط يمتد تحت الاسم عند الهفر */
+}
 
 .nav-links a::after {
   content: "";
@@ -113,6 +134,56 @@ body {
 .nav-links a.active {
   color: white;
 }
+
+/* الكلاس الموحد */
+.glow-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+  margin-left: auto !important; /* جبر التوسيط من اليسار */
+    margin-right: auto !important; /* جبر التوسيط من اليمين */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px 60px;
+    z-index: 1;
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    /* إضافة transform-origin لضمان خروج الحركة من المركز */
+    transform-origin: center; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    cursor: pointer;
+}
+
+/* تأثير الهوفر للأمام فقط (Zoom In) بدون انزياح للجنب */
+.glow-title:hover {
+    /* شلنا الـ translateX وحافظنا فقط على التكبير للأمام */
+    transform: scale(1.1); 
+}
+
+/* البلورة (نفس لون الـ Navbar) */
+.glow-title::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #0F3345; 
+    border: 2px solid #00d4ff;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 
+                inset 0 0 20px rgba(0, 212, 255, 0.4);
+    border-radius: 100px;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* إخفاء أي خطوط قديمة */
+.glow-title + .divider, 
+.glow-title::after {
+    display: none; 
+}
+
 
 /* زرار الموبايل */
 .menu-toggle {

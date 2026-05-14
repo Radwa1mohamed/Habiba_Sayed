@@ -28,6 +28,70 @@ a {
     text-decoration: none;
 }
 
+/* حاوية اللوجو والاسم */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* سلاسة الانتقال */
+}
+
+/* تنسيق صورة اللوجو */
+.logo-image {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* تنسيق النص (الأبيض) */
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff; /* اللون الأبيض */
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* تأثير الهفر (Hover Effects) */
+
+/* 1. تأثير على الحاوية بالكامل */
+.logo-wrapper:hover {
+    transform: translateX(-5px); /* حركة بسيطة لجهة اليسار عند الهفر */
+}
+
+/* 2. تأثير على الصورة عند الهفر */
+.logo-wrapper:hover .logo-image {
+    transform: rotate(10deg) scale(1.1); /* دوران بسيط وتكبير */
+    border-color: var(--primary); /* ظهور إطار بلون البراند */
+    box-shadow: 0 0 15px rgba(98, 190, 172, 0.4); /* توهج حول اللوجو */
+}
+
+/* 3. تأثير على النص عند الهفر */
+.logo-wrapper:hover .logo-text {
+    color: var(--primary); /* يتغير اللون للون البراند الأخضر */
+    text-shadow: 0 0 10px rgba(98, 190, 172, 0.3);
+}
+
+/* إضافة خط سفلي يظهر عند الهفر تحت الاسم فقط */
+.logo-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary); /* لون الخط السفلي */
+    transition: width 0.3s ease;
+}
+
+.logo-wrapper:hover .logo-text::after {
+    width: 100%; /* الخط يمتد تحت الاسم عند الهفر */
+}
+
 .container {
     width: min(1150px, 92%);
     margin: auto;

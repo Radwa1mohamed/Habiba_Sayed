@@ -40,6 +40,69 @@
         a { text-decoration: none; }
         .container { width: min(1150px, 92%); margin: auto; }
 
+        /* حاوية اللوجو والاسم */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* المسافة بين الاسم واللوجو */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* تنسيق النص (الأبيض) */
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* تنسيق صورة اللوجو */
+.logo-image {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* تأثير الهفر (Hover Effects) */
+
+/* عند الهفر الحاوية تتحرك لليمين قليلاً لأن الاسم أصبح في الأول */
+.logo-wrapper:hover {
+    transform: translateX(5px); 
+}
+
+/* تأثير الصورة عند الهفر */
+.logo-wrapper:hover .logo-image {
+    transform: rotate(-10deg) scale(1.1); /* الدوران لليسار عكس الترتيب */
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(98, 190, 172, 0.4);
+}
+
+/* تأثير النص عند الهفر */
+.logo-wrapper:hover .logo-text {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(98, 190, 172, 0.2);
+}
+
+/* الخط السفلي تحت الاسم */
+.logo-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0; /* يبدأ من اليسار */
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+.logo-wrapper:hover .logo-text::after {
+    width: 100%;
+}
         /* Header */
         .header {
             position: sticky; top: 0; z-index: 999;
@@ -134,10 +197,14 @@
 
 <body>
 
-    <header class="header">
+   <header class="header">
         <div class="container header-content">
-            <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i> العودة للأعمال</a>
-            <div class="logo"> Habiba Sayed </div>
+            <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i> العودة للمعرض</a>
+            <div class="logo-wrapper">
+                <div class="logo-text">Habiba Sayed</div>
+                <img src="../imgs/logo_Habiba.jpg" alt="Logo" class="logo-image">
+
+            </div>
         </div>
     </header>
 
