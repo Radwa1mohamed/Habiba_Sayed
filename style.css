@@ -135,75 +135,65 @@ body {
   color: white;
 }
 
-/* الكلاس الموحد */
+/* الكلاس الموحد - النسخة النهائية المصغرة */
 .glow-title {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: fit-content;
-  margin-left: auto !important; /* جبر التوسيط من اليسار */
-    margin-right: auto !important; /* جبر التوسيط من اليمين */
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 20px 60px;
+    margin: 30px auto !important; 
+    padding: 8px 35px; /* تقليل السمك */
     z-index: 1;
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1.4rem; /* حجم مناسب للابتوب */
     text-align: center;
-    /* إضافة transform-origin لضمان خروج الحركة من المركز */
-    transform-origin: center; 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    transition: all 0.4s ease;
     cursor: pointer;
+    white-space: nowrap; /* يمنع الكلمة تنزل على سطرين */
 }
 
-/* تأثير الهوفر للأمام فقط (Zoom In) بدون انزياح للجنب */
-.glow-title:hover {
-    /* شلنا الـ translateX وحافظنا فقط على التكبير للأمام */
-    transform: scale(1.1); 
-}
-
-/* البلورة (نفس لون الـ Navbar) */
 .glow-title::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background-color: #0F3345; 
-    border: 2px solid #00d4ff;
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 
-                inset 0 0 20px rgba(0, 212, 255, 0.4);
+    border: 1.5px solid #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
     border-radius: 100px;
     z-index: -1;
-    transition: all 0.3s ease;
 }
 
-/* إخفاء أي خطوط قديمة */
-.glow-title + .divider, 
-.glow-title::after {
-    display: none; 
-}
-
-/* ضبط العنوان للأجهزة الصغيرة (الموبايل) */
 @media (max-width: 768px) {
     .glow-title {
-        font-size: 1.4rem; /* تصغير الخط عشان مياخدش مساحة كبيرة */
-        padding: 12px 30px; /* تقليل المسافات الداخلية عشان البلورة متكونش ضخمة */
-        margin-top: 30px; /* تقليل المسافات الخارجية */
-        margin-bottom: 30px;
-        width: 85%; /* نحدد عرض نسبي عشان يضمن التوسيط وعدم الخروج عن الشاشة */
-        line-height: 1.3; /* ضبط المسافة بين السطور لو العنوان طويل */
+        /* تكبير "سنة" ليكون 1.2rem - مقاس مثالي وواضح */
+        font-size: 1.5rem !important; 
+        
+        /* ضبط المسافات حول الخط الجديد */
+        padding: 15px 33px !important; 
+        
+        margin-top: 25px !important;
+        margin-bottom: 25px !important;
+        
+        white-space: nowrap;
+        
+        /* تجهيز الترانزيشن للهفر */
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* تأثير الهفر (اللمس) في الموبايل */
+    .glow-title:active, .glow-title:hover {
+        transform: scale(1.08); /* بروز للأمام عند اللمس */
+        filter: brightness(1.2); /* إضاءة أقوى */
     }
 
     .glow-title::before {
-        box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 
-                    inset 0 0 10px rgba(0, 212, 255, 0.3); /* تقليل التوهج شوية عشان ميبقاش مزعج في الشاشات الصغيرة */
+        border-width: 1.5px;
+        box-shadow: 0 0 18px rgba(0, 212, 255, 0.5);
     }
-    
-    /* إلغاء تأثير الهوفر في الموبايل (اختياري) لأن الموبايل ملوش ماوس، بس لو سبتيه مش هيضر */
-    .glow-title:hover {
-        transform: scale(1.05); /* تقليل نسبة التكبير في الموبايل */
-    }
+}
+.glow-title:hover {
+    transform: scale(1.05);
 }
 
 
