@@ -676,3 +676,39 @@ html {
     transform: translateX(-50%) translateY(0); /* ترتفع لأعلى بسلاسة عند الظهور */
 }
 
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 8%;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .view-more-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 20px 0 !important;
+    /* مسافة فوق وتحت */
+    padding: 0 !important;
+  }
+
+  /* 2. ضبط الزرار نفسه */
+  #show-more-certs {
+    margin: 0 auto !important;
+    /* أهم سطر للتوسيط */
+    display: block !important;
+    width: fit-content !important;
+    /* يخلي الزرار على قد الكلام بس */
+    min-width: 200px;
+    /* اختياري: عشان الزرار ميبقاش صغير أوي */
+    transform: none !important;
+    /* إلغاء أي ميلان أو إزاحة */
+  }
+
+}

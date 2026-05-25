@@ -167,6 +167,9 @@ body {
     display: none;
 }
 
+
+
+
 /* 2. التحكم في العرض على شاشات الموبايل */
 @media (max-width: 768px) {
     /* إخفاء النص */
@@ -251,6 +254,40 @@ body {
     .glow-title::before {
         border-width: 1.5px;
         box-shadow: 0 0 18px rgba(0, 212, 255, 0.5);
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+    /* ضبط قسم الهيرو ليكون مناسباً للموبايل */
+    .hero {
+        padding: 0 5% !important;
+        text-align: center; /* توسيط النص */
+    }
+
+    /* تحسين حجم العنوان */
+    h1 {
+        font-size: 2.2rem !important;
+    }
+
+    /* ضبط الحاوية لتكون الأزرار بجانب بعضها */
+    .buttons {
+        display: flex !important;
+        flex-direction: row !important; /* التأكيد على أنها بجانب بعض */
+        justify-content: center !important; /* توسيط الأزرار في المنتصف */
+        gap: 10px !important; /* مسافة بسيطة بين الزرين */
+        margin-top: 30px !important; /* تنزيل الأزرار للأسفل */
+        margin-bottom: 30px !important;
+        width: 100%;
+    }
+
+    /* ضبط حجم الأزرار لتكون أصغر قليلاً ومتساوية */
+    .btn {
+        padding: 10px 15px !important; /* تقليل البادنج لجعلها أنحف */
+        font-size: 0.85rem !important; /* تصغير الخط ليناسب الزرار */
+        white-space: nowrap; /* منع النص من النزول لسطرين داخل الزرار */
+        flex: 0 1 auto; /* يجعل الزرار يأخذ حجم النص فقط */
     }
 }
 .glow-title:hover {
