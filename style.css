@@ -46,7 +46,7 @@ body {
 }
 
 .navbar {
-   position: fixed;
+  position: fixed;
   top: 15px;
   left: 50%;
   transform: translateX(-50%);
@@ -90,26 +90,28 @@ body {
   position: relative;
   transition: 0.3s;
 }
+
 /* 3. تأثير على النص عند الهفر */
 .logo-wrapper:hover .logo-text {
-    color: var(--primary); 
-    text-shadow: 0 0 10px rgba(98, 190, 172, 0.3);
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(98, 190, 172, 0.3);
 }
 
 /* إضافة خط سفلي يظهر عند الهفر تحت الاسم فقط */
 .logo-text::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    right: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--secondary); /* لون الخط السفلي */
-    transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary);
+  /* لون الخط السفلي */
+  transition: width 0.3s ease;
 }
 
 .logo-wrapper:hover .logo-text::after {
-    width: 100%; 
+  width: 100%;
 }
 
 .nav-links a::after {
@@ -135,54 +137,61 @@ body {
 
 
 @media (max-width: 768px) {
-  
-  
-    .buttons {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        gap: 10px !important;
-        
-        /* هذا هو السطر المسؤول عن المسافة من الأعلى، زيدي القيمة هنا */
-        margin-top: 60px !important; 
-        
-        margin-bottom: 30px !important;
-        width: 100%;
-    }
+
+
+  .buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    /* هذا هو السطر المسؤول عن المسافة من الأعلى، زيدي القيمة هنا */
+    margin-top: 60px !important;
+
+    margin-bottom: 30px !important;
+    width: 100%;
+  }
 
 }
+
 /* الكلاس الموحد - النسخة النهائية المصغرة */
 .glow-title {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    margin: 30px auto !important; 
-    padding: 8px 35px; /* تقليل السمك */
-    z-index: 1;
-    color: #ffffff;
-    font-size: 1.4rem; /* حجم مناسب للابتوب */
-    text-align: center;
-    transition: all 0.4s ease;
-    cursor: pointer;
-    white-space: nowrap; /* يمنع الكلمة تنزل على سطرين */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 30px auto !important;
+  padding: 8px 35px;
+  /* تقليل السمك */
+  z-index: 1;
+  color: #ffffff;
+  font-size: 1.4rem;
+  /* حجم مناسب للابتوب */
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  /* يمنع الكلمة تنزل على سطرين */
 }
 
 .glow-title::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #0F3345; 
-    border: 1.5px solid #62BEAC;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-    border-radius: 100px;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0F3345;
+  border: 1.5px solid #62BEAC;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+  border-radius: 100px;
+  z-index: -1;
 }
 
 /* 1. إخفاء الأيقونة في الوضع الافتراضي (شاشات الكمبيوتر) */
 .nav-btn .btn-icon {
-    display: none;
+  display: none;
 }
 
 
@@ -190,33 +199,36 @@ body {
 
 /* 2. التحكم في العرض على شاشات الموبايل */
 @media (max-width: 768px) {
-    /* إخفاء النص */
-    .nav-btn .btn-text {
-        display: none;
-    }
 
-    /* إظهار الأيقونة وتوسيطها */
-    .nav-btn .btn-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
+  /* إخفاء النص */
+  .nav-btn .btn-text {
+    display: none;
+  }
 
-    /* إعادة ضبط أبعاد الزرار ليصبح دائري ومتناسق في الموبايل */
-    .nav-btn {
-        width: 40px;
-        height: 40px;
-        padding: 0 !important; /* إلغاء الـ padding القديم عشان يحافظ على أبعاد الدائرة */
-        border-radius: 50% !important; /* تحويل الزرار لدائرة */
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-    }
+  /* إظهار الأيقونة وتوسيطها */
+  .nav-btn .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* إعادة ضبط أبعاد الزرار ليصبح دائري ومتناسق في الموبايل */
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+    /* إلغاء الـ padding القديم عشان يحافظ على أبعاد الدائرة */
+    border-radius: 50% !important;
+    /* تحويل الزرار لدائرة */
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
 
-   nav {
+  nav {
     padding: 5px 5px;
   }
 
@@ -247,34 +259,38 @@ body {
   .btn {
     margin-right: 30px;
   }
-    .glow-title {
-        /* تكبير "سنة" ليكون 1.2rem - مقاس مثالي وواضح */
-        font-size: 1.5rem !important; 
-        
-        /* ضبط المسافات حول الخط الجديد */
-        padding: 15px 33px !important; 
-        
-        margin-top: 25px !important;
-        margin-bottom: 25px !important;
-        
-        white-space: nowrap;
-        
-        /* تجهيز الترانزيشن للهفر */
-        transition: all 0.3s ease-in-out;
-    }
 
-    /* تأثير الهفر (اللمس) في الموبايل */
-    .glow-title:active, .glow-title:hover {
-        transform: scale(1.08); /* بروز للأمام عند اللمس */
-        filter: brightness(1.2); /* إضاءة أقوى */
-    }
+  .glow-title {
+    /* تكبير "سنة" ليكون 1.2rem - مقاس مثالي وواضح */
+    font-size: 1.5rem !important;
 
-    .glow-title::before {
-        border-width: 1.5px;
-        box-shadow: 0 0 18px rgba(0, 212, 255, 0.5);
-    }
+    /* ضبط المسافات حول الخط الجديد */
+    padding: 15px 33px !important;
 
-    
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+
+    white-space: nowrap;
+
+    /* تجهيز الترانزيشن للهفر */
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* تأثير الهفر (اللمس) في الموبايل */
+  .glow-title:active,
+  .glow-title:hover {
+    transform: scale(1.08);
+    /* بروز للأمام عند اللمس */
+    filter: brightness(1.2);
+    /* إضاءة أقوى */
+  }
+
+  .glow-title::before {
+    border-width: 1.5px;
+    box-shadow: 0 0 18px rgba(0, 212, 255, 0.5);
+  }
+
+
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
@@ -299,17 +315,21 @@ body {
   z-index: 1;
   opacity: 0.6;
 }
+
 .circle-1 {
   width: 300px;
   height: 300px;
-  background: #8c6239; /* لون الهوية الدافئ */
+  background: #8c6239;
+  /* لون الهوية الدافئ */
   top: 10%;
   left: 20%;
 }
+
 .circle-2 {
   width: 250px;
   height: 250px;
-  background: #3b82f6; /* لون أزرق ساحر للتناغم */
+  background: #3b82f6;
+  /* لون أزرق ساحر للتناغم */
   bottom: 15%;
   right: 25%;
 }
@@ -320,21 +340,23 @@ body {
   width: 100%;
   padding: 50px 40px;
   text-align: center;
-  z-index: 2; /* لتكون فوق الدوائر الملونة */
-  
+  z-index: 2;
+  /* لتكون فوق الدوائر الملونة */
+
   /* سر الشفافية الزجاجية النظيفة (تقليل الأبيض إلى 5% فقط) */
-  background: rgba(255, 255, 255, 0.05); 
-  backdrop-filter: blur(25px); 
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  
+
   /* حواف زجاجية حادة ولامعة تعكس الضوء */
-  border: 1px solid rgba(255, 255, 255, 0.15); 
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 28px;
-  
+
   /* ظلال ناعمة جداً لمنح الزجاج عمقاً حقيقياً */
-  box-shadow: 
+  box-shadow:
     0 4px 30px rgba(0, 0, 0, 0.2),
-    inset 0 0 12px rgba(255, 255, 255, 0.05); /* إضاءة داخلية للزجاج */
+    inset 0 0 12px rgba(255, 255, 255, 0.05);
+  /* إضاءة داخلية للزجاج */
 }
 
 /* نصوص مضيئة ومريحة فوق الخلفية الداكنة والزجاج */
@@ -355,7 +377,8 @@ body {
 .hero-subtitle {
   font-size: 1.35rem;
   font-weight: 400;
-  color: #e2e8f0; /* أبيض ناعم مائل للرمادي */
+  color: #e2e8f0;
+  /* أبيض ناعم مائل للرمادي */
   line-height: 1.9;
   margin-bottom: 24px;
 }
@@ -370,7 +393,8 @@ body {
 /* تمييز الكلمات بلمسة زجاجية مضيئة ومميزة */
 .highlight {
   font-weight: 600;
-  color: #ffedd5; /* لون بيج ذهبي مضيء */
+  color: #ffedd5;
+  /* لون بيج ذهبي مضيء */
   background: rgba(255, 255, 255, 0.1);
   padding: 4px 12px;
   border-radius: 8px;
@@ -378,8 +402,15 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-5px) rotate(8deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(8deg);
+  }
 }
 
 /* التجاوب مع الشاشات الصغيرة */
@@ -388,45 +419,214 @@ body {
     padding: 35px 20px;
     border-radius: 20px;
   }
-  .hero-title { font-size: 1.8rem; }
-  .hero-subtitle { font-size: 1.15rem; }
-  .hero-description { font-size: 1.1rem; }
-  .bg-circle { filter: blur(50px); width: 180px; height: 180px; }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .bg-circle {
+    filter: blur(50px);
+    width: 180px;
+    height: 180px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  
+  /* 1. ضبط السيكشن الرئيسي ليعتمد على الارتفاع التلقائي المرن */
+ #hero {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-top: 160px !important; /* 👈 قمنا بزيادتها هنا لزيادة النزول لأسفل بشكل متناسق */
+    padding-bottom: 60px !important;
+    position: relative !important;
+    justify-content: flex-start !important; /* يضمن أن المحتوى يبدأ بالترتيب من بعد الـ padding الجديد */
+  }
+
+  /* 2. تصفير الحاوية الوسيطة لتأخذ مساحة أوتوماتيكية */
+  .hero-container {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important; /* 👈 يبدأ من الأعلى ليلتزم بمسافة الـ padding العلوية */
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. إلغاء أي أبعاد ثابتة للكارت الزجاجي ليتمدد تلقائياً حسب المحتوى */
+  .hero-card {
+    position: relative !important; /* إلغاء أي absolute قديم يسبب خروج الأزرار */
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    height: auto !important; /* أهم سطر: يجعل الكارت يغلق مباشرة بعد الأزرار */
+    padding: 30px 20px !important;
+    box-sizing: border-box !important;
+    
+    /* الخصائص الزجاجية الفاخرة */
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 24px !important;
+    
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* 4. تنسيق حاوية الأزرار وضمان بقائها داخل الكارت بالأسفل */
+  .hero-card .buttons {
+    display: flex !important;
+    flex-direction: column !important; /* ترتيب الأزرار عمودياً فوق بعضها */
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: 25px !important; /* مسافة أمان فريدة تفصلها عن آخر فقرة نصية */
+    position: relative !important;
+    bottom: auto !important; /* إلغاء أي تهميش سفلي مطلق */
+  }
+
+  /* 5. ضبط حجم الأزرار وتوسيطها */
+  .hero-card .buttons .btn,
+  .hero-card .buttons a.btn {
+    width: 50% !important;
+    max-width: 280px !important;
+    padding: 12px !important;
+    font-size: 0.95rem !important;
+    border-radius: 25px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+ 
+}
+@media (max-width: 768px) {
+
+
+
+  /* تحسين حجم العنوان */
+  h1 {
+    font-size: 2.2rem !important;
+  }
+
+  /* ضبط الحاوية لتكون الأزرار بجانب بعضها */
+  .buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    /* التأكيد على أنها بجانب بعض */
+    justify-content: center !important;
+    /* توسيط الأزرار في المنتصف */
+    gap: 10px !important;
+    /* مسافة بسيطة بين الزرين */
+    margin-top: 30px !important;
+    /* تنزيل الأزرار للأسفل */
+    margin-bottom: 30px !important;
+    width: 100%;
+  }
+
+  /* ضبط حجم الأزرار لتكون أصغر قليلاً ومتساوية */
+  .btn {
+    padding: 10px 15px !important;
+    /* تقليل البادنج لجعلها أنحف */
+    font-size: 0.85rem !important;
+    /* تصغير الخط ليناسب الزرار */
+    white-space: nowrap;
+    /* منع النص من النزول لسطرين داخل الزرار */
+    flex: 0 1 auto;
+    /* يجعل الزرار يأخذ حجم النص فقط */
+  }
 }
 
 @media (max-width: 768px) {
-    /* ضبط قسم الهيرو ليكون مناسباً للموبايل */
-    .hero {
-        padding: 0 5% !important;
-        text-align: center; /* توسيط النص */
-    }
 
-    /* تحسين حجم العنوان */
-    h1 {
-        font-size: 2.2rem !important;
-    }
+  /* ضبط الحاوية الخارجية */
+  .profile-hero {
+    padding-top: 110px !important;
+    /* مسافة أمان حتى لا يلمس الهيدر الكحلي */
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-direction: column !important;
+  }
 
-    /* ضبط الحاوية لتكون الأزرار بجانب بعضها */
-    .buttons {
-        display: flex !important;
-        flex-direction: row !important; /* التأكيد على أنها بجانب بعض */
-        justify-content: center !important; /* توسيط الأزرار في المنتصف */
-        gap: 10px !important; /* مسافة بسيطة بين الزرين */
-        margin-top: 30px !important; /* تنزيل الأزرار للأسفل */
-        margin-bottom: 30px !important;
-        width: 100%;
-    }
+  /* الكارت الزجاجي أصبح يحتوي على كل شيء الآن */
+  .frosted-panel {
+    width: 92% !important;
+    max-width: 380px !important;
+    padding: 25px 15px !important;
+    border-radius: 24px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
 
-    /* ضبط حجم الأزرار لتكون أصغر قليلاً ومتساوية */
-    .btn {
-        padding: 10px 15px !important; /* تقليل البادنج لجعلها أنحف */
-        font-size: 0.85rem !important; /* تصغير الخط ليناسب الزرار */
-        white-space: nowrap; /* منع النص من النزول لسطرين داخل الزرار */
-        flex: 0 1 auto; /* يجعل الزرار يأخذ حجم النص فقط */
-    }
+  /* تنسيق النصوص لتتوسط الكارت بشكل متزن */
+  .arabic-text {
+    text-align: center !important;
+    margin-bottom: 25px !important;
+  }
+
+  .hero-title {
+    font-size: 1.35rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .hero-description {
+    font-size: 0.95rem !important;
+  }
+
+  /* 🌟 تنسيق شريط المهارات الجديد داخل البلوك الزجاجي */
+  .skills-inside-panel {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    /* لجعل الأزرار تنزل تحت بعضها بشكل منسق إذا ضاقت الشاشة */
+    justify-content: center !important;
+    gap: 8px !important;
+    /* المسافة بين كل زر والثاني */
+    margin-top: 15px !important;
+    padding-top: 15px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    /* خط شفاف ناعم يفصل النصوص عن الأزرار */
+  }
+
+  /* تنسيق حبات المهارات (الأزرار) لتناسب الحجم الجديد */
+  .skill-tag,
+  .skills-inside-panel a,
+  .skills-inside-panel span {
+    font-size: 0.85rem !important;
+    /* تصغير حجم خط الأزرار لتستوعبها الشاشة */
+    padding: 6px 12px !important;
+    border-radius: 20px !important;
+    white-space: nowrap !important;
+    /* منع انكسار الكلمة الإنجليزية الواحدة على سطرين */
+  }
 }
+
+
+
 .glow-title:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 
@@ -690,6 +890,10 @@ h1 span {
     transform: translateY(-8px);
   }
 }
+
+
+
+
 
 /* About Section */
 .about {
@@ -1242,7 +1446,7 @@ h1 span {
   .footer {
     padding: 60px 8%;
   }
-  
+
   .footer-container {
     flex-direction: column;
     text-align: center;
@@ -1600,24 +1804,25 @@ h1 span {
 } */
 /* التعديل على كارت التدريب والاستشارات فقط */
 .main-card-s2 {
-  max-width: 1100px; /* نفس الحد الأقصى للخدمات */
-  
+  max-width: 1100px;
+  /* نفس الحد الأقصى للخدمات */
+
   /* السطرين دول هما اللي هيخلقوا المسافة الخارجية (اليمين والشمال) */
-  width: calc(100% - 40px) !important; 
-  margin: 10px auto !important; 
-  
+  width: calc(100% - 40px) !important;
+  margin: 10px auto !important;
+
   /* باقي التنسيقات الخاصة بيكي زي ما هي */
   background: white;
   border-radius: 40px;
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  
+
   /* لضمان أن التعديل يظهر فوراً */
   position: relative;
-  display: block; 
+  display: block;
   box-sizing: border-box;
 
-    transform: translateY(30px);
+  transform: translateY(30px);
 
 }
 
@@ -1837,21 +2042,24 @@ h1 span {
   color: #2ecc71;
   margin-left: 8px;
 }
+
 /* كلاس مخصص لخلفية أيقونة الإيميل */
 .email-bg {
-    background: linear-gradient(135deg, #FF9A8B, #FF6A88); /* لون وردي برتقالي مميز */
+  background: linear-gradient(135deg, #FF9A8B, #FF6A88);
+  /* لون وردي برتقالي مميز */
 }
 
 /* للتأكد من أن الروابط تعمل وقابلة للنقر */
 .contact-card-item {
-    cursor: pointer !important;
-    position: relative;
-    z-index: 5; /* لضمان ظهورها فوق أي لمعة أو خلفية */
+  cursor: pointer !important;
+  position: relative;
+  z-index: 5;
+  /* لضمان ظهورها فوق أي لمعة أو خلفية */
 }
 
 /* تعديل بسيط لضمان المسافات في الـ Hover */
 .contact-card-item:hover {
-    transform: scale(1.02) translateX(-5px);
+  transform: scale(1.02) translateX(-5px);
 }
 
 
@@ -1897,13 +2105,16 @@ h1 span {
     }
 
     .email-text {
-        font-size: 0.85rem !important; /* تصغير الخط قليلاً ليناسب عرض الموبايل */
-        word-break: break-all; /* يمنع خروج النص عن الكارت */
-        display: block;
+      font-size: 0.85rem !important;
+      /* تصغير الخط قليلاً ليناسب عرض الموبايل */
+      word-break: break-all;
+      /* يمنع خروج النص عن الكارت */
+      display: block;
     }
-    
+
     .email-card {
-        padding: 15px 10px; /* مساحة أنسب للمس بالإصبع */
+      padding: 15px 10px;
+      /* مساحة أنسب للمس بالإصبع */
     }
 
     /* أهم سطر 👇 يمنع أي overflow */
@@ -1914,13 +2125,16 @@ h1 span {
 
   }
 
-   .card-details span {
-        font-size: 0.8rem !important; /* تصغير الخط للإيميل */
-        word-break: break-all !important; /* السماح بكسر النص لو طويل */
-        white-space: normal !important; /* السماح للنص بالنزول لسطر جديد لو احتاج */
-        line-height: 1.2;
-        display: block;
-    }
+  .card-details span {
+    font-size: 0.8rem !important;
+    /* تصغير الخط للإيميل */
+    word-break: break-all !important;
+    /* السماح بكسر النص لو طويل */
+    white-space: normal !important;
+    /* السماح للنص بالنزول لسطر جديد لو احتاج */
+    line-height: 1.2;
+    display: block;
+  }
 
 }
 
@@ -2271,7 +2485,7 @@ h1 span {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 25px;
   margin-top: 50px;
-  
+
 }
 
 .portfolio-card {
@@ -2299,17 +2513,20 @@ h1 span {
   height: 300px;
   overflow: hidden;
   position: relative;
-  padding: 0 !important;        /* تأكدي إن مفيش مسافات داخلية */
-    margin: 0;
+  padding: 0 !important;
+  /* تأكدي إن مفيش مسافات داخلية */
+  margin: 0;
 }
 
 .portfolio-img img {
-  width: 100% !important ;
+  width: 100% !important;
   height: 100% !important;
-object-fit: cover !important; /* بيخلي الصورة تملأ الكارت بشكل مهندم */
-object-position: center; /* عشان يركز على نص الصورة */
-    transition: transform 0.5s ease;
-    display: block;
+  object-fit: cover !important;
+  /* بيخلي الصورة تملأ الكارت بشكل مهندم */
+  object-position: center;
+  /* عشان يركز على نص الصورة */
+  transition: transform 0.5s ease;
+  display: block;
 }
 
 .portfolio-info {
@@ -2478,24 +2695,28 @@ object-position: center; /* عشان يركز على نص الصورة */
 }
 
 .social-proof-container {
-    background: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(10px); 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px; 
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    
-    /* --- التعديلات المطلوبة للعرض --- */
-    width: 500px;           /* تحديد عرض ثابت وكبير للاب توب */
-    max-width: 90%;         /* عشان لو الشاشة أصغر من 600px ما يحصلش مشكلة */
-    padding: 30px 40px;     /* زيادة الـ padding العلوي والسفلي للفخامة */
-    /* ------------------------------ */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
-    margin: 40px auto; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 60px; /* الحواف الدائرية اللي بتفضليها */
+  /* --- التعديلات المطلوبة للعرض --- */
+  width: 500px;
+  /* تحديد عرض ثابت وكبير للاب توب */
+  max-width: 90%;
+  /* عشان لو الشاشة أصغر من 600px ما يحصلش مشكلة */
+  padding: 30px 40px;
+  /* زيادة الـ padding العلوي والسفلي للفخامة */
+  /* ------------------------------ */
+
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 60px;
+  /* الحواف الدائرية اللي بتفضليها */
 }
 
 /* --- الأفاتارز (Stacked) --- */
@@ -2544,35 +2765,45 @@ object-position: center; /* عشان يركز على نص الصورة */
 
 /* --- تعديل دائرة الرقم لتكون بنفس حجم الصور --- */
 .more-clients {
-    /* جعل الحجم ثابتًا ومساويًا لقطر الصور الأخرى (مثلاً 50px) */
-    width: 70px;       /* غيري هذا الرقم ليتناسب مع حجم صور العملاء عندك */
-    height: 70px;      /* يجب أن يكون العرض والطول متساويين لشكل دائري مثالي */
-    border-radius: 50%; /* للحفاظ على الشكل الدائري */
-    
-    /* جعل النص في المنتصف تماماً */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* تصغير النص ليتناسب مع الحجم الجديد (تعديل font-size) */
-    font-size: 16px;    /* غيري هذا الرقم حسب ذوقك ليكون النص مقروءاً */
-    font-weight: 700;  /* لجعل الرقم غليظاً */
-    
-    /* إزالة التدرج اللوني وتحديد لون ثابت (لون البينك في موقعك مثلاً) */
-    background: #ff7bac; /* أو اكتبي اللون بدقة من الـ Palette بتاعك */
-    color: #ffffff;       /* لون النص أبيض */
-    
-    /* إضافة حدود رفيعة لإبرازها */
-    border: 3px solid #fff; /* حدود بيضاء */
-    
-    /* تصحيح المسافات (الـ Margin) لجعلها جزءاً من الصف */
-    margin-left: -20px; /* أو حسب المسافة بين الصور عندك */
-    
-    /* إزالة أي z-index زائد قد يؤثر على تداخلها */
-    z-index: 1;
+  /* جعل الحجم ثابتًا ومساويًا لقطر الصور الأخرى (مثلاً 50px) */
+  width: 70px;
+  /* غيري هذا الرقم ليتناسب مع حجم صور العملاء عندك */
+  height: 70px;
+  /* يجب أن يكون العرض والطول متساويين لشكل دائري مثالي */
+  border-radius: 50%;
+  /* للحفاظ على الشكل الدائري */
 
-    
+  /* جعل النص في المنتصف تماماً */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* تصغير النص ليتناسب مع الحجم الجديد (تعديل font-size) */
+  font-size: 16px;
+  /* غيري هذا الرقم حسب ذوقك ليكون النص مقروءاً */
+  font-weight: 700;
+  /* لجعل الرقم غليظاً */
+
+  /* إزالة التدرج اللوني وتحديد لون ثابت (لون البينك في موقعك مثلاً) */
+  background: #ff7bac;
+  /* أو اكتبي اللون بدقة من الـ Palette بتاعك */
+  color: #ffffff;
+  /* لون النص أبيض */
+
+  /* إضافة حدود رفيعة لإبرازها */
+  border: 3px solid #fff;
+  /* حدود بيضاء */
+
+  /* تصحيح المسافات (الـ Margin) لجعلها جزءاً من الصف */
+  margin-left: -20px;
+  /* أو حسب المسافة بين الصور عندك */
+
+  /* إزالة أي z-index زائد قد يؤثر على تداخلها */
+  z-index: 1;
+
+
 }
+
 /* --- النص والنجوم --- */
 .proof-text {
   text-align: center;
@@ -2589,13 +2820,18 @@ object-position: center; /* عشان يركز على نص الصورة */
 }
 
 .proof-text p {
-  font-size: 20px;       /* كبرنا الخط من 18 لـ 20 */
+  font-size: 20px;
+  /* كبرنا الخط من 18 لـ 20 */
   color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;      /* خليناه أسمك شوية (Semi-bold) */
-  max-width: 350px;      /* زودنا العرض شوية */
+  font-weight: 600;
+  /* خليناه أسمك شوية (Semi-bold) */
+  max-width: 350px;
+  /* زودنا العرض شوية */
   line-height: 1.6;
-  margin: 0 auto;        /* لضمان التوسيط */
+  margin: 0 auto;
+  /* لضمان التوسيط */
 }
+
 /* أنميشن ظهور القسم */
 @keyframes fadeInUpProof {
   from {
@@ -2612,17 +2848,21 @@ object-position: center; /* عشان يركز على نص الصورة */
 @media (max-width: 768px) {
   .social-proof-container {
     /* تثبيت العرض تماماً كما هو في اللابتوب أو برقم ثابت */
-    width: 380px;         /* جربي الرقم ده، هو مناسب جداً لعرض أغلب الموبايلات */
-    max-width: 90%;       /* حماية عشان لو الموبايل قديم وصغير ما يحصلش Scroll عرضي */
-    
-    margin: 20px auto;    /* التوسيط الإلزامي */
-    padding: 25px 30px;   /* الحفاظ على مساحة القالب */
-    
+    width: 380px;
+    /* جربي الرقم ده، هو مناسب جداً لعرض أغلب الموبايلات */
+    max-width: 90%;
+    /* حماية عشان لو الموبايل قديم وصغير ما يحصلش Scroll عرضي */
+
+    margin: 20px auto;
+    /* التوسيط الإلزامي */
+    padding: 25px 30px;
+    /* الحفاظ على مساحة القالب */
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
     /* التأكد من عدم وجود إزاحة جانبية */
     position: relative;
     left: 0;
@@ -2633,30 +2873,32 @@ object-position: center; /* عشان يركز على نص الصورة */
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-left: 15px; /* تعويض الـ margin السالب لآخر صورة عشان التوسيط يظبط */
+    margin-left: 15px;
+    /* تعويض الـ margin السالب لآخر صورة عشان التوسيط يظبط */
   }
 }
-  .avatars-stack img,
-  .more-clients {
-    width: 55px;
-    /* تصغير قطر الدوائر */
-    height: 55px;
-    margin-left: -12px;
-    /* تقليل التداخل ليناسب الحجم الأصغر */
-    border-width: 3px;
-    /* تصغير السمك */
-  }
 
-  .proof-text p {
-    font-size: 16px;
-    /* تصغير الخط عشان يكفي سطرين */
-    max-width: 250px;
-  }
+.avatars-stack img,
+.more-clients {
+  width: 55px;
+  /* تصغير قطر الدوائر */
+  height: 55px;
+  margin-left: -12px;
+  /* تقليل التداخل ليناسب الحجم الأصغر */
+  border-width: 3px;
+  /* تصغير السمك */
+}
 
-  .proof-text .stars {
-    font-size: 16px;
-    /* تصغير حجم النجوم */
-  }
+.proof-text p {
+  font-size: 16px;
+  /* تصغير الخط عشان يكفي سطرين */
+  max-width: 250px;
+}
+
+.proof-text .stars {
+  font-size: 16px;
+  /* تصغير حجم النجوم */
+}
 
 
 
@@ -2784,7 +3026,8 @@ infinite-results-track {
   }
 
   .res-overlay {
-    padding: 15px 10px; /* تقليل البادنج لأن المساحة أصبحت أصغر */
+    padding: 15px 10px;
+    /* تقليل البادنج لأن المساحة أصبحت أصغر */
   }
 
   .infinite-results-track {
@@ -2806,84 +3049,103 @@ infinite-results-track {
     /* تصغير الخط */
   }
 }
+
 /* تنسيق رابط اسم البشمهندسة رضوى */
 .radwa-whatsapp-link {
-    color: #25D366; /* اللون الأخضر الأساسي */
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px; /* مسافة صغيرة بين الاسم والأيقونة */
-    transition: all 0.3s ease;
+  color: #25D366;
+  /* اللون الأخضر الأساسي */
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  /* مسافة صغيرة بين الاسم والأيقونة */
+  transition: all 0.3s ease;
 }
 
 /* تنسيق أيقونة الواتساب الخاصة بها */
 .radwa-ws-icon {
-    font-size: 1.1rem; /* حجم الأيقونة متناسق مع السطر */
-    transition: transform 0.3s ease;
+  font-size: 1.1rem;
+  /* حجم الأيقونة متناسق مع السطر */
+  transition: transform 0.3s ease;
 }
 
 /* تأثير تفاعلي عند تمرير الماوس (Hover) */
 .radwa-whatsapp-link:hover {
-    color: #20ba5a; /* درجة أخضر أغمق قليلاً عند الوقوف بالماوس */
+  color: #20ba5a;
+  /* درجة أخضر أغمق قليلاً عند الوقوف بالماوس */
 }
 
 .radwa-whatsapp-link:hover .radwa-ws-icon {
-    transform: scale(1.2) rotate(15deg); /* تكبير الأيقونة ولفها قليلاً بشكل جمالي */
+  transform: scale(1.2) rotate(15deg);
+  /* تكبير الأيقونة ولفها قليلاً بشكل جمالي */
 }
 
 /* تجهيز العنصر الحاضن */
 .tooltip {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 /* تصميم الرسالة العربية الصغيرة بشكل عصري واحترافي */
 .tooltip .tooltip-text {
-    visibility: hidden;
-    width: 180px; /* زيادة العرض لتناسب النص العربي */
-    background: rgba(30, 41, 59, 0.95); /* خلفية داكنة فاخرة متناسقة مع الموقع */
-    color: #ffffff; /* لون النص أبيض ناصع */
-    text-align: center;
-    border-radius: 8px; /* حواف ناعمة */
-    padding: 8px 12px; /* مساحات داخلية مريحة للعين */
-    position: absolute;
-    z-index: 99;
-    bottom: 135%; /* رفعها قليلاً لتكون مريحة فوق الاسم */
-    left: 50%;
-    transform: translateX(-50%) translateY(10px); /* إزاحة بسيطة للأسفل لتأثير الحركة */
-    opacity: 0;
-    font-family: 'Cairo', sans-serif; /* استخدام نفس خط الموقع الاحترافي */
-    font-size: 0.8rem;
-    font-weight: 500;
-    line-height: 1.4;
-    border: 1px solid rgba(37, 211, 102, 0.3); /* إطار ناعم جداً بلون الواتساب الأخضر */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(37, 211, 102, 0.1); /* ظل فخم مع توهج خفيف */
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-                visibility 0.3s ease; /* حركة انسيابية مرنة للظهور */
-    white-space: nowrap; /* يمنع انقسام النص على سطرين */
+  visibility: hidden;
+  width: 180px;
+  /* زيادة العرض لتناسب النص العربي */
+  background: rgba(30, 41, 59, 0.95);
+  /* خلفية داكنة فاخرة متناسقة مع الموقع */
+  color: #ffffff;
+  /* لون النص أبيض ناصع */
+  text-align: center;
+  border-radius: 8px;
+  /* حواف ناعمة */
+  padding: 8px 12px;
+  /* مساحات داخلية مريحة للعين */
+  position: absolute;
+  z-index: 99;
+  bottom: 135%;
+  /* رفعها قليلاً لتكون مريحة فوق الاسم */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  /* إزاحة بسيطة للأسفل لتأثير الحركة */
+  opacity: 0;
+  font-family: 'Cairo', sans-serif;
+  /* استخدام نفس خط الموقع الاحترافي */
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.4;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  /* إطار ناعم جداً بلون الواتساب الأخضر */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(37, 211, 102, 0.1);
+  /* ظل فخم مع توهج خفيف */
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.3s ease;
+  /* حركة انسيابية مرنة للظهور */
+  white-space: nowrap;
+  /* يمنع انقسام النص على سطرين */
 }
 
 /* السهم الصغير أسفل الرسالة */
 .tooltip .tooltip-text::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 6px;
-    border-style: solid;
-    border-color: rgba(30, 41, 59, 0.95) transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(30, 41, 59, 0.95) transparent transparent transparent;
 }
 
 /* التأثير التفاعلي عند تمرير أو وقوف الماوس (Hover) */
 .tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0); /* ترتفع لأعلى بسلاسة عند الظهور */
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  /* ترتفع لأعلى بسلاسة عند الظهور */
 }
 
 /* تأكدي من استدعاء الخط من Google Fonts في أول الملف إذا لم يكن لديكِ */
@@ -2891,10 +3153,15 @@ infinite-results-track {
 
 .arabic-welcome {
   font-family: 'Cairo', sans-serif;
-  font-size: 1.2rem;          /* تكبير الخط ليصبح مقروءاً */
-  font-weight: 600;           /* جعله سميكاً قليلاً ليجذب الانتباه */
-  color: #ff4a9e;             /* استخدام نفس اللون الوردي الجذاب الموجود بكلمة feel&act والزر */
-  margin-bottom: 15px;        /* ترك مسافة مريحة بينه وبين العنوان الإنجليزي */
-  letter-spacing: 0;          /* إلغاء أي تباعد حروف قد يؤثر على العربي */
+  font-size: 1.2rem;
+  /* تكبير الخط ليصبح مقروءاً */
+  font-weight: 600;
+  /* جعله سميكاً قليلاً ليجذب الانتباه */
+  color: #ff4a9e;
+  /* استخدام نفس اللون الوردي الجذاب الموجود بكلمة feel&act والزر */
+  margin-bottom: 15px;
+  /* ترك مسافة مريحة بينه وبين العنوان الإنجليزي */
+  letter-spacing: 0;
+  /* إلغاء أي تباعد حروف قد يؤثر على العربي */
   display: block;
 }

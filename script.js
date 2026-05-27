@@ -242,3 +242,55 @@
       }, { passive: true });
     }
  
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const card = document.querySelector(".hero-card");
+  const container = document.querySelector(".hero-container");
+
+  if (!card || !container) return;
+
+  // دالة حساب حركة الـ 3D وتطبيقها عبر GSAP لضمان سلاسة الأنميشن
+  function handleTilt(e) {
+    // تحديد إحداثيات الحركة سواء كانت ماوس أو لمس موبايل
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+    const rect = container.getBoundingClientRect();
+    const x = clientX - rect.left; 
+    const y = clientY - rect.top; 
+
+    // حساب زوايا الدوران بناءً على مركز الحاوية
+    const rotateX = -((y - rect.height / 2) / rect.height) * 30; // زاوية الميل الرأسي (أقصى حد 30 درجة)
+    const rotateY = ((x - rect.width / 2) / rect.width) * 30;   // زاوية الميل الأفقي
+
+    // تطبيق الأنميشن فوراً بسلاسة
+    gsap.to(card, {
+      rotateX: rotateX,
+      rotateY: rotateY,
+      duration: 0.2,
+      ease: "power2.out"
+    });
+  }
+
+  // دالة إعادة الكارت لوضعه الطبيعي المستوي عند ترك الشاشة
+  function resetTilt() {
+    gsap.to(card, {
+      rotateX: 0,
+      rotateY: 0,
+      duration: 0.6,
+      ease: "power3.out"
+    });
+  }
+
+  // --- أحداث الشاشات الكبيرة (الماوس) ---
+  container.addEventListener("mousemove", handleTilt);
+  container.addEventListener("mouseleave", resetTilt);
+
+  // --- أحداث شاشات الموبايل (اللمس والضغط) ---
+  container.addEventListener("touchmove", handleTilt, { passive: true });
+  container.addEventListener("touchend", resetTilt);
+  container.addEventListener("touchstart", (e) => {
+    // تأثير نبضي خفيف عند أول لمسة للموبايل قبل التحريك
+    handleTilt(e);
+  }, { passive: true });
+});
