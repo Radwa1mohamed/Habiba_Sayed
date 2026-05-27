@@ -2768,3 +2768,16 @@ infinite-results-track {
     opacity: 1;
     transform: translateX(-50%) translateY(0); /* ترتفع لأعلى بسلاسة عند الظهور */
 }
+
+/* تأكدي من استدعاء الخط من Google Fonts في أول الملف إذا لم يكن لديكِ */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap');
+
+.arabic-welcome {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.2rem;          /* تكبير الخط ليصبح مقروءاً */
+  font-weight: 600;           /* جعله سميكاً قليلاً ليجذب الانتباه */
+  color: #ff4a9e;             /* استخدام نفس اللون الوردي الجذاب الموجود بكلمة feel&act والزر */
+  margin-bottom: 15px;        /* ترك مسافة مريحة بينه وبين العنوان الإنجليزي */
+  letter-spacing: 0;          /* إلغاء أي تباعد حروف قد يؤثر على العربي */
+  display: block;
+}

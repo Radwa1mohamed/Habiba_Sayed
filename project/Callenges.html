@@ -1,477 +1,968 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Habiba Sayed | تحديات متنوعة شاركت بها </title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <meta name="description"
-        content="كوتش كونتنت ماركتنج لمساعدتك في بناء حضور رقمي قوي. خدماتنا تشمل: خطط محتوى شهرية، سكريبتات ريلز، كتابة محتوى بيعي وإعلاني، وزيادة الـ Organic Reach. احجز سيشنك الآن.">
-    <meta name="keywords"
-        content="كوتش محتوى، كونتنت ماركتنج، كتابة محتوى، سكريبتات ريلز، خطة محتوى، زيادة الأورجانيك ريتش، محتوى بيعي، إعلانات تسويقية، صناعة محتوى إبداعي، كورس كتابة محتوى، استشارات تسويقية، تحليل الجمهور، Content Marketing، Copywriting، Organic Reach.">
-    <meta name="author" content="ُEng: Radwa Mohamed">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>معرض أعمال حبيبة سيد | حملات تسويقية وصناعة محتوى</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="shortcut icon" href="imgs/logo_Habiba.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="Callenges.css">
+    <link rel="stylesheet" href="project.css" />
+    <style>
+        /* التنسيقات الإضافية الخاصة بـ الفلتر للحفاظ على الكينونة المنظمة */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px auto 40px auto;
+            max-width: 1000px;
+        }
+        .filter-btn {
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #ddd;
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #8c6239; /* أو لون البراند الأساسي المعتمد لديكِ */
+            color: #fff;
+            border-color: #8c6239;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .card {
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+        .card.hidden {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
 
-    
+    <header class="header">
+        <div class="container header-content">
+            <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i> العودة لمعرض الأعمال</a>
+            <div class="logo-wrapper">
+                <div class="logo-text"> Habiba Sayed </div>
+                <div class="logo-icon"><i class="fa-solid fa-pen-nib"></i></div>
+            </div>
+        </div>
+    </header>
 
-    <main class="challenge-details-page" dir="rtl">
+    <section class="hero">
+        <div class="container">
+            <span class="tag">معرض شامل: كتابة محتوى إعلاني، قصصي، تحفيزي وبيعي</span>
+            <h1>نماذج حملات صناعة المحتوى</h1>
+            <p>تنوع استراتيجي مميز يغطي قطاعات مختلفة؛ من السرد القصصي والتحديات المعرفية إلى براندات الفاشون، المنتجات التنظيمية، والاستشارات المهنية.</p>
+        </div>
+    </section>
 
-        <header class="challenge-view-header">
-            <span class="top-label">OnTrack Challenge & Portfolio Copywriting</span>
-            <h1 class="premium-title">تحديات متنوعة شاركت بها</h1>
-            <p class="sub-intro">تفكيك صراعات العملاء وصياغة الحكايات الإعلانية والزوايا النفسية لمختلف البراندات والخدمات.</p>
-        </header>
+    <section class="portfolio-section">
+        <div class="container">
+            
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterSelection('all')">عرض الكل</button>
+                <button class="filter-btn" onclick="filterSelection('medesta')">تحدي ميديستا</button>
+                <button class="filter-btn" onclick="filterSelection('fashion')">ملابس وعبايات</button>
+                <button class="filter-btn" onclick="filterSelection('planner')">بلانرز وتخطيط</button>
+                <button class="filter-btn" onclick="filterSelection('academy')">أكاديميات وتعليم</button>
+                <button class="filter-btn" onclick="filterSelection('hand-craft')">هاند ميد وديكور</button>
+                <button class="filter-btn" onclick="filterSelection('cosmetics')">عناية وكوزمتكس</button>
+                <button class="filter-btn" onclick="filterSelection('business')">بيزنس وبورتفوليو</button>
+            </div>
 
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">الكل (21)</button>
-            <button class="filter-btn" data-filter="sales">محتوى بيعي وتجاري</button>
-            <button class="filter-btn" data-filter="edu">تعليم وتربية</button>
-            <button class="filter-btn" data-filter="handmade">هاند ميد وديكور</button>
-            <button class="filter-btn" data-filter="growth">تخطيط وتطوير مهارات</button>
+            <div class="cards-grid">
+
+                <div class="card" data-category="medesta">
+                    <div class="card-header">
+                        <span class="card-type">محتوى سرد قصصي (تحدي ميديستا)</span>
+                        <h3>بكار والزمن الجميل...</h3>
+                        <p class="card-desc">منشور عاطفي يعزز الارتباط بذكريات الطفولة وأجواء اللمة الرمضانية النقية.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">حب</div>
+                                <div class="author-info">
+                                    <h5>حبيبة سيد</h5>
+                                    <span>صناعة محتوى وسرد قصصي</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">بكار والزمن الجميل ...
+
+ما تسرحش أوي أنت لسه جواك بكار وما كبرتِش ولا حاجة. روحك شبه أبو كف رقيق وصغير كان كده تقريبًا التتر.
+
+أيوة أيوة أنت ناسي ولسه بقول لك ما كبرتش أنت حالتك خطر بس خد فيتامين من بتاع زمان ده وهتبقى كويس؛ فيتامين الحب واللمة وأجواء رمضان والروحانيات الجميلة.
+
+وأنت قاعد مستني آخر دقائق علشان متلهف تشوف أول حلقة وتسمع التتر وتندمج معاه، فتنسي جوعك وعطشك، ومرة واحدة تلاقي مدفع الإفطار وريحة الأكل وكل الأصناف الحلوة اللي في أول يوم رمضان. وأنت وإخواتك بتوزعوا العصير على بعض، محدش قادر خلاص يستنى.. وكلام والدك في الخلفية بس ما تقلش أوي علشان نعرف نصلي.
+
+ذكرياتنا دائمًا العقل بيربطها بحاجات معينة زي بكار والمعزة رشيدة، أيوة المعزة ما هي كانت صديقة بكار.. والأهم اللمة والأهل وشعور الفرحة اللي لو بكار اتكرر تاني هتقعد تتفرج وتغمرك السعادة وتسترجع الزمن الجميل.
+
+ارجع تاني طفل مش عيب ارجع طفل بروحك ونقائك وصلة رحم أهلك وحبايبك ما تخليش الدنيا تلهيك يا رقيق يا صغير 🥹💗
+
+#تحدي_الكتابة_مع_ميديستا</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التسويق بالنوستالجيا (Nostalgia Marketing) لإثارة المشاعر الإيجابية الدافئة وربطها بالهوية المعنوية.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fashion">
+                    <div class="card-header">
+                        <span class="card-type">بيدج ملابس (محتوى بيعي)</span>
+                        <h3>إحساس التميز والإطلالة الراقية</h3>
+                        <p class="card-desc">التركيز على القيمة المعنوية والجمالية للمنتج وتأثيره على الثقة بالنفس.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مل</div>
+                                <div class="author-info">
+                                    <h5>براند أزياء وملابس</h5>
+                                    <span>موضة وأناقة عصرية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">فيه قطع بتعدي وقطع بتفضل عالقة في بالك لأنها مش مجرد لبس 💎
+
+العباية دي مش بس هتغير شكلك، هتغير إحساسك بنفسك. لما تلبسيها هتحسي إنك في عالم مختلف: خطواتك أهدى، ثقتك أعمق وإطلالتك أرقى.
+
+هي مش مجرد قطعة موضة هي تجربة كاملة، من أول ما تلمحيها بعينك لحد ما تبصي لنفسك في المراية.. هتعرفي إنها معمولة علشان تديكي لحظة جمال خالص لحظة تفضلي فاكرها.
+
+عيشي التجربة بنفسك، احجزي دلوقتي من خلال الواتساب أو الماسنجر ♥️👀</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> بيع التجربة والشعور (Selling the Experience) بدلاً من بيع المواصفات المادية للقطعة.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fashion">
+                    <div class="card-header">
+                        <span class="card-type">بيدج ملابس (محتوى بيعي)</span>
+                        <h3>البحث عن الراحة اليومية والعملية</h3>
+                        <p class="card-desc">محتوى يخاطب الفئة التي تبحث عن العملية والخفة والأمان في الحركة طوال اليوم.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مل</div>
+                                <div class="author-info">
+                                    <h5>براند أزياء وملابس</h5>
+                                    <span>موضة وأناقة عصرية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">أوقات كتير مش بندوّر على قطعة ملفتة… بندوّر على راحة تدوم طول اليوم 👌
+
+العباية دي معمولة علشان تخلي يومك أسهل. من أول ما تلبسيها تحسي إنك خفيفة ومرتاحة من غير ما تفكري كتير في اللبس أو التفاصيل. هي الاختيار اللي يخليك تركزي في يومك، وتعيشي لحظتك، من غير ما يكون في قلق من الحركة أو من المظهر. زي حضن دافي بيديكي أمان وبيطمنك إنك طول اليوم شكلك مظبوط.
+
+لأن راحتك أهم من أي حاجة متفوتيش الفرصة.. كلمينا دلوقتي على الماسنجر أو الواتساب ♥️😉</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التركيز على حل مشكلة يومية (نقاط الألم المتعلقة بالتعب والراحة والعملية).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fashion">
+                    <div class="card-header">
+                        <span class="card-type">بيدج ملابس (محتوى بيعي)</span>
+                        <h3>إطلالة الانتماء واللمة</h3>
+                        <p class="card-desc">ربط العباية بالمناسبات الاجتماعية، التواجد بين الأصدقاء والذكريات السعيدة.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مل</div>
+                                <div class="author-info">
+                                    <h5>براند أزياء وملابس</h5>
+                                    <span>موضة وأناقة عصرية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">الإطلالة مش مجرد لبس الإطلالة هي اللي بتخليكي جزء من اللحظة 💕
+
+العباية دي هتخليكي مميزة وسط صحابك وأهلك مش محتاجة تبذلي مجهود علشان تسيبي انطباع حلو لأن حضورك هيبقى كافي. كل مرة تخرجي بيها هتحسي إنك قريبة من كل الناس اللي بتحبيهم، وكأنها جزء من اللمة والذكريات الحلوة. دي العباية اللي بتخليك تحسي بالانتماء واللي بتدي لمسة خاصة للّحظات اللي عايزة تفضلي فاكرها.
+
+خلي إطلالتك جزء من كل لمة، الطلب متاح دلوقتي من خلال الواتساب أو الماسنجر ♥️🔥</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> استخدام دافع الانتماء الاجتماعي (Social Belonging) لربط المنتج بلحظات السعادة المشتركة.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="planner">
+                    <div class="card-header">
+                        <span class="card-type">بيدج البلانر (محتوى تحفيزي وتخطيطي)</span>
+                        <h3>مراجعة الـ 8 شهور الأولى وجلسة العصف الذهني</h3>
+                        <p class="card-desc">براند: Violet Eve Planner - تحفيز الجمهور على تقييم الإنجازات ومحاربة التشتت.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">ڤا</div>
+                                <div class="author-info">
+                                    <h5>Violet Eve Planner</h5>
+                                    <span>أدوات تنظيم وتخطيط الفتيات</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">🔗 استنوا! لو ظهر ليكم البوست يبقى كملوا للآخر 😉🏃‍♂️
+
+عدّى ٨ شهور من السنة، وده الوقت اللي محتاجين فيه نقف مع نفسنا شوية، نراجع اللي فات ونخطط للأفضل لباقي السنة.👌
+
+🖇️ أول حاجة محتاجين نعملها هي نسأل نفسنا: الـ ٨ شهور اللي فاتوا عدوا في إيه؟ والإجابة على السؤال ده هتحتاج: 
+📍 نختار مكان هادي وجميل مع مشروبنا المفضل، ونجيب أوراقنا📃 وأقلامنا الجميله ✏️ علشان نعمل جلسة عصف ذهني ونسترجع كل الحاجات اللي أنجزناها في الفترة دي.
+📍 لو بنستخدم بلانر أو نوتة بنسجل فيها إنجازاتنا، دي كمان هتفيدنا جداً في إننا نتذكر كل خطوة خطيناها.
+📍 نحاول نفتكر كل التفاصيل، من أول الحاجات اللي اتعلمناها، والعادات اللي اكتسبناها أو حتى تخلصنا منها.
+
+📌 نُقسّم إنجازاتنا بالشهور زي ما هو موضح في الصور👇 (مراجعة شهرية وربع سنوية)، ونشوف الشهر عدّى في إيه: هل اتعلمنا حاجة جديدة؟ اكتسبنا عادة مفيدة؟ أو ممكن نكون قصرنا في حاجة وعايزين نعالجها؟ 🤷‍♀️
+
+مع بلانر ڤايوليت إيڤ، نقدر نرتب كل أفكارنا وإنجازاتنا بشكل سهل ومنظم، يعني من غير تشتت، كل حاجة هتكون في مكانها!👌
+
+مهم جداً نعمل وقفة مع نفسنا كل فترة ونتأكد إننا ماشيين في الطريق الصح، وده بيبقى عن طريق مراجعة مستمرة (شهرية وربع سنوية). وبعد ما نخلص العصف الذهني، نفكر في الحاجات اللي اكتشفناها عن نفسنا: إيه اللي اتعلمناه؟ إيه اللي غيرناه أو حسنّاه؟ وإيه اللي اكتسبناه؟ وهل حسينا بنعم ربنا علينا؟
+
+📍 شاركونا تطبيقكم للـ ٨ شهور اللي فاتوا، وإيه الإنجازات اللي حققتوها أو الحاجات اللي اكتشفتوها عن نفسكم 🤗 لو حبيتوا البوست، قولوا لنا رأيكم في الكومنتات، وكمان تابعونا عشان بارت ٢ هيكون عن: (إزاي نستغل الشهور اللي جاية من السنة بطريقة أفضل 🙊)</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> صناعة محتوى تعليمي تفاعلي ذو قيمة (Value Content) يزيد الولاء للبراند قبل البيع المباشر.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="planner">
+                    <div class="card-header">
+                        <span class="card-type">بيدج البلانر (محتوى تمكيني وتحفيزي)</span>
+                        <h3>البنات القويات وقتنا للإنجاز لسه ما خلصش</h3>
+                        <p class="card-desc">استغلال الـ 4 شهور المتبقية من السنة عبر وضع 8 خطوات عملية ومنظمة.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">ڤا</div>
+                                <div class="author-info">
+                                    <h5>Violet Eve Planner</h5>
+                                    <span>أدوات تنظيم وتخطيط الفتيات</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">✨ البنات القويات وقتنا للإنجاز لسه ما خلصش ✨
+
+معاكي 4 شهور كاملة قبل ما السنة تخلص ليه ما تستغليشهم عشان تكوني أفضل نسخة من نفسك؟ 😍💪
+
+1. حطي أهدافك قدام عينيك: 🎯 مش لازم تكون كبيرة وصعبة، المهم تكون واضحة ومقسمة لخطوات بسيطة. وطبعا بلانر Violet Eve Planner هتكون مساعدتك المثالية في التخطيط ده وعمل جداول دقيقة.
+2. راجعي إنجازاتك: 📊 رجعي كده لأهدافك اللي حطيتيها في بداية السنة، واطمني على اللي حققتيه. واللي لسه، لسه قدامك وقت تعمليه! 🌟
+3. اتعلمي حاجة جديدة: 📚 شوفي إيه اللي نفسك تتعلميه ويضيف ليكي، سواءً كانت لغة جديدة، مهارة تقنية، أو هواية ممتعة!
+4. رتبي وقتك بعناية: وازني بين الشغل، الراحة، ووقتك الشخصي.
+5. اهتمي بصحتك 🧘‍♀️ التزمي برياضة بتحبيها أو نظام غذائي صحي.
+6. خططي لمستقبلك المالي: 💸 ابدأي بخطة للادخار أو رتبي مصاريفك.
+7. طوري علاقاتك: 💕 استغلي الوقت المتبقي لتقوية علاقاتك مع أهلك وأصدقائك.
+8. جهزي خطة للسنة الجديدة: 🗓️ ابدأي من دلوقتي وحطي أهداف جديدة مبنية على اللي اتعلمتيه السنة دي.
+
+خليكي جاهزة لأنك قادرة تنهي السنة دي بقوة وتبدأي سنة جديدة بإنجازات أكبر. إيه الحاجات اللي هتبدأي تعمليها من النهاردة؟ شاركينا في الكومنتات! 👇🔥</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> مخاطبة الهوية الأنثوية القيادية والقوية (Empowerment Marketing) المنسجمة تماماً مع طبيعة براند البلانرز الخاص بالبنات.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="academy">
+                    <div class="card-header">
+                        <span class="card-type">أكاديمية قرآن أون لاين (محتوى ترويجي قيمي)</span>
+                        <h3>د. جهاد شحات | أنوار السند المتصل للإجازات القرآنية</h3>
+                        <p class="card-desc">إبراز التميز المنهجي والشرعي والتربوي للدكتورة لبناء الثقة الكاملة في نتائج الأكاديمية.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">جه</div>
+                                <div class="author-info">
+                                    <h5>د. جهاد شحات</h5>
+                                    <span>أنوار السند المتصل للإجازات القرآنية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">لقت لكم أكاديمة قرآن أون لاين حرفياً كنز .. ليه في ناس بتحفظ قرآن سنين بدون نتيجة وفي ناس تانية خلال شهور قليلة بتوصل لثبات وإتقان؟
+
+الفرق الحقيقي مش في الشخص اللي بيحفظ لكن في المُعلم وفي المنهج والخطة اللي بتمشي عليها طول رحلة حفظك وفي اللي بيعرف يمسك بإيدك لحد ما توصل. ود. جهاد شحات نموذج من الناس اللي ربنا بيمن بيهم على اللي عايز يتعلم.
+
+اللهم بارك جمعت بين: العلم الشرعي – التربية – الصحة النفسية – منهجيات التحفيظ – القراءات – والخطط الزمنية وكمان هي: خريجة جامعة الأزهر، متخصصة في أصول القراءات العشر، ومُجازة قراءة وإقراء وحفظًا عن ظهر قلب. ودمجت التربية فبقت تعلم: عقيدة، تفسير، حديث، آداب، وما لا يسع أطفال المسلمين جهله.
+
+تتميز الأكاديمية بـ:
+📌 إجازات بأعلى الأسانيد في العالم (حفص، شعبة، ورش، قالون، ختمة أصحاب الصلة).
+📌 شهادات إتقان وتصحيح تلاوة وإجازات في الحديث (البخاري – الأربعين النووية).
+📌 أسعار رمزية جدًا مقارنة بالمنافسين وتعليم للكبار والأطفال ولغير الناطقين بالعربية.
+
+انضمي لأكاديمية د. جهاد وسيبي الباقي على المنهج والالتزام وتوفيق ربنا وبس كده 🩷🩷</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التسويق بالميزات التنافسية وبناء السلطة العلمية (Authority Building) لدحض مخاوف ضياع الوقت بدون جودة حفظ حقيقية.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="academy">
+                    <div class="card-header">
+                        <span class="card-type">توعية وتربية (صحة نفسية)</span>
+                        <h3>إحنا لحد دلوقتي مش فاهمين نعمل إيه؟!💔</h3>
+                        <p class="card-desc">طرح قضية حماية وأمان الأطفال من منظور عاطفي نابع من تجربة الأمومة الصادقة، والترشيح للدكتورة رحاب رشوان.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">رح</div>
+                                <div class="author-info">
+                                    <h5>د. رحاب رشوان</h5>
+                                    <span>تربية طفولة وصحة نفسية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">إحنا لحد دلوقتي مش فاهمين نعمل إيه؟!💔
+
+في يوم كنت قاعدة لوحدي بعد ما ولادي ناموا وفتحت الموبايل ولقيت صدمة؛ خبر جديد عن اعتداء على طفل ومن غير ما أحس قلبي وقع في رجلي زعل على الطفل وخوف على ولادي. وبعد شوية بدأت أهدي نفسي وأقول هو أنا كده مبالغة ولا فعلاً في خطر عليهم؟ وهل أنا بعرف أحميهم ولا أنا بس بخوف نفسي على الفاضي؟ الخوف كان بيزيد جوايا بس الخوف ما علمنيش المفروض برضوا أعمل إيه 😅
+
+وبالصدفة لقيت حد باعت لي رسالة على الماسنجر، فحببت أعرف دي مين لقيتها د. رحاب رشوان؛ خريجة تربية طفولة معاها دبلوم في التربية الخاصة وباحثة ماجستير في الصحة النفسية، بتوعي الناس فى أمور التربية وإزاي يتعاملوا وبالأخص فى المواقف دي.
+
+وأنا كحبيبة بقول لكم سواء بنت أو أم لازم تتثقفوا تتعلموا إزاي تحموا ولادكم وتاخدوا بالاسباب فكان ده أفضل ترشيح. د. رحاب عندها جروب هسب لكم اللينك بتاعه أول كومنت.. وربنا يحفظ أطفال كل بيت ويجعل وعي الأمهات سبب أمانهم 🩷</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> استخدام مدخل القصص الواقعية والمشاركة الإنسانية (Empathy Marketing) للمس مشاعر الأمهات المستهدفات مباشرة وتلبية حاجتهن للأمان والوعي.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="hand-craft">
+                    <div class="card-header">
+                        <span class="card-type">براند هاند ميد (محتوى سرد قصصي وترشيحي)</span>
+                        <h3>براند طيف-TeaF | مش مجرد ديكور دي قطع ليها روح</h3>
+                        <p class="card-desc">قصة دعاء محمد خريجة زراعة التي تبدع في صناعة تفاصيل الأكواب والمراسيل بحب وأثر طيب.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">طي</div>
+                                <div class="author-info">
+                                    <h5>طيف-TeaF</h5>
+                                    <span>قطع يدوية ومراسيل ورقية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">مش كل هدية ينفع تتغلف كمل معايا الحكاية وشوف أول كومنت 🫣🤌🏻🔥
+
+في حاجات بنشتريها وفي حاجات بنحتفظ بيها مش علشان شكلها بس علشان إحساسها وذكرياتنا معاها. من فترة لفت نظري بيدج مختلفة مش بتبيع قطع قد ما بتقدم أثر ورسالة اسمها طيف-TeaF والحقيقة الاسم مناسب جدًا لأنها فعلاً طيف مش بيعدي مرور الكرام.
+
+البيدج دي وراها بنت جميلة جداً اسمها Duaa R Mohamed خريجة زراعة بس عندها عين بتشوف الجمال في أبسط التفاصيل وقلب شايف النعمة. بدأت من حوالي 6 سنين بمراسيل ورقية إيماناً بالكلمة الطيبة، ومن 5 سنين عملت أول كوب بإيديها قطعة تشبهها وبقى زي صديق وفي.
+
+دلوقتي طيف بتقدم حاجات كلها معمولة بحب زي: أكواب مرسومة يدويًا بالكامل، مراسيل ورقية، ماديليات من عجينة السيراميك، تابلوهات، بوكسات تجفيف ورد، فواصل كتب، كوسترات وأطباق ديكور. 
+
+واللي مميز فعلاً إنها بتهتم جداً بالتفاصيل وتعديل الديزاين والرسم بدون ملامح ليلائم رغبة العميل تماماً وتكون القطعة شبهه وليها روح وعاطفة تعيش معاه، والتوصيل متاح لكل المحافظات 💗✨</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التسويق بالهوية الفردية والتخصيص (Customization) والتركيز التام على القيمة العاطفية والمشاعر المصاحبة للمنتج.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="business">
+                    <div class="card-header">
+                        <span class="card-type">كورسات وتعليم (محتوى تسويقي وتوجيهي)</span>
+                        <h3>فرصة شغل من كورس واحد بس 👀🔥</h3>
+                        <p class="card-desc">ترشيح كورس الجرافيك ديزاينر للمهندسة زينب أحمد غازية، والمخصص للبنات فقط بمفهوم المنتور والمتابعة الحقيقية.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">زي</div>
+                                <div class="author-info">
+                                    <h5>Zeinab Ahmed Ghozia</h5>
+                                    <span>تعليم وتوجيه جرافيك ديزاين</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">فرصة شغل من كورس واحد بس 👀🔥
+
+في ناس بتدخل مجال الجرافيك أو أي مجال تتوه وبالذات المبتدئين، وفي ناس بتدخل صح من أول خطوة بتاخدها تجاه استثمارها فى نفسها واختصار التشتت. الأهم فى أي كورس هو: نطبق إزاي، هل في متابعة، ومين يعدل لنا ويكون بمثابة منتور؟
+
+لحد ما لقيت Zeinab Ahmed Ghozia جرافيك ديزاينر، مش بس بتشرح ده متابعة معاكِ كل تفصيله. بتقدم الكورس أونلاين ومسجل ترجعيله في أي وقت، ومتابعة مستمرة وتطبيقات عملية يعني بتشتغلي وتغلطي وتتعلمي والمتابعة مش بتقف بعد انتهاء الكورس، حتي لو جالك شغل بتوجهك وتراجع معاكِ التصميم قبل ما يروح للعميل.
+
+كمان بتدخلك جروبات شغل خاصة بالجرافيك لتتعلمي من الواقع. الكورس للبنات فقط علشان المساحة الخاصة والأريحية، وسعره بسيط ورمزي جداً. أنا كحبيبة بقول لكل بنت لو عايزة تدخلي مجال الجرافيك اشتركي بدون تفكير وهتدعي لي، وفي فرصة كمان لتكسب اتنين الكورس مجاني بشرط واحد سكرين بالمتابعة ليها وبس كده 💗✨</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> معالجة مخاوف المبتدئين (التشتت وغياب التوجيه) من خلال إبراز ميزة المتابعة المستمرة كـ المنتور (Mentorship Value).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="hand-craft">
+                    <div class="card-header">
+                        <span class="card-type">بيدج ألعاب أطفال (محتوى حل مشكلة)</span>
+                        <h3>Caramel Toys | ألعاب لفوق سن العشرين.. 🤌🏻👀</h3>
+                        <p class="card-desc">مشروع قائم على عقلية أم تهدف لإبعاد الأطفال عن الشاشات وتقديم ألعاب آمنة ومدروسة لتنمية المهارات.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">كا</div>
+                                <div class="author-info">
+                                    <h5>Caramel Toys</h5>
+                                    <span>ألعاب منتسوري وتنمية مهارات</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">لو أنتي أم أو أب قرر يكون صالح أو طفولة متأخرة كمل البوست للآخر 😂 فيه ألعاب بتسلي الطفل وفيه ألعاب بتطمن الأم، الفرق ده هو أساس بيدج Caramel Toys.
+
+صاحبة البيدج أم لبنوته عندها سنتين و10 شهور، ومن تجربتها اليومية بدأت تفهم إن أكبر تحدي في المرحلة دي إن الطفل يلعب والأم كمان تطمن والألعاب تكون مناسبة لسنهم وآمنة مفيهاش حاجة ممكن تأذيه، ومن هنا بدأت فكرة المشروع من حوالي خمس شهور كحل لمشكلة حقيقية.
+
+البيدج مبنية على الترشيح والأمان قبل البيع، مع خدمة ما بعد البيع وضمان استرجاع الأموال الفوري لو حدثت أي مشكلة بسبب الشحن. الهدف الأساسي إبعاد الأطفال عن الموبايل والتلفزيون وتنمية المهارات من سن 0 لحد 15 سنة وما فوق. توفر ألعاب منتسوري، تعليمية، ترفيهية، جماعية ومستلزمات أطفال بجودة مستوردة ممتازة وأسعار في متناول الجميع 🩷🩷🔥</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> بناء المصداقية عبر نبرة الصدق والمشاركة (Honesty & Transparency)، وتقديم البراند في صورة "مستشار حلول تربوية" وليس مجرد متجر تجاري.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="hand-craft">
+                    <div class="card-header">
+                        <span class="card-type">بيدج هاند ميد (محتوى مسابقات ودعم)</span>
+                        <h3>Monica Store | فن المكرمية والديكور المصنوع بحب</h3>
+                        <p class="card-desc">مسابقة ترويجية تفاعلية لدعم مشروع الجميلة أماني المتخصصة في الشنط والستائر والجدرايات الفنية.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مو</div>
+                                <div class="author-info">
+                                    <h5>Monica Store</h5>
+                                    <span>فن المكرمية والديكورات اليدوية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">صاحيييين👀 كل ما يُصنع بحب فهو جميل 💗🔥
+
+بنوته جميلة تواصلت معايا بتشتغل هاند ميد مكرميه عندها بيدج مونيكا ستور Monica store بتقدم فيها: شنط، كوشن، مفارش، ستائر، جداريات، وأي قطعة ديكور بفن المكرميه تقدر تنفذها بفضل الله بقالها 4 سنين حرفية وشغلها اللهم بارك على الطبيعة تحفة.
+
+وحبت تقدم هديتين للمتابعين عندي: 1- جدارية شكلها مميز جداً. 2- كلاتش خطير خطير بجد. بشروط بسيطة جداً كدعم مننا لمشروعها:
+ـ شير للبوست ده.
+ـ متابعة للبيدج ودعوة لصحابكم واسكرين.
+ـ التفاعل على آخر 10 بوستات في البيدج عندها.
+
+وبإذن الله 3 أيام وهتختار الفائزين ومبارك مقدماً 🥳✨</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> استخدام قوة المسابقات (Giveaways) لزيادة قاعدة المتابعين والتفاعل العضوي السريع للبراند.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="hand-craft">
+                    <div class="card-header">
+                        <span class="card-type">مسابقة مشتركة (هاند ميد وأكاديمية)</span>
+                        <h3>5 هدايا مميزة من Vichaar Brand وأكاديمية أنوار السند</h3>
+                        <p class="card-desc">حملة تسويق تشاركي تدمج بين منتجات الكروشية اليدوية والخدمات الدينية والكتب التعليمية الفاخرة.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مس</div>
+                                <div class="author-info">
+                                    <h5>Vichaar & أنوار السند</h5>
+                                    <span>تسويق تشاركي ترويجي</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">مش هدية ولا اتنين دول 5 🔥👀 المرادي المسابقة مختلفة لأنها مش واحدة دول اتنين!
+
+2 هدايا مقدمين من بيدج Vichaar Brand (كوفية وشنطة لكل بنت هدية والديزاين من اختياركم كروشية أو توتي باج مزينة أو مطبوعة).
+
+3 هدايا مقدمين من أكاديمية انوار السند المتصل للإجازات القرآنيه لكل بنت هدية واحدة (كتاب الأربعين النووية، كتاب تدبر وعمل، إجازة في قراءة من اختياركم). وهذا بجانب خدمات الأكاديمية المتميزة في تحفيظ القرآن للكبار والأطفال وإتقان القراءات بأعلى الأسانيد.
+
+الشروط لتأهيل الفوز بالكامل:
+📌 متابعة لبيدج الهاند ميد وبيدج الأكاديمية ودعوة للبدجين لاصحابكم واسكرين بالمتابعة.
+📌 شير للبوست ده والتفاعل على آخر 10 بوستات في البدجين.
+وبعد 5 أيام هيتم إختيار الفائزين بإذن الله 🔥🩷</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التسويق المشترك والتضافر (Cross-Promotion) لتبادل الجماهير المهتمة بين براندين مختلفين لرفع الأداء الإعلاني للطرفين.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="cosmetics">
+                    <div class="card-header">
+                        <span class="card-type">براند عناية وكوزمتكس (محتوى تفاعلي وبيعي)</span>
+                        <h3>عِفّة وجمال | متخصصون في الحمام المغربي الحقيقي</h3>
+                        <p class="card-desc">التحذير من المنتجات مجهولة المصدر وترشيح براند موثوق يوفر ليف صابون، تبريمة، ودلكة طبيعية.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">عف</div>
+                                <div class="author-info">
+                                    <h5>عِفّة وجمال</h5>
+                                    <span>منتجات العناية والحمام المغربي</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">اوعوا تتعاملوا مع أي حمام مغربي قبل ما تعرفوا مصدرة 🙂 ناس كتير بتقدم منتجات حلوة جداً ظاهرياً لكن بعد الاستخدام ممكن تسبب كارثة.
+
+فلو بتدوري على حمام مغربي مكوناته حقيقية ونتيجته بتبان من أول مرة فحب جداً ارشح لكم براند عفة وجمال، وهتلاقوا عندها كل منتجات الحمام المغربي لأنها متخصصة فيه: ليفة مغربية، صابون مغربي، تبريمة صحراوية، دلكة سوداني، طمي، مرطبات طبيعية زي زبدة الشيا بالورد أو الليمون.
+
+اللي شدني إن كل اللي جربوه رجعوا يطلبوا تاني ومفيش شكاوى والأسعار في المتناول جداً. ترشيحي ده لأي بنت بتدور على عناية حقيقية. 🎁 وفي هدية لبنوته حمام مغربي الشروط: متابعة بيدج عِفّة وجمال وجروبها والانستا، اسكرين بالمتابعة، وشير للبوست. وربنا يديم الجمال اللي فيه عافية 🔥🥳🩷</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> استخدام إستراتيجية إثارة المخاوف المشروعة (Fear-Appeal) من المنتجات الرديئة متبوعاً بتقديم الحل الآمن لضمان التحويل والطلب.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="academy">
+                    <div class="card-header">
+                        <span class="card-type">أكاديمية تعليم وقرآن (محتوى هدايا وإجازات)</span>
+                        <h3>المعلمة أمل بنت علي | تعليم وإقراء بأعلى الأسانيد</h3>
+                        <p class="card-desc">إبراز الأمانة العلمية والجروبات الصغيرة (5 طلاب فقط) لسهولة المتابعة مع تقديم هدايا إجازات مجانية.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">أم</div>
+                                <div class="author-info">
+                                    <h5>المعلمة أمل بنت علي</h5>
+                                    <span>إقراء وحفظ وتأسيس نور بيان</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">في فرق بين حد بيعلم قرآن وحد اتعلم صح وبقى يُعلم بأمانة. لو بتدوري على معلمة قرآن تكون مجازة فعلًا وتفيدك في رحلة حفظك فالترشيح ده ليكِ. المعلمة أمل بنت علي؛ مجازة بحفص وشعبة وورش، ومجازة في تحفة الأطفال والجزريّة ونور البيان بسند الشيخ عبد المؤمن زكي يوسف من أعلى الأسانيد.
+
+بتقدم: حفظ قرآن للأطفال والنساء فردي ومجموعات صغيرة جدًا (5 طلاب فقط) لسهولة المتابعة، وجروبات تصحيح تلاوة ودورات تجويد ونور البيان للتأسيس. الأسعار في المتناول وفيه عروض للإخوات.
+
+ومعلمة أمل بتقدم هدايا لمتابعين حبيبة (إجازة في حفص مجاناً، إجازة ورش، حفظ قرآن مدى الحياة، أو أماكن في دورات التجويد) بشرط: متابعة الأكونت، شير، واسكرين بالمتابعة في الكومنتات 🌿 دمتن متألقات.</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التركيز على القيمة الحصرية (المجموعات الصغيرة 5 طلاب فقط) كعامل جذب قوي يضمن جودة التلقي والاهتمام الفردي بالمتعلم.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="hand-craft">
+                    <div class="card-header">
+                        <span class="card-type">براند هاند ميد وديكور (محتوى تفاعلي ذكي)</span>
+                        <h3>بهجة ستور | تفاصيل تصنع البهجة في كل مناسبة</h3>
+                        <p class="card-desc">6 سنوات من التميز في التوزيعات، شغل الكونكريت، الشموع العطرية الفواحة، والسبح المخصصة بالأسماء.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">به</div>
+                                <div class="author-info">
+                                    <h5>بهجة ستور-Bahga</h5>
+                                    <span>هاند ميد، شموع، وكونكريت</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">أحذروا نصب في رمضان مع صاحبة بيدج بهچه ستور.. قالت لي حاجتها حلوة وطلعت نصابه دي حلوة جداً جداً 😂🫣💗
+
+في بيدجات كتير هاند ميد الفترة دي بس قليل اللي تحس إن الشغل طالع زي ما أنت حابه بالظبط، أنا اتعاملت مع بهجة ستور بنفسي وحقيقي الاسم على مسمى والبراند بقاله 6 سنين. كل حاجة معمولـة بإيد جميلة وذوق في التعامل وخامات تحفة.
+
+شغلها متنوع ما بين توزيعات لأي مناسبة (سبوع، عيد ميلاد، خطوبة، فرح) وبتشتغل كونكريت بأكتر من 40 شكل (فازات، كوسترات، صواني، مرايات خطوبة)، وسبح مخصصة بالأسماء والألوان، وشموع عطرية بأكثر من 20 شكل وعطور نفاذة وثابتة. والأجمل إنها بتساعد البنات اللي حابة تبدأ مشروعها وتوفر لهم كونكريت بدون فينش مع باكدج ممتازة للمبتدئين. تابعوهم وهتشوفوا بنفسكم الذوق العالي والبهجة الحقيقية 🔥🥳👀🩷🌙</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> استخدام العنوان الصادم الخادع الفكاهي (Clickbait Pattern) لجذب الانتباه العالي جداً في القراءة وسرعة انتشار المنشور.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="cosmetics">
+                    <div class="card-header">
+                        <span class="card-type">براند عناية وعطور (محتوى توعوي بيعي)</span>
+                        <h3>مسك وعبقي | روتين الـ 3 شهور قبل الفرح هو أكبر فخ!</h3>
+                        <p class="card-desc">تفكيك معضلة العرائس في الاهتمام المؤقت المفاجئ بالبشرة، والترشيح لباكدجات مسك وعطور عبقي الفاخرة.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مع</div>
+                                <div class="author-info">
+                                    <h5>مسك وعبقي - Apaqy</h5>
+                                    <span>منتجات عناية وعطور فاخرة</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">روتين الـ 3 شهور قبل الفرح هو أكبر فخ بتقعي فيه ❌
+
+أغلب البنات بيقعوا في نفس الغلطة وبيتعاملوا مع جمالهم بشكل مؤقت كأنه مهمة لازم تخلص، والمشكلة مش في نوع المنتج بل في انتظار لحظة معينة لبدء الاهتمام، وده بيسبب ضغط مفاجئ ورد فعل عكسي من بشرتك 😅 السر اللي هيوفر عليكي مجهود هو أن أقل القليل من الاهتمام الشخصي والراحة النفسية دلوقتي هو اللي هيخليكي ملكة يوم فرحك مش مجهدة وبتداري التعب بالميك أب.
+
+أعيريني عقلك بقى يا عروسة.. الحل والسر موجود عند مسك وعبقي Apaqy؛ مسك عندهم باكدج العروسة المتكامل للبشرة والشعر والجسم، وعبقي بعطورها الأنيقة الفاخرة وروائحها المتعددة لتناسب ذوقك الأنيق. 
+
+وليه بنرشح مسك وعبقي؟ لأن عندهم متابعة واهتمام خاص ليرشحوا المناسب لكِ ولاحتياج جسمك أنتي وبس بدون زحمة منتجات، ابدأي لمعانك الحقيقي من النهاردة واعرفي السر اللي هيخليكي مختلفة ✨💗
+
+#كوبيهاية_بـ1000_جنيه | OnTrack</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> استخدام ميزة الفلترة والاستشارة الشخصية (Consultative Selling) لإعطاء قيمة ومصداقية مضافة للمنتجات تفوق المنافسين.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="business">
+                    <div class="card-header">
+                        <span class="card-type">صناعة بورتفوليو (محتوى تحفيزي وحل مشكلة)</span>
+                        <h3>فرص شغل حلوة جداً ولكن!! سابقة الأعمال هي العائق</h3>
+                        <p class="card-desc">منشور يحث الفريلانسرز على بدء عمل بورتفوليو احترافي ومميز بمساعدة المصممة Sara Emad.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">سا</div>
+                                <div class="author-info">
+                                    <h5>Sara Emad</h5>
+                                    <span>تصميم البورتفوليو والمواقع</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">فرص شغل حلوة جداً ولكن!!
+
+كتير مننا وهو بيسكرول يلاقي فرصة شغل حلوة جداً في مجاله فيتشجع ويقول بس خلاص دخلي هيزيد 🤑 ويتفاجئ بعدها أنه في آخر الإعلان لازم سابقة أعمالك (البورتفوليو)، فتبدأ تيأس وتعدي الإعلان وأنت حزين ومحبط 🥲 بس خليني اقول لك أنك بتغلط غلطة كبيرة جداً وأنت بتضيع الفرص دي، فإنك عديت وما أخدتش خطوة فعلية أنه يكون عندك بورتفوليو ولو بسيط كبداية 🤷🏻‍♀️
+
+أصل عن تجربة محدش بدأ كبير بس أنت أتقدم! فالحل اللي هيوفر عليك كل الحيرة دي هو أنه أرشح لك الشخص الصح اللي يعمل لك بورتفوليو محترفين حتي لو مبتدأ.. وده مش خداع ده تميز.
+
+علشان كده Sara Emad هي اللي هتساعدك في رحلتك شغلها ممتاز وعن تجربة هسب لك لينك البورتفوليو بتاعي أول كومنت تاخد فكرة 👀 مستني إيه مش كفاية تأجيل أبدأ دلوقتي ونام وأنت مطمن أنه مفيش فرصة هتفوتك تاني 🔥💗🫣
+
+. Habiba Sayed</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> اللعب على دافع "الخوف من ضياع الفرص" (FOMO) متبوعاً بتقديم آلية سريعة ومضمونة لإنهاء أزمة سابقة الأعمال.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fashion">
+                    <div class="card-header">
+                        <span class="card-type">براند ملابس محجبات (محتوى بيعي استراتيجي)</span>
+                        <h3>براند SiS | الغالي تمنه مش فيه ولا حاجة دي نظرتك أنتي 😅</h3>
+                        <p class="card-desc">استخدام مفهوم الـ CPW (تكلفة المرة الواحدة) لإقناع الفتيات بالاستثمار في الجودة العالية من Sew In Style.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">سِ</div>
+                                <div class="author-info">
+                                    <h5>SiS - Sew In Style</h5>
+                                    <span>أزياء وملابس للمحجبات</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">الغالي تمنه مش فيه ولا حاجة دي نظرتك أنتي 😅 طبعاً بتسألي نفسك عرفت إزاي ما أنتي دايماً عينك على الغالي وكأنه هو الحل السحري لكل مشاكل لبسك، لكن خليني أقولك الحقيقة ببساطة شديدة مفيش أي نظرية في الستايلينج بتقول إن القطعة لازم تكون غالية عشان تبقي حلوة 🫣
+
+الحكاية كلها في الذكاء مش في السعر وهنا لازم تعرفي سر بيستخدمه خبراء الموضة بيسموه تكلفة المرة الواحدة أو الـ CPW ومعناها إن قيمة القطعة الحقيقية مش في الرقم اللي مكتوب على التيكت بل في عدد المرات اللي هتلبسيها فيها وهي لسه محافظة على جودتها 🧐 يعني لو اشتريتي قطعة غالية جداً ولبستيها مرة واحدة فكده تمنها غالي فعلاً لكن لو اشتريتي قطعة بسعر مناسب وجودة عالية ولبستيها 50 مرة وفضلت زي ما هي فكده فلوسك في مكانها الصح ✅
+
+وعلشان أنتي بنت فـ دايمًا بتبصي على المميز والمختلف لأن لبسك هو اللي يعبر عن شخصيتك 😊 وهنا بيجي السر اللي براند SiS - Sew In Style للمحجبات ركزوا عليه؛ بيقدموا لك المعادلة الصعبة: موديلات شيك + أعلى جودة تعيش معاكي + سعر يرضي ذوقك الرفيع. استثمري في القطعة اللي تعيش معاكي وتظهر شياكتك 😌😉
+
+#كوبيهاية_بـ1000_جنيه | OnTrack</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التسويق التعليمي العقلاني المعتمد على المفاهيم الحسابية والمنطقية (CPW Strategy) لتبرير القيمة وإقناع العميل بجدوى الاستثمار الذكي.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="planner">
+                    <div class="card-header">
+                        <span class="card-type">بيدج تخطيط وتنظيم (محتوى هدايا وتحفيز)</span>
+                        <h3>بيدج وِفَاق | تنظيم الوقت والتخلص من التسويف</h3>
+                        <p class="card-desc">مخططات سنوية، شهرية، ويومية مصممة خصيصاً مع مسابقة ترويجية تفاعلية للفوز بـ 3 مخططات مميزة.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">وف</div>
+                                <div class="author-info">
+                                    <h5>وِفَاق-Wefaq</h5>
+                                    <span>مخططات، تدوين، وتنظيم وقت</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">يومي صعب مش بعمل أي حاجة مفيدة 🥲 بتخطط ليومك؟ لا. طيب عارف مهامك؟ لا. طيب محدد عايز إيه؟ برضوا لا. طبيعي جداً ماتحققش أي حاجة حتي لو بسيطه ما أنت كل حاجه تسويف وكسل 😅 بس عايزة أقول لك حاجة.. أنت هتتسأل وقتك فيما افنيته!
+
+وعلشان أسهل عليك كل ده وتكون إنسان منظم فاهم نفسه بقدم لك مهارة من ذهب وهي التخطيط والتدوين 1×2 يعني مفيش تشتت ولا حيره بعد كده 🫣 بيدج وِفَاق بتقدم لك مخططات سنوية وشهرية ويومية وكمان أي تصميم بشكل خاص يتصمم لك خصيصاً، يعني مفيش حجج تاني ووقتك في إيدك.
+
+وكمان بيدج وفاق حبت تفرحكم بهدايا بشرط فولو للبيدج وشير وسيب اسكرين:
+• مخطط سنوي لأول فائز.
+• مخطط اسبوعي ويومي مع بعض لتاني فائز.
+• تصميم مخصص للفائز التالت للحاجة اللي هيحتاجها إن شاء الله.
+ما تنساش تدعي لصاحبة البيدج وتنفذ الشرط دمتم سالمين 😁🔥🩷
+
+. Habiba Sayed</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> استخدام الوازع الديني والأخلاقي والمسؤولية الذاتية عن الوقت لدفع القارئ للتوقف عن الكسل والبدء الفوري في اقتناء أدوات التخطيط.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fashion">
+                    <div class="card-header">
+                        <span class="card-type">بيدج عبايات وهوم وير (محتوى بيعي)</span>
+                        <h3>MOON store | حل معضلة الشياكة وجودة الخامات</h3>
+                        <p class="card-desc">ترشيح ذكي لبراند يقدم عبايات استقبال وبيجامات هوم وير تريند بأسعار ما قبل الغلاء وخامات قطنية ممتازة.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مو</div>
+                                <div class="author-info">
+                                    <h5>MOON store</h5>
+                                    <span>عبايات استقبال وهوم وير</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">يا جماعة بلاش نضحك على بعض اللي بيوفر لك سعر ينقصه جودة والعكس 🤐
+
+يعني إيه يا حبيبة؟ يعني كلنا بقينا بنواجه نفس المعضلة؛ تنزلي تشتري بيجامة أو عباية استقبال شيك تلاقي أسعار خيالية بتسمع ألوفات حرفياً 🤑 ولو قررتي توفري وتجيبي حاجة أرخص بتتحول لـ "فوطة مطبخ بعد أول غسلة". فكلنا بقينا محصورين بين نار الأسعار وبين رداءة الجودة ومبقيناش عارفين نلاقي المعادلة الصعبة شياكة البيت خامة قطن تعيش وسعر مناسب 🔥
+
+فـ مؤخراً وقعت على كنز حقيقي غير كل اللي شفته الفترة اللي فاتت بيدج MOON store، هتلاقوا عندها عبايات هوم وير وبيجامات وحاجات تانية كتير غير الموديلات تريندي جداً مش بتاعة ستات زمان. والأسعار هما لسه حرفياً شغالين بأسعار قبل الغلاء تقدري علشان كده رشحتها 😌 ادخلوا اتفرجوا على الكوليكشن واحكموا بنفسكم 💗🔥
+
+. Habiba Sayed</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> معالجة المشكلة الاقتصادية واللعب على ميزة السعر القديم (Price Advantage) مع تأكيد توافق الجودة والشياكة في نفس الوقت.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="cosmetics">
+                    <div class="card-header">
+                        <span class="card-type">براند كوزمتكس طبيعي (محتوى طبي وهدايا)</span>
+                        <h3>miraya cosmetics | تركيبات صيدلانية علاجية آمنة وبخامات عالمية</h3>
+                        <p class="card-desc">التركيز على خلفية صاحبة البراند كطبيبة صيدلانية مع تقديم مسابقة تفاعلية بـ 3 هدايا طبية ممتازة.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مي</div>
+                                <div class="author-info">
+                                    <h5>miraya cosmetics</h5>
+                                    <span>تركيبات طبية وعناية بالبشرة</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">أنا بطلت أدفع في الكوزماتكس مقابل الاسم والماركة علشان فلقيت الأفضل 💸🚫
+
+المشكلة اللي بتقابلنا كلنا إن براندات الكوزماتكس كترت وطبعاً حيرة نثق فين ونشتري منين وفلوسنا ماتضيعش. أنا النهاردة برشحلكم براند miraya cosmetics (تركيبات صيدلانية علاجية)🍂 صاحبة البراند صيدلانية يعني فاهمة كيميكال وطبيعة الجسم والبشرة بتشتغل إزاي 🧐 والأحلى إنها بتجيب خاماتها من البراندات العالمية زي فارمالوج وبيرفكت كيم يعني بتاخدي جودة مقابل سعر تحفة بتركيبات طبية آمنة تماماً لشعر وبشرة وجسم.
+
+واتفقت مع صاحبة البراند تقدم 3 هدايا لمتابعيني بشرط بسيط (فولو للبيدج والجروب وشير وسيب اسكرين):
+الفائزة الأولى: غسول بشرة طبيعي.
+الفائزة الثانية: (ديودرنت + ليب بالم).
+الفائزة الثالثة: (ديودرنت + ليب بالم). وبس كده 💗😌
+
+. Habiba Sayed</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> تعزيز عنصر الأمان الطبي والمهني (Medical Authority) لكسر حاجز الخوف المرتبط بمنتجات البشرة مجهولة الهوية.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="business">
+                    <div class="card-header">
+                        <span class="card-type">أكاديمية لغات للبنات (محتوى قصصي وبيعي)</span>
+                        <h3>أكاديمية Fluentiva | فرص العمل العالمية وضياع الدولارات</h3>
+                        <p class="card-desc">عرض مشكلة الخوف من المحادثة وغياب الثقة أمام العملاء الأجانب، وتقديم برامج الطلاقة للأكاديمية.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">فل</div>
+                                <div class="author-info">
+                                    <h5>Fluentiva Academy</h5>
+                                    <span>كورسات لغة إنجليزية للبنات فقط</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">فلوس بالدولار بتضيع مني والسبب إني مش قادرة آخد القرار🥲
+
+كنت دايماً شايفة إن مشكلتي نقص خبرة في صناعة المحتوي أو إن الـ Portfolio بتاعي محتاج يكون أفضل شوية عشان أدخل السوق الأوروبي، بس الحقيقة المُرة ظهرت لما جيت أتعامل مع أول عميل أجنبي اكتشفت إن مشكلتي في اللغة لساني اللي بيقف ومعنديش الثقة إني أعبر عن أفكاري بطلاقة وبحس إني لسه مبتدئة مهما اجتهدت 💔 حاولت كتير أصلح ده والنتيجة كانت صفر والفرص بتطير.
+
+لحد ما حصلت المفاجأة وسمعت بنوتة في إيفينت بتتكلم بطلاقة وثبات رهيب واللهم بارك، وقتها ادركت إن السر الحقيقي في المصدر اللي بيعرف يفك عقدة لسانك صح ويخليكي تتكلمي وأنتي واثقة في نفسك. وهنا كانت البداية مع أكاديمية Fluentiva للبنات فقط، وبيوفروا لك:
+☑️ كورس التأسيس من 0 انجلش وكورس الـ General لتظبيط الجرامر والكلمات من ليفل 0 لـ 5.
+☑️ برنامج الطلاقة Fluency Mastery: 9 أسابيع مكثفة لتتحدثي ساعة كاملة بثقة.
+☑️ كورس المحادثة لكسر حاجز الخوف وتحسين اللكنة الأمريكية.
+احجزي مكانك وانطلقي للعالمية 🤩🔥
+
+#كوبيهاية_بـ1000_جنيه | OnTrack</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> ربط تعلم المهارة (اللغة) بالعائد المالي المباشر بالعملات الأجنبية (ROI Concept) لتحفيز الفريلانسرز على اتخاذ القرار.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="business">
+                    <div class="card-header">
+                        <span class="card-type">استشارات وتطوير أعمال (محتوى سرد قصصي)</span>
+                        <h3>شركة صانعة المحتوى | شطارة ومية مهارة بس المحصلة صفر🫠</h3>
+                        <p class="card-desc">قصة ميمونة التي تمتلك المهارات ولكن تفتقد النظام والهوية الواضحة لبناء بيزنس متكامل دون ضغط.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">صا</div>
+                                <div class="author-info">
+                                    <h5>شركة صانعة المحتوى</h5>
+                                    <span>استشارات وبناء براندات الفتيات</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">شطارة ومية مهارة بس المحصلة صفر🫠
+
+أنا بحس إني بتعلم وبكتسب مهارات كتير بس ملهاش لازمة طيب إزاي ووقتي وجهدي راحوا فين؟ دي كانت صرختي المكتومة أنا ميمونة طول الفترة اللي فاتت عندي مشروعي الخاص وشايلة كل حاجة على كتافي، ومحتارة بين مية طريق مشتتة جداً مش عارفة أستغل اللي اتعلمته عشان أحوله لبيزنس بيجيب مبيعات حقيقية ومحصورة في دايرة المقارنة ببراندات كبيرة وأنا لسه مكاني محلك سر😔 تعبت من الدوشة اللي في دماغي وتأنيب نفسي.
+
+لحد ما بدأت أتخيل لو التشتت ده اتحول لـهوية واضحة والمهارات الكتير دي اتوظفت صح، أكيد هتبني براند بمستوى عالمي يخلي العميل هو اللي يدور عليا وقتها الوضع هيكون أفضل بكتير🫣
+
+واللي كمل ونجح هو اللي توكل على الله وقرر يدور على حل. طيب مين ساعد ميمونة ووصلها للحل؟ أحب أقدم لك خلطة النجاح "شركة صانعة المحتوى" كانت هي المنقذ ليا ولكل بنت تايهة لأنهم بيقرأوا دماغي قبل عميلي وبيرسموا لي الطريق اللي يخلي البيزنس بتاعي يكبر من غير ضغط. فلو أنتي محتاجة اللي يوجهك للطريق الصح يبقى مفيش غير صانعة المحتوى 🔥😉✔️
+
+#كوبيهاية_بـ1000_جنيه | OnTrack</div>
+                        </div>
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التوجيه النفسي والتأثير بضمير المتكلم والشخصية الاعتبارية (Character Persona) لخلق تجانس وتطابق ذهني بين القارئ وبين حالة ميمونة.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-top-btn">
+            <a href="../index.html#project-Yesser" class="footer-btn">
+                <i class="fa-solid fa-arrow-right"></i> العودة لكل الأعمال
+            </a>
         </div>
 
-        <div class="challenge-content-stack" id="grid-container">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span>Habiba Sayed</span>
+                <img src="../imgs/logo_Habiba.jpg" alt="logo" class="logo-image"> 
+            </div>
 
-            <section class="single-brand-block" data-category="edu">
-                <div class="brand-info-header">
-                    <span class="brand-tag">01. كورس إنجليزي للبنات</span>
-                    <h3>براند الأكاديمية: Fluentiva</h3>
-                </div>
-                <p class="premium-text-block">
-                    فلوس بالدولار بتضيع مني والسبب إني مش قادرة آخد القرار🥲<br><br>
-                    كانت دايماً شايفة إن مشكلتي نقص خبرة في صناعة المحتوي أو إن الـ Portfolio بتاعي محتاج يكون أفضل شوية عشان أدخل السوق الأوروبي<br>
-                    بس الحقيقة المُرة ظهرت لما جيت أتعامل مع أول عميل أجنبي اكتشفت إن مشكلتي مش في الشطارة<br><br>
-                    مشكلتي في اللغة لساني اللي بيقف ومعنديش الثقة إني عبر عن أفكاري بطلاقة زي المحتوي العربي وبحس إني لسه مبتدئة مهما اجتهدت 💔<br><br>
-                    حاولت كتير أصلح ده جربت تطبيقات و أصنع بيئة محفزة وخصصت وقت طويل جداً بس النتيجة كانت صفر والفرص كانت بتطير من قدامي 😅<br><br>
-                    لحد ما حصلت المفاجأة اللي غيرت تفكيري<br><br>
-                    كنت بحضر إيفينت وسمعت بنوتة بتحكي عن رحلتها كانت بتتكلم بطلاقة وثبات رهيب واللهم بارك لسانها فصيح وقتها سألت نفسي ليه في يوم مابقاش زيها ؟!🤨<br><br>
-                    ووقتها بس ادركت إن الموضوع مش بس عزيمة وصبر السر الحقيقي في المصدر اللي بيعرف يفك عقدة لسانك صح ويخليكي تتكلمي وأنتي واثقة في نفسك<br><br>
-                    هنا كانت البداية طلع قدامي وأنا بسكرول إعلان أكاديمية Fluentiva<br><br>
-                    المكان ده بيقدم كورسات إنجليزي مش بس كده دول بيطوروا في كل فتفوتة في الماتريال بتاعتهم عشان تناسبنا كبنات لأن الأكاديمية بنات فقط وبيوفروا لك:<br><br>
-                    ☑️ كورس التأسيس من 0 انجلش و كورس الـ General: لتأسيس وتظبيط الجرامر والكلمات من ليفل 0 لحد 5<br>
-                    ☑️ برنامج الطلاقة Fluency Mastery : 9 أسابيع من التدريب المكثف عشان تتكلمي ساعة كاملة لوحدك بكل ثقة<br>
-                    ☑️ كورس المحادثة: لكسر حاجز الخوف وتحسين اللكنة الأمريكية وتعلم طرق التفكير بالإنجليزي<br><br>
-                    دلوقتي أقدر أقولك إنك مش محتاجة تذاكري إنجليزي أنتي محتاجة تعيشي الرحلة مع مكان بيفهمك عشان الشركات هي اللي تتخانق عليكي بعد كدة 😉<br><br>
-                    مستنية إيه اطلعي برا دايرة التسويف واحجزي مكانك في Fluentiva وانطلقي للعالمية 🤩🔥
-                </p>
-            </section>
+            <div class="footer-links">
+                <a href="#contact">Contact</a>
+                <a href="#work">Work</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#home">Home</a>
+            </div>
 
-            <section class="single-brand-block" data-category="growth">
-                <div class="brand-info-header">
-                    <span class="brand-tag">02. بيزنس واستشارات</span>
-                    <h3>براند: صانعة المحتوى</h3>
-                </div>
-                <p class="premium-text-block">
-                    شطارة ومية مهارة بس المحصلة صفر🫠<br><br>
-                    أنا بحس إني بتعلم وبكتسب مهارات كتير بس ملهاش لازمة طيب إزاي ووقتي وجهدي راحوا فين<br><br>
-                    Camp صرختي المكتومة أنا ميمونة طول الفترة اللي فاتت عندي مشروعي الخاص وشايلة كل حاجة على كتافي<br><br>
-                    محتارة بين مية طريق مشتتة جداً مش عارفة أستغل اللي اتعلمته عشان أحوله لبيزنس بيجيب مبيعات حقيقية<br><br>
-                    محصورة في دايرة المقارنة ببراندات كبيرة وأنا لسه مكاني محلك سر😔<br><br>
-                    كنت دايماً بقول نفسي حد يوجهني يخرجني برا دايرة التوهان دي تعبت ومش عارفة أعمل إيه<br>
-                    وأخلص الدوشة اللي في دماغي بتأنيب نفسي وفي الآخر أنام من كتر التفكير🙃<br><br>
-                    لحد ما بدأت أتخيل لو التشتت ده اتحول لـهوية واضحة والمهارات الكتير دي اتوظفت صح<br>
-                    أكيد هتبني براند بمستوى عالمي براند يخلي العميل هو اللي يدور عليا وقتها الوضع هيكون أفضل بكتير🫣<br><br>
-                    وقبل ما تسألي إزاي لأن كلنا في الهوا سوا جاية أطمنك إن مفيش حد مامرش بنفس السيناريو مية مرة في اليوم<br><br>
-                    بس اللي كمل ونجح هو اللي توكل على الله وقرر يدور على حل<br><br>
-                    طيب مين ساعد ميمونة ووصلها للحل؟ 👀<br><br>
-                    أحب أقدم لك خلطة النجاح شركة صانعة المحتوى كانت هي المنقذ ليا ولكل بنت تايهة لأنهم بيقرأوا دماغي قبل عميلي وبيرسموا لي الطريق اللي يخلي البيزنس بتاعي يكبر من غير ضغط<br><br>
-                    ولو أنتي زيي ومحتاجة اللي يمسك إيدك ويوجهك للطريق الصح يبقى مفيش غير صانعة المحتوى 🔥😉✔️
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="sales">
-                <div class="brand-info-header">
-                    <span class="brand-tag">03. أزياء ومحجبات</span>
-                    <h3>براند: SiS - Sew In Style</h3>
-                </div>
-                <p class="premium-text-block">
-                    الغالي تمنه مش فيه ولا حاجة دي نظرتك أنتي 😅<br><br>
-                    طبعاً بتسألي نفسك عرفت إزاي ما أنتي دايماً عينك على الغالي وكأنه هو الحل السحري لكل مشاكل لبسك<br><br>
-                    لكن خليني أقولك الحقيقة ببساطة شديدة مفيش أي نظرية في الستايلينج بتقول إن القطعة لازم تكون غالية عشان تبقي حلوة🫣<br><br>
-                    الحكاية كلها في الذكاء مش في السعر وهنا لازم تعرفي سر بيستخدمه خبراء الموضة بيسموه تكلفة المرة الواحدة أو الـ CPW<br><br>
-                    ومعناها إن قيمة القطعة الحقيقية مش في الرقم اللي مكتوب على التيكت بل في عدد المرات اللي هتلبسيها فيها وهي لسه محافظة على جودتها🧐<br><br>
-                    يعني ببساطة لو اشتريتي قطعة غالية جداً ولبستيها مرة واحدة فكده تمنها غالي فعلاً لكن لو اشتريتي قطعة بسعر مناسب جودة عالية ولبستيها 50 مرة وفضلت زي ما هي فكده فلوسك في مكانها الصح ✅<br><br>
-                    وعلشان أنتي بنت فأنا عارفة إن العادي مش بيعجبك و دايمًا بتبصي على المميز والمختلف لأن لبسك هو اللي بيعبر عن شخصيتك مش مجرد قماش وخلاص😊<br><br>
-                    وهنا بيجي السر اللي براند SiS - Sew In Style للمحجبات ركزوا عليه هما بيقدموا لك المعادلة الصعبة:<br>
-                    موديلات شيك + أعلى جودة تعيش معاكي + سعر يرضي ذوقك الرفيع<br><br>
-                    وهنا دوري اقول لك استثمري في القطعة اللي تعيش معاكي وتظهر شياكتك في كل مرة تخرجي فيها مستنية أيه تاني براند sis هو اختيارك الأمثل 😌😉<br><br>
-                    <a href="https://www.facebook.com/share/p/14UX59tE1YT/" target="_blank" class="live-post-btn">رابط الإعلان الحي على فيسبوك <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="sales">
-                <div class="brand-info-header">
-                    <span class="brand-tag">04. عناوين وعطور</span>
-                    <h3>براند: مسك وعبقي Apaqy</h3>
-                </div>
-                <p class="premium-text-block">
-                    روتين الـ 3 شهور قبل الفرح هو أكبر فخ بتقعي فيه ❌<br><br>
-                    أغلب البنات أو خليني أقول 90% منهم بيقعوا في نفس الغلطة بيتعاملوا مع جمالهم بشكل مؤقت كأنه مهمة لازم تخلص<br><br>
-                    مشكلتك هنا مش في نوع المنتج اللي بتشتريه المشكلة في إنك مستنية لحظة معينة عشان تبدأي تهتمي<br><br>
-                    ده اللي بيخلي جواكي ضغط وحيرة وتوهان ملوش آخر وللأسف النتيجة في الغالب بتكون رد فعل عكسي من بشرتك بسبب الضغط المفاجئ عليها😅<br><br>
-                    فأنا جيالك من المستقبل أقولك السر اللي هيوفر عليكي مجهود وسنين🥳🤌🏻<br><br>
-                    أقل القليل من الاهتمام الشخصي بنفسك ولراحتك النفسية دلوقتي هو اللي هيخليكي يوم فرحك ملكة فعلاً مش واحدة مجهدة بتحاول تداري التعب ورا طبقات الميك اب<br><br>
-                    أعيريني عقلك بقى يا عروسة وتعالي أقولك سر خطير<br><br>
-                    أنا مجربة وعارفة إن دماغك مش مبطلة تفكير عشان كده هقدم لك السر وهو عند مسك و عبقي Apaqy<br><br>
-                    مسك عندهم منتجات لكل احتياجاتك من ضمنهم باكدج العروسة اللي بيوفر لك كل اللي تحتاجيه من بشرة وشعر وجسم<br><br>
-                    ده غير عبقي بعطورها الأنيقة الفاخرة هتلاقي عندهم روائح متعددة ترضي جميع الأذواق وأولهم أنتي 😉😁<br><br>
-                    طيب ليه ما قولتيش يا حبيبة عن منتجات معينة نقتنيها منهم؟!<br><br>
-                    لأن ببساطة هما عندهم متابعة واهتمام إنهم يرشحوا المناسب لكِ ولاحتياجك أنتي وبس عشان يضمنوا إنك بتستخدمي اللي جسمك محتاجه فعلاً مش زحمة منتجات وخلاص<br><br>
-                    فبدل ما تضيعي وقتك في المقارنات ابدئي لمعانك الحقيقي من النهاردة وجربي منتجات مسك وعبقي واعرفي السر اللي هيخليكي مختلفة ✨💗<br><br>
-                    <a href="https://www.facebook.com/share/p/174epQUVvq/" target="_blank" class="live-post-btn">رابط الإعلان الحي على فيسبوك <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="growth">
-                <div class="brand-info-header">
-                    <span class="brand-tag">05. تحدي ميديستا للكتابة</span>
-                    <h3>براند ميديستا | بكار والزمن الجميل</h3>
-                </div>
-                <p class="premium-text-block">
-                    بكار والزمن الجميل ...<br><br>
-                    ما تسرحش أوي أنت لسه جواك بكار وما كبرتِش ولا حاجة<br><br>
-                    روحك شبه أبو كف رقيق وصغير كان كده تقريبًا التتر<br><br>
-                    أيوة أيوة أنت ناسي ولسه بقول لك ما كبرتش أنت حالتك خطر بس خد فيتامين من بتاع زمان ده وهتبقى كويس<br><br>
-                    فيتامين الحب واللمة وأجواء رمضان والروحانيات الجميلة<br><br>
-                    وأنت قاعد مستني آخر دقائق علشان متلهف تشوف أول حلقة وتسمع التتر وتندمج معاه<br><br>
-                    فتنسي جوعك وعطشك، ومرة واحدة تلاقي مدفع الإفطار وريحة الأكل وكل الأصناف الحلوة اللي في أول يوم رمضان<br><br>
-                    وأنت وإخواتك بتوزعوا العصير على بعض، محدش قادر خلاص يستنى<br><br>
-                    وكلام والدك في الخلفية بس ما تقلش أوي علشان نعرف نصلي<br><br>
-                    ذكرياتنا دائمًا العقل بيربطها بحاجات معينة زي بكار والمعزة رشيدة، أيوة المعزة ما هي كانت صديقة بكار<br><br>
-                    والأهم اللمة والأهل وشعور الفرحة اللي لو بكار اتكرر تاني هتقعد تتفرج وتغمرك السعادة وتسترجع الزمن الجميل<br><br>
-                    ارجع تاني طفل مش عيب ارجع طفل بروحك ونقائك وصلة رحم أهلك وحبايبك ما تخليش الدنيا تلهيك يا رقيق يا صغير 🥹💗
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="sales">
-                <div class="brand-info-header">
-                    <span class="brand-tag">06. محتوى بيعي للملابس</span>
-                    <h3>براند عبايات راقية | تجربة وراحة وأناقة</h3>
-                </div>
-                <div class="premium-text-block">
-                    فيه قطع بتعدي وقطع بتفضل عالقة في بالك لأنها مش مجرد لبس 💎<br>
-                    العباية دي مش بس هتغير شكلك، هتغير إحساسك بنفسك<br>
-                    لما تلبسيها هتحسي إنك في عالم مختلف: خطواتك أهدى ثقتك أعمق وإطلالتك أرقى<br>
-                    هي مش مجرد قطعة موضة هي تجربة كاملة من أول ما تلمحيها بعينك لحد ما تبصي لنفسك في المراية<br>
-                    هتعرفي إنها معمولة علشان تديكي لحظة جمال خالص لحظة تفضلي فاكرها<br><br>
-                    عيشي التجربة بنفسك احجزي دلوقتي من خلال الواتساب أو الماسنجر♥️👀
-                    <hr>
-                    أوقات كتير مش بندوّر على قطعة ملفتة… بندوّر على راحة تدوم طول اليوم 👌<br>
-                    العباية دي معمولة علشان تخلي يومك أسهل من أول ما تلبسيها تحسي إنك خفيفة ومرتاحة من غير ما تفكري كتير في اللبس أو التفاصيل<br>
-                    هي الاختيار اللي يخليك تركزي في يومك، وتعيشي لحظتك، من غير ما يكون في قلق من الحركة أو من المظهر<br>
-                    زي حضن دافي بيديكي أمان وبيطمنك إنك طول اليوم شكلك مظبوط<br><br>
-                    لأن راحتك أهم من أي حاجة متفوتيش الفرصة كلمينا دلوقتي على الماسنجر أو الواتساب ♥️😉
-                    <hr>
-                    الإطلالة مش مجرد لبس الإطلالة هي اللي بتخليكي جزء من اللحظة 💕<br>
-                    العباية دي هتخليكي مميزة وسط صحابك وأهلك مش محتاجة تبذلي مجهود علشان تسيبي انطباع حلو لأن حضورك هيبقى كافي<br>
-                    كل مرة تخرجي بيها هتحسي إنك قريبة من كل الناس اللي بتحبيهم، وكأنها جزء من اللمة والذكريات الحلوة<br>
-                    دي العباية اللي بتخليك تحسي بالانتماء واللي بتدي لمسة خاصة للّحظات اللي عايزة تفضلي فاكرها<br><br>
-                    خلي إطلالتك جزء من كل لمة الطلب متاح دلوقتي من خلال الواتساب أو الماسنجر ♥️🔥
-                </div>
-            </section>
-
-            <!-- <section class="single-brand-block" data-category="growth">
-                <div class="brand-info-header">
-                    <span class="brand-tag">07. محتوى تفاعلي وتحفيزي للبلانر</span>
-                    <h3>براند: Violet Eve Planner</h3>
-                </div>
-                <div class="premium-text-block">
-                    🔗 استنوا! لو ظهر ليكم البوست يبقي كملوا للآخر 😉🏃‍♂️<br><br>
-                    عدّى ٨ شهور من السنة، وده الوقت اللي محتاجين فيه نقف مع نفسنا شوية، نراجع اللي فات و نخطط للأفضل لباقي السنة.👌<br><br>
-                    🖇️ أول حاجة محتاجين نعملها هي نسأل نفسنا: الـ ٨ شهور اللي فاتوا عدوا في إيه؟ والإجابة على السؤال ده هتحتاج:<br><br>
-                    📍 نختار مكان هادي وجميل مع مشروبنا المفضل، ونجيب اوراقنا📃 وأقلامنا الجميله ✏️ علشان نعمل جلسة عصف ذهني ونسترجع كل الحاجات اللي أنجزناها في الفترة دي.<br>
-                    📍 لو بنستخدم بلانر أو نوتة بنسجل فيها إنجازاتنا، دي كمان هتفيدنا جداً في إننا نتذكر كل خطوة خطيناها.<br>
-                    📍 نحاول نفتكر كل التفاصيل، من أول الحاجات اللي اتعلمناها، والعادات اللي اكتسبناها أو حتى تخلصنا منها.<br><br>
-                    📌 نُقسّم إنجازاتنا بالشهور زي ما هو موضح في الصور👇 (مراجعة شهرية وربع سنوية)، ونشوف الشهر عدّى في إيه: هل اتعلمنا حاجة جديدة؟ اكتسبنا عادة مفيدة؟ أو ممكن نكون قصرنا في حاجة وعايزين نعالجها؟ 🤷‍♀️<br><br>
-                    مع بلانر ڤايوليت إيڤ، نقدر نرتب كل أفكارنا وإنجازاتنا بشكل سهل ومنظم، يعني من غير تشتت، كل حاجة هتكون في مكانها!👌<br><br>
-                    - مهم جداً نعمل وقفة مع نفسنا كل فترة ونتأكد إننا ماشيين في الطريق الصح، وده بيبقى عن طريق مراجعة مستمرة (شهرية و ربع سنوية).<br><br>
-                    📌 وبعد ما نخلص العصف الذهني، نفكر في الحاجات اللي اكتشفناها عن نفسنا: إيه اللي اتعلمناه؟ إيه اللي غيرناه أو حسنّاه؟ وإيه اللي اكتسبناه؟ وهل حسينا بنعم ربنا علينا<br><br>
-                    📍 شاركونا تطبيقكم للـ ٨ شهور اللي فاتوا، وإيه الإنجازات اللي حققتوها أو الحاجات اللي اكتشفتوها عن نفسكم 🤗<br><br>
-                    لو حبيتوا البوست، قولوا لنا رأيكم في الكومنتات، وكمان تابعونا عشان بارت ٢ هيكون عن: (إزاي نستغل الشهور اللي جاية من السنة بطريقة أفضل 🙊)
-                    <hr>
-                    ✨ البنات القويات وقتنا للإنجاز لسه ما خلصش ✨<br><br>
-                    معاكي 4 شهور كاملة قبل ما السنة تخلص ليه ما تستغليشهم عشان تكوني أفضل نسخة من نفسك؟ 😍💪<br><br>
-                    1. حطي أهدافك قدام عينيك: 🎯 مش لازم تكون كبيرة وصعبة، المهم تكون واضحة ومقسمة لخطوات بسيطة. وطبعا بلانر Violet Eve Planner هتكون مساعدتك المثالية في التخطيط ده😇<br>
-                    2. راجعي إنجازاتك: 📊 رجعي كده لأهدافك اللي حطيتيها في بداية السنة، واطمني على اللي حققتيه. واللي لسه، لسه قدامك وقت تعمليه! 🌟<br>
-                    3. اتعلمي حاجة جديدة: 📚 شوفي إيه اللي نفسك تتعلميه ويضيف ليكي، سواءً كانت لغة جديدة، مهارة تقنية، أو حتى هواية ممتعة!<br>
-                    4. رتبي وقتك بعناية: توازني بين الشغل، الراحة، ووقتك الشخصي. استخدمي التطبيقات أو الجداول اللي تناسبك عشان تكوني في أفضل حال<br>
-                    5. اهتمي بصحتك🧘‍♀️ ده الوقت اللي تهتمي فيه بصحتك ولياقتك! التزمي برياضة بتحبيها أو نظام غذائي صحي<br>
-                    6. خططي لمستقبلك المالي: 💸 ابدأي بخطة للادخار أو رتبي مصاريفك عشان تكوني جاهزة للسنة الجاية<br>
-                    7. طوري علاقاتك:💕 استغلي الوقت المتبقي لتقوية علاقاتك مع أهلك وأصدقائك أو توسيع شبكتك المهنية<br>
-                    8. جهزي خطة للسنة الجديدة: 🗓️ ابدأي من دلوقتي وحطي أهداف جديدة مبنية على اللي اتعلمتيه السنة دي.<br><br>
-                    خليكي جاهزة لأنك قادرة تنهي السنة دي بقوة وتبدأي سنة جديدة بإنجازات أكبر. إيه الحاجات اللي هتبدأي تعمليها من النهاردة؟ شاركينا في الكومنتات! 👇🔥
-                </div>
-            </section> -->
-
-            <section class="single-brand-block" data-category="edu">
-                <div class="brand-info-header">
-                    <span class="brand-tag">07. أكاديمية قرآن أون لاين</span>
-                    <h3>د. جهاد شحات | أنوار السند المتصل</h3>
-                </div>
-                <p class="premium-text-block">
-                    ليه في ناس بتحفظ قرآن سنين بدون نتيجة، وفي ناس تانية خلال شهور قليلة بتوصل لثبات وإتقان؟<br><br>
-                    الفرق الحقيقي مش في الشخص اللي بيحفظ لكن في المُعلم وفي المنهج والخطة اللي بتمشي عليها طول رحلة حفظك. ود. جهاد شحات نموذج من الناس اللي ربنا بيمن بيهم على اللي عايز يتعلم، لأنها جمعت بين العلم الشرعي، التربية، الصحة النفسية، ومنهجيات التحفيظ والقراءات.<br><br>
-                    الأكاديمية منظومة كاملة توفر:<br><br>
-                    📌 إجازات بأعلى الأسانيد في العالم (حفص، شعبة، ورش، قالون، وختمة أصحاب الصلة).<br>
-                    📌 شهادات إتقان وتصحيح تلاوة، وإجازات في الحديث (البخاري والأربعين النووية).<br>
-                    📌 أسعار رمزية جدًا، تعليم للكبار والأطفال، تحفيظ فردي وجماعي، وتدريس لغير الناطقين بالعربية.<br><br>
-                    انضمي لأكاديمية د. جهاد وسيبي الباقي على المنهج والالتزام وتوفيق ربنا وبس كده 🩷<br><br>
-                    <a href="https://www.facebook.com/share/p/1G3NU7kTT8/" target="_blank" class="live-post-btn">رابط الإعلان الحي على فيسبوك <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="edu">
-                <div class="brand-info-header">
-                    <span class="brand-tag">08. صحة نفسية وتربوية</span>
-                    <h3>د. رحاب رشوان | ربوهم صح</h3>
-                </div>
-                <p class="premium-text-block">
-                    إحنا لحد دلوقتي مش فاهمين نعمل إيه?!💔<br><br>
-                    في يوم كنت قاعدة لوحدي بعد ما ولادي ناموا وفتحت الموبايل ولقيت صدمة.. خبر جديد عن اعتداء على طفل ومن غير ما أحس قلبي وقع في رجلي زعل على الطفل وخوف على ولادي. الخوف ما علمنيش المفروض برضوا أعمل إيه 😅<br><br>
-                    د. رحاب رشوان (خريجة تربية طفولة وباحثة ماجستير في الصحة النفسية) بتوعي الناس فى أمور التربية وإزاي يتعاملوا وبالأخص فى المواقف دي.<br><br>
-                    وأنا كحبيبة بقول لكم سواء بنت أو أم لازم تتثقفوا تتعلموا إزاي تحموا ولادكم وتاخدوا بالأسباب فكان ده أفضل ترشيح.<br><br>
-                    وربنا يحفظ أطفال كل بيت ويجعل وعي الأمهات سبب أمانهم 🩷
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="handmade">
-                <div class="brand-info-header">
-                    <span class="brand-tag">09. هاند ميد وهدايا</span>
-                    <h3>براند: طيف - TeaF</h3>
-                </div>
-                <p class="premium-text-block">
-                    مش كل هدية ينفع تتغلف كمل معايا الحكاية وشوف أول كومنت 🫣🤌🏻🔥<br><br>
-                    في حاجات بنشتريها وفي حاجات بنحتفظ بيها مش علشان شكلها بس علشان إحساسها وذكرياتنا معاها. طيف - TeaF (وراها الجميلة دعاء محمد) مش براند ولا شغل وبس دي وسيلة تسيب بيها أثر حلو وتعبر عن محبين التميز بقطع مصنوعة بحب يدوياً بالكامل.<br><br>
-                    📌 أكواب مرسومة يدويًا، مراسيل ورقية, ماديليات سيراميك، بوكسات تجفيف ورد، وفواصل كتب.<br><br>
-                    التفاصيل دقيقة ومتاح أي ديزاين مخصص ورسم صور شخصية بدون ملامح حتى ترضي ذوقك تماماً.<br><br>
-                    <a href="https://www.facebook.com/share/p/1EK3bStbkV/" target="_blank" class="live-post-btn">رابط الإعلان الحي على فيسبوك <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="growth">
-                <div class="brand-info-header">
-                    <span class="brand-tag">10. كورسات وتدريب</span>
-                    <h3>زينب أحمد غوزية | كورس جرافيك ديزاين</h3>
-                </div>
-                <p class="premium-text-block">
-                    فرصة شغل من كورس واحد بس 👀🔥<br><br>
-                    في ناس بتدخل مجال الجرافيك تتوه وبالذات المبتدئين، وفي ناس بتدخل صح من أول خطوة وتختصر التشتت. كورس زينب غوزية أونلاين ومسجل للمتابعة العملية المستمرة خطوة بخطوة حتى بعد انتهاء الكورس ودخول سوق العمل.<br><br>
-                    ☑️ كورس للبنات فقط للمساحة الخاصة والأريحية الكاملة مع تطبيقات وتوجيه حقيقي كمنتور مخصص لكِ.<br><br>
-                    <a href="https://www.facebook.com/share/1Mt4Q5kgaK/" target="_blank" class="live-post-btn">رابط الإعلان الحي على فيسبوك <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="growth">
-                <div class="brand-info-header">
-                    <span class="brand-tag">11. تنمية مهارات الطفل</span>
-                    <h3>براند: Caramel Toys</h3>
-                </div>
-                <p class="premium-text-block">
-                    ألعاب لفوق سن العشرين.. 🤌🏻👀<br><br>
-                    فيه ألعاب بتسلي الطفل وفيه ألعاب بتطمن الأم؛ الفرق ده هو أساس Caramel Toys. فكرة المشروع بدأت كحل لمشكلة حقيقية بعقلية أم مش تاجر، حيث تعتمد البيدج على الترشيح الأمين قبل البيع لضمان ألعاب آمنة ومناسبة لسن طفلك من عمر 0 لـ 15 سنة لتبعدهم عن الشاشات وتنمي ذكاءهم.<br><br>
-                    📌 ألعاب منتسوري، ألعاب تعليمية وجماعية، جودة ممتازة مستوردة بأسعار في متناول الجميع.
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="handmade">
-                <div class="brand-info-header">
-                    <span class="brand-tag">12. ديكور ومكرمية</span>
-                    <h3>براند: Monica Store</h3>
-                </div>
-                <p class="premium-text-block">
-                    كل ما يُصنع بحب فهو جميل 💗🔥<br><br>
-                    فن المكرمية على أصوله بخبرة 4 سنين من الحرفية والإتقان. مونيكا ستور بتقدم شنط، كوشن، مفارش، ستائر، وجداريات ديكور أنيقة جداً تُنفذ يدوياً بالطلب وعلى الطبيعة تحفة وبشروط ومسابقات مميزة للمتابعين لدعم المشاريع الشابة الراقية ✨
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="handmade">
-                <div class="brand-info-header">
-                    <span class="brand-tag">13. هاند ميد وكروشيه</span>
-                    <h3>براند: Vichaar Brand</h3>
-                </div>
-                <p class="premium-text-block">
-                    هدايا وتميز لا ينتهي مع Vichaar Brand المستوحى من ذوقك!<br><br>
-                    البيدج تقدم منتجات متنوعة من الكروشية الراقي، التوزيعات للمناسبات، وشنط التوتي باج المزينة بلمسات الكروشيه اليدوية الساحرة، بالإضافة لإمكانية الطباعة والديزاين المخصص حسب الاختيار تماماً 🥳<br><br>
-                    <a href="https://www.facebook.com/share/p/1BuyBzVgGn/" target="_blank" class="live-post-btn">رابط الإعلان الحي على فيسبوك <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="sales">
-                <div class="brand-info-header">
-                    <span class="brand-tag">14. عناية وكوزمتكس</span>
-                    <h3>براند: عِفّة وجمال | متخصص حمام مغربي</h3>
-                </div>
-                <p class="premium-text-block">
-                    اوعوا تتعاملوا مع أي حمام مغربي قبل ما تعرفوا مصدره 🙂<br><br>
-                    السوق بقا مليان براندات كتير، فلو بتدوري على حمام مغربي مكوناته حقيقية ونتيجه من أول مرة، براند عفة وجمال هو الترشيح الأفضل لمنتجات مغربية وصحراوية طبيعية 100%.<br><br>
-                    📌 ليفة وصابون مغربي، تبريمة صحراوية، دلكة سوداني، طمي، ومرطبات طبيعية ب زبدة الشيا والورد والليمون بأسعار في المتناول.<br><br>
-                    <a href="https://www.facebook.com/share/p/1GFL4ibHas/" target="_blank" class="live-post-btn">رابط الإعلان الحي على فيسبوك <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="edu">
-                <div class="brand-info-header">
-                    <span class="brand-tag">16. تحفيظ وإجازات</span>
-                    <h3>المعلمة أمل بنت علي | القرآن نور</h3>
-                </div>
-                <p class="premium-text-block">
-                    في فرق بين حد بيعلم قرآن وحد اتعلم صح وبقى يُعلم بأمانة.<br><br>
-                    المعلمة أمل مجازة بحفص وشعبة وورش ومن أعلى الأسانيد في نور البيان والجزريّة، تقدم حفظ قرآن للأطفال والنساء فردي وفي مجموعات صغيرة جداً (5 طلاب فقط) لسهولة المتابعة مع دورات تجويد متكاملة وعروض مميزة للأخوات والأصدقاء 🌿<br><br>
-                    <a href="https://www.facebook.com/share/p/1XHYuqgPtx/" target="_blank" class="live-post-btn">رابط الإعلان الحي على فيسبوك <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="handmade">
-                <div class="brand-info-header">
-                    <span class="brand-tag">17. شموع وكونكريت</span>
-                    <h3>براند: بهجه ستور - Bahja Store</h3>
-                </div>
-                <p class="premium-text-block">
-                    احذروا نصب في رمضان مع صاحبة بيدج بهجه ستور.. طلعت نصابه دي حلوة جداً جداً 😂🫣💗<br><br>
-                    الاسم على مسمى براند بقاله 6 سنين خامات تحفة وفوق المتوقع. شغل متنوع من توزيعات مناسبات، سبوع، خطوبة وفرح، وشغل كونكريت فازات وصواني بأكثر من 40 شكل ومرايات وسبح مخصوصة، وشموع بأكثر من 20 شكل وعطور ثابتة نفاذة، بجانب توفير باكدجات للمبتدئات بدون فينش لمساعدتهن على بدء مشاريعهن الذاتية بنجاح.
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="growth">
-                <div class="brand-info-header">
-                    <span class="brand-tag">18. تصميم بورتفوليو</span>
-                    <h3>سارة عماد | بورتفوليو المحترفين</h3>
-                </div>
-                <p class="premium-text-block">
-                    فرص شغل حلوة جداً ولكن!! تضيع بسبب عدم وجود سابقة أعمال (البورتفوليو).<br><br>
-                    الحل اللي هيوفر عليك الحيرة ويخليك تقدم على الشغل بثقة هو سارة عماد اللي هتساعدك في عمل بورتفوليو محترفين حتى لو كنت مبتدئ عشان ما تضيعش أي فرصة عمل أو دخل إضافي بعد اليوم متاح معاينة سابقة الأعمال لتتأكد بنفسك من التميز 🔥
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="growth">
-                <div class="brand-info-header">
-                    <span class="brand-tag">19. تخطيط وتنظيم وقت</span>
-                    <h3>براند: وِفَاق - Wefaq</h3>
-                </div>
-                <p class="premium-text-block">
-                    يومي صعب مش بعمل أي حاجة مفيدة 🥲 التخطيط والتدوين عادة وعبادة!<br><br>
-                    بيدج وفاق بتقدم لك الحل السحري من مخططات سنوية، شهرية، ويومية، وأي تصميم مخصص لمهامك تحتاجه لتستغل وقتك وتنظم أهدافك بدون كسل أو تسويف لتصنع عاداتك اليومية بنجاح 🥳
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="sales">
-                <div class="brand-info-header">
-                    <span class="brand-tag">20. ملابس وهوم وير</span>
-                    <h3>براند: MOON Store</h3>
-                </div>
-                <p class="premium-text-block">
-                    يا جماعة بلاش نضحك على بعض اللي بيوفر لك سعر ينقصه جودة والعكس 🤐<br><br>
-                    معضلة شياكة البيت والخامة القطن اللي تعيش والسعر المناسب اتحلت مع MOON store. عبايات استقبال هوم وير وبيجامات تريندي جداً وموديلات لقطة بأسعار ممتازة تناسب ميزانيتك قبل الغلاء وتضمن لك معادلة الشياكة والجودة الفاخرة 💗🔥
-                </p>
-            </section>
-
-            <section class="single-brand-block" data-category="sales">
-                <div class="brand-info-header">
-                    <span class="brand-tag">21. تركيبات صيدلانية وعلاجية</span>
-                    <h3>براند: Miraya Cosmetics</h3>
-                </div>
-                <p class="premium-text-block">
-                    أنا بطلت أدفع في الكوزماتكس مقابل الاسم والماركة لإن لقيت الأفضل 💸🚫<br><br>
-                    ميرايا كوزمتكس وراها صيدلانية فاخرة فاهمة طبيعة الجسم والبشرة كيميكال وطبيعياً، بخامات مستوردة عالمية وجودة علاجية فائقة مقابل سعر تحفة بتركيبات طبية آمنة تماماً للعناية المتكاملة بالشعر والبشرة والجسم البشري 🍂😌
-                </p>
-            </section>
-
+            <div class="footer-social">
+                <a href="https://wa.me/201501180309" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/habiba-sayed-21835b338" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/habibasaid4414" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1c21qKUL6o/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            </div>
         </div>
-    </main>
 
-    
-  <footer class="footer">
-
-    <div class="footer-container">
-
-      <!-- Logo -->
-      <div class="footer-logo">
-        <img src="imgs/logo_Habiba.jpg" alt="logo">
-        <span>Habiba Sayed</span>
-      </div>
-
-      <!-- Links -->
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <!-- Social Icons -->
-      <div class="footer-social">
-
-        <a href="https://www.facebook.com/share/1c21qKUL6o/" target="_blank">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-
-        <a href="https://www.instagram.com/habibasaid4414" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-
-        <a href="https://www.linkedin.com/in/habiba-sayed-21835b338" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-
-        <a href="https://wa.me/201501180309" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-      </div>
-
-    </div>
-
-    <!-- Bottom Text -->
-    <p class="footer-bottom">
-      © 2026 All Rights Reserved Coach Habiba Sayed |
-      Prepared by
-      <span class="tooltip">
-        <a href="https://wa.me/201007359722" target="_blank"
-          style="color:#25D366; font-weight:bold; text-decoration:none;">
-          Eng. Radwa Mohamed
-        </a>
-        <span class="tooltip-text">💬 Click to chat on WhatsApp</span>
-      </span>
-    </p>
-  </footer>
+        <p class="footer-bottom">
+            © 2026 All Rights Reserved Coach Habiba Sayed | Prepared by
+            <span class="tooltip">
+                <a href="https://wa.me/201007359722?text=%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%D9%83%20%D9%8A%D8%A7%20%D8%A8%D8%B4%D9%85%D9%87%D9%86%D8%AF%D8%B3%D8%A9%20%D8%B1%D8%B6%D9%8وف%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%B4%D8%BA%D9%84%D9%83%20%D9%81%D9%8A%20%D9%85%D9%88%D9%8%D8%B9%20%D9%83%D9%84%D9%8A%D9%8ين%20%D9%85%D9%85%D9%83%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A5%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D9%88%D9%82%D8%B9%D8%AF" target="_blank" class="radwa-whatsapp-link">
+                    Eng. Radwa Mohamed <i class="fa-brands fa-whatsapp radwa-ws-icon"></i>
+                </a>
+                <span class="tooltip-text">تواصل معي لإنشاء موقعك 💬</span>
+            </span>
+        </p>
+    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const cards = document.querySelectorAll('.single-brand-block');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    const filterValue = button.getAttribute('data-filter');
-
-                    cards.forEach(card => {
-                        const cardCategory = card.getAttribute('data-category');
-                        card.classList.remove('show-anim');
-
-                        if (filterValue === 'all' || filterValue === cardCategory) {
-                            card.classList.remove('hidden');
-                            setTimeout(() => {
-                                card.classList.add('show-anim');
-                            }, 10);
-                        } else {
-                            card.classList.add('hidden');
-                        }
-                    });
-                });
+        function filterSelection(category) {
+            const cards = document.querySelectorAll('.card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // تحديث حالة الأزرار النشطة
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.add('active');
+                }
             });
-        });
-    </script>
-</body>
 
+            // فلترة الكروت بناءً على الداتا أتريبيوت
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (cardCategory === category) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
 </html>
