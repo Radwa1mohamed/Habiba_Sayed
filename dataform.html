@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark: #0F3345;
+            --blue: #62BEAC;
+            --soft-pink: #D9C1D7;
+            --accent-pink: #E056A0;
+            --greenish: #28474F;
+            --primary-blue: #62BEAC;
+            --dark-blue: #0b1f2a;
+            
+            /* ألوان الواجهات والـ Cards المتناسقة */
+            --bg-card: #ffffff;
+            --color-text-dark: #0b1f2a;
+            --color-text-muted: #53707e;
+            --card-shadow: 0 15px 35px rgba(15, 51, 69, 0.15);
+            --border-radius: 20px;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background:
+                radial-gradient(at 0% 0%, rgba(15, 51, 69, 0.25), transparent 50%),
+                radial-gradient(at 100% 100%, rgba(98, 190, 172, 0.25), transparent 50%),
+                linear-gradient(180deg, #a12a6a 0%, #D9C1D7 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            background-attachment: fixed;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* تنسيق قسم الحجز المطور بتصميم البراند */
+        .booking-container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 40px 30px;
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            font-family: 'Cairo', sans-serif;
+            direction: rtl; 
+            border-top: 5px solid var(--accent-pink); 
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .booking-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .booking-header h2 {
+            color: var(--color-text-dark);
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .booking-header p {
+            color: var(--color-text-muted);
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        /* تنسيق الحقول والمجموعات */
+        .form-group {
+            margin-bottom: 22px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e2e8f0; 
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Cairo', sans-serif;
+            color: var(--color-text-dark);
+            background-color: #f8fafc;
+            box-sizing: border-box;
+            transition: var(--transition-smooth);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(98, 190, 172, 0.15);
+        }
+
+        ::placeholder {
+            color: #a0aec0;
+            font-size: 13px;
+        }
+
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--accent-pink); 
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;   
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(224, 86, 160, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .submit-btn:hover {
+            background-color: #c44387; 
+            box-shadow: 0 6px 20px rgba(224, 86, 160, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background-color: var(--color-text-muted);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .success-message {
+            display: none; 
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(98, 190, 172, 0.1);
+            color: var(--blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .success-message h3 {
+            color: var(--color-text-dark);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .success-message p {
+            color: var(--color-text-muted);
+            font-size: 16px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            .booking-container {
+                margin: 30px 15px;
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section id="booking-section" class="booking-container">
+    
+    <div id="form-content">
+        <div class="booking-header">
+            <h2>احجز جلستك الإستشارية الآن</h2>
+            <p>املأ البيانات التالية وسنقوم بالتواصل معك لتأكيد الموعد</p>
+        </div>
+
+        <form id="booking-form" action="https://formsubmit.co/radwa134004@gmail.com" method="POST" class="booking-form">
+            <input type="hidden" name="_next" value="">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-group">
+                <label for="name">الاسم بالكامل</label>
+                <input type="text" name="الاسم" id="name" required placeholder="أدخل اسمك الثلاثي">
+            </div>
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" name="الإيميل" id="email" required placeholder="example@mail.com">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">رقم الهاتف (واتساب)</label>
+                <input type="tel" name="رقم الهاتف" id="phone" required placeholder="01xxxxxxxxx">
+            </div>
+
+            <div class="form-group">
+                <label for="session-type">نوع الجلسة / الاستشارة</label>
+                <select name="نوع الجلسة" id="session-type" required>
+                    <option value="" disabled selected>اختر نوع الجلسة</option>
+                    <option value="استشارة أعمال">استشارة أعمال</option>
+                    <option value="تطوير شخصي">تطوير شخصي (Life Coaching)</option>
+                    <option value="استشارة تقنية">استشارة تقنية</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">التاريخ المفضل</label>
+                    <input type="date" name="التاريخ" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">الوقت المفضل</label>
+                    <input type="time" name="الوقت" id="time" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">ملاحظات أو تفاصيل إضافية (اختياري)</label>
+                <textarea name="ملاحظات إضافية" id="notes" rows="4" placeholder="اكتب هنا أي تفاصيل تود إطلاعنا عليها قبل الجلسة..."></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="submit-btn">تأكيد طلب الحجز</button>
+        </form>
+    </div>
+
+    <div id="success-box" class="success-message">
+        <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+        <h3>تم التسجيل بنجاح!</h3>
+        <p>شكراً لك، سنتواصل معك في أقرب وقت لتأكيد موعد جلستك الإستشارية.</p>
+    </div>
+
+</section>
+
+<script>
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // منع الصفحة من الريفرش الافتراضي
+        
+        const form = this;
+        const submitBtn = document.getElementById('submit-btn');
+        const formContent = document.getElementById('form-content');
+        const successBox = document.getElementById('success-box');
+        
+        submitBtn.textContent = 'جاري إرسال طلبك...';
+        submitBtn.disabled = true;
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                formContent.style.display = 'none';
+                successBox.style.display = 'block';
+            } else {
+                alert('عذراً، حدث خطأ ما. يرجى المحاولة مرة أخرى.');
+                submitBtn.textContent = 'تأكيد طلب الحجز';
+                submitBtn.disabled = false;
+            }
+        })
+        .catch(error => {
+            alert('عذراً، يرجى التحقق من اتصالك بالإنترنت.');
+            submitBtn.textContent = 'تأكيد طلب الحجز';
+            submitBtn.disabled = false;
+        });
+    });
+</script>
+    
+</body>
+</html>
