@@ -133,6 +133,24 @@ body {
   color: white;
 }
 
+
+@media (max-width: 768px) {
+  
+  
+    .buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        
+        /* هذا هو السطر المسؤول عن المسافة من الأعلى، زيدي القيمة هنا */
+        margin-top: 60px !important; 
+        
+        margin-bottom: 30px !important;
+        width: 100%;
+    }
+
+}
 /* الكلاس الموحد - النسخة النهائية المصغرة */
 .glow-title {
     position: relative;
