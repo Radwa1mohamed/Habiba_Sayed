@@ -33,18 +33,6 @@ body {
 
 }
 
-
-#fire-glow {
-  position: fixed;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(224, 86, 160, 0.25) 0%, rgba(224, 86, 160, 0) 70%);
-  filter: blur(60px);
-  pointer-events: none;
-  z-index: -1;
-  mix-blend-mode: screen;
-}
-
 .navbar {
   position: fixed;
   top: 15px;
@@ -441,17 +429,19 @@ body {
 
 
 @media (max-width: 768px) {
-  
+
   /* 1. ضبط السيكشن الرئيسي ليعتمد على الارتفاع التلقائي المرن */
- #hero {
+  #hero {
     display: flex !important;
     flex-direction: column !important;
     height: auto !important;
     min-height: 100vh !important;
-    padding-top: 160px !important; /* 👈 قمنا بزيادتها هنا لزيادة النزول لأسفل بشكل متناسق */
+    padding-top: 160px !important;
+    /* 👈 قمنا بزيادتها هنا لزيادة النزول لأسفل بشكل متناسق */
     padding-bottom: 60px !important;
     position: relative !important;
-    justify-content: flex-start !important; /* يضمن أن المحتوى يبدأ بالترتيب من بعد الـ padding الجديد */
+    justify-content: flex-start !important;
+    /* يضمن أن المحتوى يبدأ بالترتيب من بعد الـ padding الجديد */
   }
 
   /* 2. تصفير الحاوية الوسيطة لتأخذ مساحة أوتوماتيكية */
@@ -460,30 +450,33 @@ body {
     height: auto !important;
     display: flex !important;
     justify-content: center !important;
-    align-items: flex-start !important; /* 👈 يبدأ من الأعلى ليلتزم بمسافة الـ padding العلوية */
+    align-items: flex-start !important;
+    /* 👈 يبدأ من الأعلى ليلتزم بمسافة الـ padding العلوية */
     padding: 0 15px !important;
     box-sizing: border-box !important;
   }
 
   /* 3. إلغاء أي أبعاد ثابتة للكارت الزجاجي ليتمدد تلقائياً حسب المحتوى */
   .hero-card {
-    position: relative !important; /* إلغاء أي absolute قديم يسبب خروج الأزرار */
+    position: relative !important;
+    /* إلغاء أي absolute قديم يسبب خروج الأزرار */
     top: auto !important;
     left: auto !important;
     transform: none !important;
     width: 100% !important;
     max-width: 340px !important;
-    height: auto !important; /* أهم سطر: يجعل الكارت يغلق مباشرة بعد الأزرار */
+    height: auto !important;
+    /* أهم سطر: يجعل الكارت يغلق مباشرة بعد الأزرار */
     padding: 30px 20px !important;
     box-sizing: border-box !important;
-    
+
     /* الخصائص الزجاجية الفاخرة */
     background: rgba(255, 255, 255, 0.12) !important;
     backdrop-filter: blur(15px) !important;
     -webkit-backdrop-filter: blur(15px) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 24px !important;
-    
+
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -492,18 +485,21 @@ body {
   /* 4. تنسيق حاوية الأزرار وضمان بقائها داخل الكارت بالأسفل */
   .hero-card .buttons {
     display: flex !important;
-    flex-direction: column !important; /* ترتيب الأزرار عمودياً فوق بعضها */
+    flex-direction: column !important;
+    /* ترتيب الأزرار عمودياً فوق بعضها */
     gap: 12px !important;
     width: 100% !important;
-    margin-top: 25px !important; /* مسافة أمان فريدة تفصلها عن آخر فقرة نصية */
+    margin-top: 25px !important;
+    /* مسافة أمان فريدة تفصلها عن آخر فقرة نصية */
     position: relative !important;
-    bottom: auto !important; /* إلغاء أي تهميش سفلي مطلق */
+    bottom: auto !important;
+    /* إلغاء أي تهميش سفلي مطلق */
   }
 
   /* 5. ضبط حجم الأزرار وتوسيطها */
   .hero-card .buttons .btn,
   .hero-card .buttons a.btn {
-    width: 50% !important;
+    width: 70% !important;
     max-width: 280px !important;
     padding: 12px !important;
     font-size: 0.95rem !important;
@@ -514,8 +510,12 @@ body {
     margin: 0 auto !important;
   }
 
- 
+  .hero-card .buttons {
+    margin-top: 1px !important;
+  }
+
 }
+
 @media (max-width: 768px) {
 
 
@@ -899,6 +899,7 @@ h1 span {
 .about {
   padding: 60px 8%;
   background: transparent;
+
 }
 
 .about-container {
@@ -952,6 +953,7 @@ h1 span {
   font-size: 16px;
   opacity: 0.8;
   margin-bottom: 10px;
+
 }
 
 .about-text h3 {
@@ -961,18 +963,17 @@ h1 span {
 
 .about-text h3 span {
   font-size: 20px;
-  color: #ffe3f2;
+  color: #ffffff;
 }
 
 .about-text p {
-  line-height: 1.7;
+  line-height: 1.9;
   margin-bottom: 15px;
   opacity: 0.9;
+  color: var(--dark-blue);
 }
 
-/* ابحثي عن هذا السطر وضيفي التعديل بداخله */
 @media (max-width: 768px) {
-  /* ... الأكواد القديمة ... */
 
   .about-buttons {
     display: flex;
@@ -1313,11 +1314,6 @@ h1 span {
   }
 }
 
-/* 
-    <button id="scrollTopBtn" class="scroll-top">
-      <i class="fa-solid fa-arrow-up"></i>
-    </button>
-     */
 
 /* ===== FOOTER BASE ===== */
 .footer {
@@ -3145,23 +3141,16 @@ infinite-results-track {
   visibility: visible;
   opacity: 1;
   transform: translateX(-50%) translateY(0);
-  /* ترتفع لأعلى بسلاسة عند الظهور */
 }
 
-/* تأكدي من استدعاء الخط من Google Fonts في أول الملف إذا لم يكن لديكِ */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap');
 
 .arabic-welcome {
   font-family: 'Cairo', sans-serif;
   font-size: 1.2rem;
-  /* تكبير الخط ليصبح مقروءاً */
   font-weight: 600;
-  /* جعله سميكاً قليلاً ليجذب الانتباه */
   color: #ff4a9e;
-  /* استخدام نفس اللون الوردي الجذاب الموجود بكلمة feel&act والزر */
   margin-bottom: 15px;
-  /* ترك مسافة مريحة بينه وبين العنوان الإنجليزي */
   letter-spacing: 0;
-  /* إلغاء أي تباعد حروف قد يؤثر على العربي */
   display: block;
 }
