@@ -1901,6 +1901,7 @@ h1 span {
   margin-left: 20px;
 }
 
+
 .phone-bg {
   background: linear-gradient(135deg, #6c5ce7, #a29bfe);
 }
@@ -2687,4 +2688,83 @@ infinite-results-track {
     font-size: 0.9rem;
     /* تصغير الخط */
   }
+}
+/* تنسيق رابط اسم البشمهندسة رضوى */
+.radwa-whatsapp-link {
+    color: #25D366; /* اللون الأخضر الأساسي */
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* مسافة صغيرة بين الاسم والأيقونة */
+    transition: all 0.3s ease;
+}
+
+/* تنسيق أيقونة الواتساب الخاصة بها */
+.radwa-ws-icon {
+    font-size: 1.1rem; /* حجم الأيقونة متناسق مع السطر */
+    transition: transform 0.3s ease;
+}
+
+/* تأثير تفاعلي عند تمرير الماوس (Hover) */
+.radwa-whatsapp-link:hover {
+    color: #20ba5a; /* درجة أخضر أغمق قليلاً عند الوقوف بالماوس */
+}
+
+.radwa-whatsapp-link:hover .radwa-ws-icon {
+    transform: scale(1.2) rotate(15deg); /* تكبير الأيقونة ولفها قليلاً بشكل جمالي */
+}
+
+/* تجهيز العنصر الحاضن */
+.tooltip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* تصميم الرسالة العربية الصغيرة بشكل عصري واحترافي */
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 180px; /* زيادة العرض لتناسب النص العربي */
+    background: rgba(30, 41, 59, 0.95); /* خلفية داكنة فاخرة متناسقة مع الموقع */
+    color: #ffffff; /* لون النص أبيض ناصع */
+    text-align: center;
+    border-radius: 8px; /* حواف ناعمة */
+    padding: 8px 12px; /* مساحات داخلية مريحة للعين */
+    position: absolute;
+    z-index: 99;
+    bottom: 135%; /* رفعها قليلاً لتكون مريحة فوق الاسم */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* إزاحة بسيطة للأسفل لتأثير الحركة */
+    opacity: 0;
+    font-family: 'Cairo', sans-serif; /* استخدام نفس خط الموقع الاحترافي */
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.4;
+    border: 1px solid rgba(37, 211, 102, 0.3); /* إطار ناعم جداً بلون الواتساب الأخضر */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(37, 211, 102, 0.1); /* ظل فخم مع توهج خفيف */
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                visibility 0.3s ease; /* حركة انسيابية مرنة للظهور */
+    white-space: nowrap; /* يمنع انقسام النص على سطرين */
+}
+
+/* السهم الصغير أسفل الرسالة */
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(30, 41, 59, 0.95) transparent transparent transparent;
+}
+
+/* التأثير التفاعلي عند تمرير أو وقوف الماوس (Hover) */
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* ترتفع لأعلى بسلاسة عند الظهور */
 }

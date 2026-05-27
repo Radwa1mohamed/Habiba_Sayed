@@ -1,518 +1,411 @@
+/* ==========================================================================
+   1. VARIABLES & BASE STYLES (:root, *, body)
+   ========================================================================== */
 :root {
-    --bg-dark: #081b25;
-    --bg-light: #102c3b;
-    --primary: #62BEAC;
-    --secondary: #E056A0;
-    --text: #ffffff;
-    --muted: rgba(255, 255, 255, 0.75);
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --border: rgba(255, 255, 255, 0.1);
+    --dark: #0F3345;
+    --blue: #62BEAC;
+    --soft-pink: #D9C1D7;
+    --accent-pink: #E056A0;
+    --greenish: #28474F;
+    --primary-blue: #62BEAC;
+    --dark-blue: #0b1f2a;
+    
+    /* ألوان الواجهات والـ Cards المتناسقة */
+    --bg-card: #ffffff;
+    --color-text-dark: #0b1f2a;
+    --color-text-muted: #53707e;
+    --card-shadow: 0 15px 35px rgba(15, 51, 69, 0.15);
+    --border-radius: 20px;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: "Cairo", sans-serif;
-    background: radial-gradient(circle at top right, rgba(224, 86, 160, 0.12), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(98, 190, 172, 0.12), transparent 30%),
-        linear-gradient(180deg, var(--bg-light) 0%, var(--bg-dark) 100%);
-    color: var(--text);
-    line-height: 1.9;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* حاوية اللوجو والاسم */
-.logo-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease; /* سلاسة الانتقال */
-}
-
-/* تنسيق صورة اللوجو */
-.logo-image {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
-    border-radius: 50%;
-    border: 1.5px solid transparent;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* تنسيق النص (الأبيض) */
-.logo-text {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #ffffff; /* اللون الأبيض */
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-/* تأثير الهفر (Hover Effects) */
-
-/* 1. تأثير على الحاوية بالكامل */
-.logo-wrapper:hover {
-    transform: translateX(-5px); /* حركة بسيطة لجهة اليسار عند الهفر */
-}
-
-/* 2. تأثير على الصورة عند الهفر */
-.logo-wrapper:hover .logo-image {
-    transform: rotate(10deg) scale(1.1); /* دوران بسيط وتكبير */
-    border-color: var(--primary); /* ظهور إطار بلون البراند */
-    box-shadow: 0 0 15px rgba(98, 190, 172, 0.4); /* توهج حول اللوجو */
-}
-
-/* 3. تأثير على النص عند الهفر */
-.logo-wrapper:hover .logo-text {
-    color: var(--primary); /* يتغير اللون للون البراند الأخضر */
-    text-shadow: 0 0 10px rgba(98, 190, 172, 0.3);
-}
-
-/* إضافة خط سفلي يظهر عند الهفر تحت الاسم فقط */
-.logo-text::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    right: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--secondary); /* لون الخط السفلي */
-    transition: width 0.3s ease;
-}
-
-.logo-wrapper:hover .logo-text::after {
-    width: 100%; /* الخط يمتد تحت الاسم عند الهفر */
-}
-
-.container {
-    width: min(1150px, 92%);
-    margin: auto;
-}
-
-/* Header */
-.header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    backdrop-filter: blur(14px);
-    background: rgba(8, 27, 37, 0.8);
-    border-bottom: 1px solid var(--border);
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.logo {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--primary);
-}
-
-.back-btn {
-    color: var(--text);
-    font-weight: 700;
-    transition: 0.3s;
-}
-
-.back-btn:hover {
-    color: var(--secondary);
-}
-
-/* Hero */
-.hero {
-    padding: 100px 0 60px;
-    text-align: center;
-}
-
-.tag {
-    display: inline-block;
-    padding: 8px 22px;
-    border-radius: 40px;
-    background: rgba(98, 190, 172, 0.12);
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-}
-
-.hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1.3;
-    margin-bottom: 25px;
-}
-
-/* Section Title */
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 60px;
-    position: relative;
-}
-
-.section-title::after {
-    content: "";
-    width: 70px;
-    height: 4px;
-    background: var(--secondary);
-    position: absolute;
-    right: 50%;
-    transform: translateX(50%);
-    bottom: -15px;
-    border-radius: 20px;
-}
-
-/* Cards Grid */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 35px;
-    margin-bottom: 80px;
-}
-
-.card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 30px;
-    overflow: hidden;
-    transition: 0.4s;
-    backdrop-filter: blur(14px);
-    display: flex;
-    flex-direction: column;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    border-color: var(--secondary);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-}
-
-.card-content {
-    padding: 35px;
-    flex-grow: 1;
-}
-
-.card-type {
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 30px;
-    background: rgba(224, 86, 160, 0.15);
-    color: var(--secondary);
-    font-size: 0.75rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: var(--primary);
-}
-
-.card-desc {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-}
-
-/* Copy Box */
-.copy-box {
-    background: rgba(255, 255, 255, 0.03);
-    border-right: 4px solid var(--primary);
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    font-size: 0.9rem;
-}
-
-.copy-box h4 {
-    color: var(--primary);
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
-
-.copy-box p {
-    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Cairo', sans-serif;
+    background:
+        radial-gradient(at 0% 0%, rgba(15, 51, 69, 0.25), transparent 50%),
+        radial-gradient(at 100% 100%, rgba(98, 190, 172, 0.25), transparent 50%),
+        linear-gradient(180deg, #a12a6a 0%, #D9C1D7 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    background-attachment: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
     line-height: 1.8;
 }
 
-/* Strategy Features */
-.features {
-    list-style: none;
-    border-top: 1px solid var(--border);
-    pt: 20px;
-    padding-top: 20px;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-.features li {
-    display: flex;
-    align-items: start;
-    gap: 10px;
-    margin-bottom: 12px;
-    font-size: 0.85rem;
-    color: var(--muted);
-}
-
-.features i {
-    color: var(--primary);
-    margin-top: 5px;
-}
-
-/* Footer */
-.footer {
-    
-    text-align: center;
-    padding: 60px 0 100px;
-}
-
-.footer-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px 35px;
-    border-radius: 60px;
-    background: linear-gradient(45deg, var(--secondary), #ff82c0);
-    color: white;
-    font-weight: 800;
-    transition: 0.3s;
-}
-
-.footer-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(224, 86, 160, 0.3);
-}
-
-.portfolio-card, .service-card, .consult-card-s2 {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.portfolio-card:hover, .service-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(46, 204, 113, 0.2); /* اللون الأخضر بتاعك */
-  border: 1px solid var(--primary-green);
-}
-
-.hero h1 span {
-  background: linear-gradient(90deg, #2ecc71, #27ae60, #f1c40f, #2ecc71);
-  background-size: 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-move 5s linear infinite;
-}
-
-@keyframes gradient-move {
-  0% { background-position: 0%; }
-  100% { background-position: 100%; }
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-.icon-box i, .card-icon-area i {
-  animation: float 3s ease-in-out infinite;
-  display: inline-block;
-}
-@media(max-width:768px) {
-    .cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ===== FOOTER BASE ===== */
-.footer {
-  width: 100%;
-  margin: 0;
-  padding: 60px 8%;
-
-  background: rgba(15, 51, 69, 0.85);
-  backdrop-filter: blur(10px);
-
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.25);
-
-  color: white;
-}
-
-/* ===== CONTAINER ===== */
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-
-  gap: 15px;
-}
-
-/* ===== LOGO ===== */
-.footer-logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: white;
-}
-
-/* ===== LINKS ===== */
-.footer-links {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.footer-links a:hover {
-  color: white;
-  transform: translateY(-2px);
-}
-
-/* ===== SOCIAL ICONS ===== */
-.footer-social a {
-  color: #ccc;
-  margin: 0 8px;
-  font-size: 18px;
-  display: inline-block;
-  transition: 0.3s;
-}
-
-.footer-social a:hover {
-  transform: translateY(-4px);
-}
-
-/* Facebook */
-.footer-social a:hover .fa-facebook {
-  color: #1877F2;
-}
-
-/* Instagram */
-.footer-social a:hover .fa-instagram {
-  color: #E1306C;
-}
-
-/* LinkedIn */
-.footer-social a:hover .fa-linkedin {
-  color: #0A66C2;
-}
-
-/* WhatsApp */
-.footer-social a:hover .fa-whatsapp {
-  color: #25D366;
-}
-
-/* ===== BOTTOM TEXT ===== */
-.footer-bottom {
-  margin-top: 15px;
-  font-size: 12px;
-  opacity: 0.7;
-  text-align: center;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: bold;
-  font-size: 1.6rem;
-  font-weight: 700;
-
-  color: white;
-}
-
-
-
-/* شكل اللوجو */
-.footer-logo img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
-}
-
-/* hover بسيط */
-.footer-logo img:hover {
-  transform: scale(1.1) rotate(3deg);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .footer {
-    padding: 60px 8%;
-  }
-  
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .view-more-container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin: 20px 0 !important;
-    /* مسافة فوق وتحت */
-    padding: 0 !important;
-  }
-
-  /* 2. ضبط الزرار نفسه */
-  #show-more-certs {
-    margin: 0 auto !important;
-    /* أهم سطر للتوسيط */
-    display: block !important;
-    width: fit-content !important;
-    /* يخلي الزرار على قد الكلام بس */
-    min-width: 200px;
-    /* اختياري: عشان الزرار ميبقاش صغير أوي */
-    transform: none !important;
-    /* إلغاء أي ميلان أو إزاحة */
-  }
-
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+/* الهيدر المتناسق مع الخلفية الداكنة */
+.header {
+    background-color: rgba(15, 51, 69, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(98, 190, 172, 0.2);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition-smooth);
 }
 
 /* ضبط الهيدر مع اتجاه الـ RTL */
+/* ضبط الهيدر ليصبح اللوجو يسار وزر العودة يمين */
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row-reverse; /* يضمن إن الزرار يفضل شمال واللوجو يمين */
+    flex-direction: row; /* تم التعديل هنا ليعود الترتيب الطبيعي (اللوجو يسار والزر يمين) */
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    background-color: rgba(98, 190, 172, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition-smooth);
+}
+
+.back-btn:hover {
+    background-color: var(--blue);
+    color: var(--dark-blue);
+    transform: translateX(-3px); /* جعل الحركة انسيابية مع مكانه الجديد */
+    box-shadow: 0 4px 15px rgba(98, 190, 172, 0.3);
 }
 
 .logo-wrapper {
     display: flex;
     align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.logo-icon {
+    font-size: 24px;
+    color: var(--blue);
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+/* قسم الهيرو */
+.hero {
+    padding: 40px 0 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(98, 190, 172, 0.3) 0%, rgba(251, 249, 245, 0) 70%);
+    z-index: -1;
+}
+
+.tag {
+    background-color: rgba(15, 51, 69, 0.6);
+    color: var(--soft-pink);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(217, 193, 215, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    text-shadow: 0 2px 10px rgba(15, 51, 69, 0.2);
+}
+
+.hero p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 750px;
+    margin: 0 auto 40px;
+    text-shadow: 0 1px 5px rgba(15, 51, 69, 0.15);
+}
+
+/* التوضيح الفني بالهيدر */
+.hero-illustration {
+    max-width: 500px;
+    width: 100%;
+    border-radius: var(--border-radius);
+    margin: 0 auto;
+    display: block;
+    box-shadow: var(--card-shadow);
+    border: 4px solid rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================================================
+   4. PORTFOLIO & CARDS GRID
+   ========================================================================== */
+/* قسم نماذج المحتوى */
+.portfolio-section {
+    padding: 30px 0 100px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    text-shadow: 0 2px 10px rgba(15, 51, 69, 0.2);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--blue);
+    margin: 15px auto 0;
+    border-radius: 10px;
+}
+
+/* شبكة الكروت */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 992px) {
+
+    .header {
+        /* اجعل الـ padding متناسقاً ليعطي ارتفاعاً أكبر */
+        padding: 20px 0; 
+    }
+    
+    .header-content {
+        flex-direction: row;
+        gap: 12px; /* زيادة بسيطة في المسافة بين اللوجو والزر */
+        padding: 0 15px; /* إضافة مسافة جانبية لضمان عدم التصاق العناصر بالحواف */
+    }
+    
+    /* زيادة حجم الزر قليلاً ليناسب الهيدر الأطول */
+    .back-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* جعل الكارد الأول عريضاً بشكل مميز */
+    .card:first-child {
+        grid-column: span 2;
+    }
+}
+
+.card {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(98, 190, 172, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(15, 51, 69, 0.25);
+    border-color: rgba(224, 86, 160, 0.3);
+}
+
+.card-header {
+    padding: 30px 30px 20px;
+    border-bottom: 1px dashed rgba(98, 190, 172, 0.2);
+    position: relative;
+}
+
+.card-type {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--accent-pink);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-bottom: 8px;
+    background-color: rgba(224, 86, 160, 0.1);
+    padding: 4px 14px;
+    border-radius: 50px;
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.4;
+}
+
+.card-desc {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.card-body {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* صندوق محاكاة الهاتف لنص المنشور */
+.phone-mockup {
+    background-color: #fafbfc;
+    border: 1px solid rgba(15, 51, 69, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    box-shadow: inset 0 2px 8px rgba(15, 51, 69, 0.03);
+}
+
+.phone-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(15, 51, 69, 0.05);
+    padding-bottom: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--dark);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 3px 8px rgba(15, 51, 69, 0.15);
+}
+
+.author-info h5 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.author-info span {
+    font-size: 11px;
+    color: var(--color-text-muted);
+}
+
+.phone-content {
+    font-size: 15px;
+    color: #1a2d36;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.phone-content strong {
+    color: var(--accent-pink);
+}
+
+/* التحليلات والاستراتيجيات */
+.marketing-strategy {
+    background-color: rgba(98, 190, 172, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    border-right: 4px solid var(--blue);
+}
+
+.strategy-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.strategy-list {
+    list-style: none;
+}
+
+.strategy-list li {
+    font-size: 14px;
+    color: var(--color-text-dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
     gap: 10px;
+}
+
+.strategy-list li:last-child {
+    margin-bottom: 0;
+}
+
+.strategy-list i {
+    color: var(--accent-pink);
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+/* ==========================================================================
+   5. FOOTER STYLES (Old Footer & Main Footer Merged Safely)
+   ========================================================================== */
+/* ===== FOOTER BASE ===== */
+.footer {
+    width: 100%;
+    margin: 0;
+    padding: 60px 8%;
+    background: rgba(15, 51, 69, 0.85);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.25);
+    color: white;
 }
 
 /* تنسيق الفوتر الجديد */
 .main-footer {
-    background-color: #0b1a24; /* نفس درجة لون الخلفية الغامقة عندك */
+    background-color: rgba(15, 51, 69, 0.85); /* تم توحيدها لتناسق أفضل ويمكن تغييرها لـ #0b1a24 حسب الرغبة */
     padding: 40px 0 20px 0;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -539,6 +432,7 @@ html {
     transform: scale(1.05);
 }
 
+/* ===== CONTAINER ===== */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -547,55 +441,103 @@ html {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
     flex-direction: row-reverse; /* لضبط الترتيب من اليمين للياسر بالتوافق مع الصورة */
 }
 
+/* ===== LOGO ===== */
 .footer-logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #fff;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: white;
 }
 
+/* شكل اللوجو */
 .footer-logo img {
     width: 45px;
     height: 45px;
-    border-radius: 50px;
+    border-radius: 50%;
     object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+/* hover بسيط */
+.footer-logo img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* ===== LINKS ===== */
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .footer-links a {
     color: #a0aec0;
     text-decoration: none;
     margin: 0 15px;
-    transition: color 0.2s;
+    font-size: 14px;
+    transition: color 0.2s, transform 0.3s;
 }
 
 .footer-links a:hover {
-    color: #fff;
+    color: white;
+    transform: translateY(-2px);
 }
 
+/* ===== SOCIAL ICONS ===== */
 .footer-social a {
     color: #a0aec0;
-    font-size: 20px;
     margin: 0 10px;
-    transition: color 0.2s;
+    font-size: 20px;
+    display: inline-block;
+    transition: color 0.2s, transform 0.3s;
 }
 
 .footer-social a:hover {
+    transform: translateY(-4px);
     color: #e25c9b;
 }
 
+/* Facebook */
+.footer-social a:hover .fa-facebook {
+    color: #1877F2;
+}
+
+/* Instagram */
+.footer-social a:hover .fa-instagram {
+    color: #E1306C;
+}
+
+/* LinkedIn */
+.footer-social a:hover .fa-linkedin {
+    color: #0A66C2;
+}
+
+/* WhatsApp */
+.footer-social a:hover .fa-whatsapp {
+    color: #25D366;
+}
+
+/* ===== BOTTOM TEXT ===== */
 .footer-bottom {
     margin-top: 40px;
     color: #718096;
     font-size: 14px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 20px;
+    text-align: center;
 }
 
+/* ==========================================================================
+   6. RADWA LINKS & TOOLTIPS
+   ========================================================================== */
 /* تنسيق رابط اسم البشمهندسة رضوى */
 .radwa-whatsapp-link {
     color: #25D366; /* اللون الأخضر الأساسي */
@@ -676,39 +618,139 @@ html {
     transform: translateX(-50%) translateY(0); /* ترتفع لأعلى بسلاسة عند الظهور */
 }
 
-/* ===== RESPONSIVE ===== */
+/* ==========================================================================
+   7. RESPONSIVE DESIGNS (Media Queries)
+   ========================================================================== */
+/* ===== الشاشات المتوسطة والصغيرة (التعديلات الشاملة للموبايل) ===== */
 @media (max-width: 768px) {
-  .footer {
-    padding: 60px 8%;
-  }
-  
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
+    /* 1. ضبط مساحات الهيدر ومنع التفاف العناصر بشكل سيء */
+    .header {
+        padding: 20px 0;
+    }
+    
+    .header-content {
+        flex-direction: row; /* الحفاظ على التوزيع الأفقي ولكن بحجم أصغر */
+        gap: 8px;
+    }
 
-  .view-more-container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin: 20px 0 !important;
-    /* مسافة فوق وتحت */
-    padding: 0 !important;
-  }
+    .logo-text {
+        font-size: 16px; /* تصغير حجم اللوجو ليناسب الشاشات الصغيرة */
+    }
 
-  /* 2. ضبط الزرار نفسه */
-  #show-more-certs {
-    margin: 0 auto !important;
-    /* أهم سطر للتوسيط */
-    display: block !important;
-    width: fit-content !important;
-    /* يخلي الزرار على قد الكلام بس */
-    min-width: 200px;
-    /* اختياري: عشان الزرار ميبقاش صغير أوي */
-    transform: none !important;
-    /* إلغاء أي ميلان أو إزاحة */
-  }
+    .logo-icon {
+        font-size: 18px;
+    }
 
+    .back-btn {
+        padding: 6px 14px;
+        font-size: 12px;
+        gap: 6px;
+    }
+
+    /* 2. ضبط نصوص الهيرو والمساحات */
+    .hero {
+        padding: 30px 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 24px; /* حجم خط مريح للموبايل دون الخروج عن الشاشة */
+    }
+
+    .hero p {
+        font-size: 14px;
+        margin-bottom: 25px;
+        padding: 0 5px;
+    }
+
+    /* 3. ضبط الـ Cards ومحتواها الداخلي */
+    .portfolio-section {
+        padding: 20px 0 60px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .cards-grid {
+        gap: 20px; /* تقليل المسافة بين الكروت */
+    }
+
+    .card-header {
+        padding: 20px 20px 15px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card-body {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .phone-mockup {
+        padding: 15px;
+    }
+
+    .phone-content {
+        font-size: 13px;
+    }
+
+    /* 4. معالجة وتوسيط الفوتر بالكامل وعناصره */
+    .footer {
+        padding: 60px 8%;
+    }
+
+    .main-footer {
+        padding: 30px 0 15px 0;
+    }
+
+    .footer-top-btn {
+        margin-bottom: 25px;
+    }
+
+    .footer-container {
+        flex-direction: column !important; /* تحويل التوزيع إلى عمودي ليناسب الموبايل */
+        text-align: center;
+        gap: 25px;
+    }
+
+    .footer-logo, .footer-links, .footer-social {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap; /* السماح للقوائم بالالتفاف إذا كانت شاشة الموبايل صغيرة جداً */
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .footer-links a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    /* 5. ضبط أزرار "عرض المزيد" وإلغاء أي إزاحات مسببة للمشاكل */
+    .view-more-container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 20px 0 !important;
+        padding: 0 !important;
+    }
+
+    /* ضبط الزرار نفسه */
+    #show-more-certs {
+        margin: 0 auto !important; /* أهم سطر للتوسيط */
+        display: block !important;
+        width: fit-content !important; /* يخلي الزرار على قد الكلام بس */
+        min-width: 180px; /* اختياري: عشان الزرار ميبقاش صغير أوي */
+        transform: none !important; /* إلغاء أي ميلان أو إزاحة */
+    }
+
+    
 }

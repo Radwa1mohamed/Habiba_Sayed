@@ -4,1070 +4,304 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Habiba Sayed | Coach Muhammed’s Work </title>
-
-    <!-- Fonts -->
+    <title>معرض أعمال حبيبة سيد | محتوى محمد عدوي - استشارات وسرد قصصي</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
-        :root {
-            --bg-dark: #081b25;
-            --bg-light: #102c3b;
-            --primary: #62BEAC;
-            --secondary: #E056A0;
-            --text: #ffffff;
-            --muted: rgba(255, 255, 255, 0.75);
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --border: rgba(255, 255, 255, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Cairo", sans-serif;
-            background: radial-gradient(circle at top right, rgba(224, 86, 160, 0.12), transparent 30%),
-                radial-gradient(circle at bottom left, rgba(98, 190, 172, 0.12), transparent 30%),
-                linear-gradient(180deg, var(--bg-light) 0%, var(--bg-dark) 100%);
-            color: var(--text);
-            line-height: 1.9;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1150px, 92%);
-            margin: auto;
-        }
-
-        /* حاوية اللوجو والاسم */
-        .logo-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            /* المسافة بين الاسم واللوجو */
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        /* تنسيق النص (الأبيض) */
-        .logo-text {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: #ffffff;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        /* تنسيق صورة اللوجو */
-        .logo-image {
-            width: 45px;
-            height: 45px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 1.5px solid transparent;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        /* تأثير الهفر (Hover Effects) */
-
-        /* عند الهفر الحاوية تتحرك لليمين قليلاً لأن الاسم أصبح في الأول */
-        .logo-wrapper:hover {
-            transform: translateX(5px);
-        }
-
-        /* تأثير الصورة عند الهفر */
-        .logo-wrapper:hover .logo-image {
-            transform: rotate(-10deg) scale(1.1);
-            /* الدوران لليسار عكس الترتيب */
-            border-color: var(--primary);
-            box-shadow: 0 0 15px rgba(98, 190, 172, 0.4);
-        }
-
-        /* تأثير النص عند الهفر */
-        .logo-wrapper:hover .logo-text {
-            color: var(--primary);
-            text-shadow: 0 0 10px rgba(98, 190, 172, 0.2);
-        }
-
-        /* الخط السفلي تحت الاسم */
-        .logo-text::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            /* يبدأ من اليسار */
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary);
-            transition: width 0.3s ease;
-        }
-
-        .logo-wrapper:hover .logo-text::after {
-            width: 100%;
-        }
-
-        /* Header */
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            backdrop-filter: blur(14px);
-            background: rgba(8, 27, 37, 0.8);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            flex-direction: row;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        .back-btn {
-            color: var(--primary);
-            font-weight: 700;
-            transition: 0.3s;
-        }
-
-        .back-btn:hover {
-            color: var(--secondary);
-        }
-
-        /* Hero */
-        .hero {
-            padding: 120px 0 70px;
-            text-align: center;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 8px 22px;
-            border-radius: 40px;
-            background: rgba(224, 86, 160, 0.12);
-            border: 1px solid rgba(224, 86, 160, 0.4);
-            color: #ff9fd1;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 4rem);
-            line-height: 1.3;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            max-width: 850px;
-            margin: auto;
-            color: var(--muted);
-            font-size: 1.1rem;
-        }
-
-        /* Stats */
-        .stats {
-            padding-bottom: 80px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
-        .stat-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 25px;
-            padding: 35px;
-            text-align: center;
-            backdrop-filter: blur(12px);
-        }
-
-        .stat-box h3 {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 12px;
-        }
-
-        .stat-box p {
-            color: var(--muted);
-        }
-
-        /* Section Title */
-        section {
-            padding-bottom: 90px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: "";
-            width: 70px;
-            height: 4px;
-            background: var(--primary);
-            position: absolute;
-            right: 50%;
-            transform: translateX(50%);
-            bottom: -15px;
-            border-radius: 20px;
-        }
-
-        /* Cards */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 35px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            transition: 0.4s;
-            backdrop-filter: blur(14px);
-            padding: 15px 0;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(224, 86, 160, 0.4);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-        }
-
-        .card-content {
-            padding: 30px;
-        }
-
-        .card-type {
-            display: inline-block;
-            padding: 7px 16px;
-            border-radius: 30px;
-            background: rgba(98, 190, 172, 0.15);
-            color: var(--primary);
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 18px;
-        }
-
-        .card-desc {
-            color: var(--muted);
-            margin-bottom: 25px;
-        }
-
-        /* Copy Box */
-        .copy-box {
-            background: rgba(255, 255, 255, 0.04);
-            border-right: 4px solid var(--secondary);
-            padding: 22px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-        }
-
-        .copy-box p {
-            color: rgba(255, 255, 255, 0.88);
-            line-height: 2.1;
-            font-size: 0.95rem;
-        }
-
-        /* Features */
-        .features {
-            list-style: none;
-        }
-
-        .features li {
-            display: flex;
-            align-items: start;
-            gap: 12px;
-            margin-bottom: 16px;
-            color: var(--muted);
-            font-size: 0.85rem;
-        }
-
-        .features i {
-            color: var(--secondary);
-            margin-top: 7px;
-        }
-
-        /* Tags */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .tags span {
-            padding: 12px 22px;
-            border-radius: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            transition: 0.3s;
-        }
-
-        .tags span:hover {
-            background: rgba(224, 86, 160, 0.14);
-            border-color: rgba(224, 86, 160, 0.5);
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding-bottom: 100px;
-        }
-
-        .footer-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 40px;
-            border-radius: 60px;
-            background: linear-gradient(45deg, var(--secondary), #ff82c0);
-            color: white;
-            font-weight: 800;
-            transition: 0.3s;
-        }
-
-        .footer-btn:hover {
-            transform: scale(1.05);
-        }
-
-        @media(max-width:768px) {
-            .hero {
-                padding-top: 90px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ===== FOOTER BASE ===== */
-        .footer {
-            width: 100%;
-            margin: 0;
-            padding: 60px 8%;
-
-            background: rgba(15, 51, 69, 0.85);
-            backdrop-filter: blur(10px);
-
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.25);
-
-            color: white;
-        }
-
-        /* ===== CONTAINER ===== */
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-
-            gap: 15px;
-        }
-
-        /* ===== LOGO ===== */
-        .footer-logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: white;
-        }
-
-        /* ===== LINKS ===== */
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* ===== SOCIAL ICONS ===== */
-        .footer-social a {
-            color: #ccc;
-            margin: 0 8px;
-            font-size: 18px;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .footer-social a:hover {
-            transform: translateY(-4px);
-        }
-
-        /* Facebook */
-        .footer-social a:hover .fa-facebook {
-            color: #1877F2;
-        }
-
-        /* Instagram */
-        .footer-social a:hover .fa-instagram {
-            color: #E1306C;
-        }
-
-        /* LinkedIn */
-        .footer-social a:hover .fa-linkedin {
-            color: #0A66C2;
-        }
-
-        /* WhatsApp */
-        .footer-social a:hover .fa-whatsapp {
-            color: #25D366;
-        }
-
-        /* ===== BOTTOM TEXT ===== */
-        .footer-bottom {
-            margin-top: 15px;
-            font-size: 12px;
-            opacity: 0.7;
-            text-align: center;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: bold;
-            font-size: 1.6rem;
-            font-weight: 700;
-
-            color: white;
-        }
-
-
-
-        /* شكل اللوجو */
-        .footer-logo img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: 0.3s;
-        }
-
-        /* hover بسيط */
-        .footer-logo img:hover {
-            transform: scale(1.1) rotate(3deg);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .footer {
-                padding: 60px 8%;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            .view-more-container {
-                display: flex !important;
-                justify-content: center !important;
-                align-items: center !important;
-                width: 100% !important;
-                margin: 20px 0 !important;
-                /* مسافة فوق وتحت */
-                padding: 0 !important;
-            }
-
-            /* 2. ضبط الزرار نفسه */
-            #show-more-certs {
-                margin: 0 auto !important;
-                /* أهم سطر للتوسيط */
-                display: block !important;
-                width: fit-content !important;
-                /* يخلي الزرار على قد الكلام بس */
-                min-width: 200px;
-                /* اختياري: عشان الزرار ميبقاش صغير أوي */
-                transform: none !important;
-                /* إلغاء أي ميلان أو إزاحة */
-            }
-
-        }
-
-        /* ضبط الهيدر مع اتجاه الـ RTL */
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row-reverse;
-            /* يضمن إن الزرار يفضل شمال واللوجو يمين */
-        }
-
-        .logo-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* تنسيق الفوتر الجديد */
-        .main-footer {
-            background-color: #0b1a24;
-            /* نفس درجة لون الخلفية الغامقة عندك */
-            padding: 40px 0 20px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-top-btn {
-            margin-bottom: 40px;
-        }
-
-        .footer-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background-color: #e25c9b;
-            /* درجة البينك المتاحة في تصميمك */
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s;
-        }
-
-        .footer-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            flex-direction: row-reverse;
-            /* لضبط الترتيب من اليمين للياسر بالتوافق مع الصورة */
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .footer-logo img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50px;
-            object-fit: cover;
-        }
-
-        .footer-links a {
-            color: #a0aec0;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #fff;
-        }
-
-        .footer-social a {
-            color: #a0aec0;
-            font-size: 20px;
-            margin: 0 10px;
-            transition: color 0.2s;
-        }
-
-        .footer-social a:hover {
-            color: #e25c9b;
-        }
-
-        .footer-bottom {
-            margin-top: 40px;
-            color: #718096;
-            font-size: 14px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 20px;
-        }
-
-        /* تنسيق رابط اسم البشمهندسة رضوى */
-        .radwa-whatsapp-link {
-            color: #25D366;
-            /* اللون الأخضر الأساسي */
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            /* مسافة صغيرة بين الاسم والأيقونة */
-            transition: all 0.3s ease;
-        }
-
-        /* تنسيق أيقونة الواتساب الخاصة بها */
-        .radwa-ws-icon {
-            font-size: 1.1rem;
-            /* حجم الأيقونة متناسق مع السطر */
-            transition: transform 0.3s ease;
-        }
-
-        /* تأثير تفاعلي عند تمرير الماوس (Hover) */
-        .radwa-whatsapp-link:hover {
-            color: #20ba5a;
-            /* درجة أخضر أغمق قليلاً عند الوقوف بالماوس */
-        }
-
-        .radwa-whatsapp-link:hover .radwa-ws-icon {
-            transform: scale(1.2) rotate(15deg);
-            /* تكبير الأيقونة ولفها قليلاً بشكل جمالي */
-        }
-
-        /* تجهيز العنصر الحاضن */
-        .tooltip {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        /* تصميم الرسالة العربية الصغيرة بشكل عصري واحترافي */
-        .tooltip .tooltip-text {
-            visibility: hidden;
-            width: 180px;
-            /* زيادة العرض لتناسب النص العربي */
-            background: rgba(30, 41, 59, 0.95);
-            /* خلفية داكنة فاخرة متناسقة مع الموقع */
-            color: #ffffff;
-            /* لون النص أبيض ناصع */
-            text-align: center;
-            border-radius: 8px;
-            /* حواف ناعمة */
-            padding: 8px 12px;
-            /* مساحات داخلية مريحة للعين */
-            position: absolute;
-            z-index: 99;
-            bottom: 135%;
-            /* رفعها قليلاً لتكون مريحة فوق الاسم */
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            /* إزاحة بسيطة للأسفل لتأثير الحركة */
-            opacity: 0;
-            font-family: 'Cairo', sans-serif;
-            /* استخدام نفس خط الموقع الاحترافي */
-            font-size: 0.8rem;
-            font-weight: 500;
-            line-height: 1.4;
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            /* إطار ناعم جداً بلون الواتساب الأخضر */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(37, 211, 102, 0.1);
-            /* ظل فخم مع توهج خفيف */
-            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.3s ease;
-            /* حركة انسيابية مرنة للظهور */
-            white-space: nowrap;
-            /* يمنع انقسام النص على سطرين */
-        }
-
-        /* السهم الصغير أسفل الرسالة */
-        .tooltip .tooltip-text::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 6px;
-            border-style: solid;
-            border-color: rgba(30, 41, 59, 0.95) transparent transparent transparent;
-        }
-
-        /* التأثير التفاعلي عند تمرير أو وقوف الماوس (Hover) */
-        .tooltip:hover .tooltip-text {
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-            /* ترتفع لأعلى بسلاسة عند الظهور */
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .footer {
-                padding: 60px 8%;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            .view-more-container {
-                display: flex !important;
-                justify-content: center !important;
-                align-items: center !important;
-                width: 100% !important;
-                margin: 20px 0 !important;
-                /* مسافة فوق وتحت */
-                padding: 0 !important;
-            }
-
-            /* 2. ضبط الزرار نفسه */
-            #show-more-certs {
-                margin: 0 auto !important;
-                /* أهم سطر للتوسيط */
-                display: block !important;
-                width: fit-content !important;
-                /* يخلي الزرار على قد الكلام بس */
-                min-width: 200px;
-                /* اختياري: عشان الزرار ميبقاش صغير أوي */
-                transform: none !important;
-                /* إلغاء أي ميلان أو إزاحة */
-            }
-
-        }
-    </style>
+    <link rel="stylesheet" href="project.css" />
 </head>
 
 <body>
 
-   <header class="header">
-    <div class="container header-content">
-        <div class="logo-wrapper">
-            <div class="logo-text">Habiba Sayed</div>
-            <img src="../imgs/logo_Habiba.jpg" alt="Logo" class="logo-image">
+    <header class="header">
+        <div class="container header-content">
+            <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i> العودة لمعرض الأعمال</a>
+            <div class="logo-wrapper">
+                <div class="logo-text"> Habiba Sayed </div>
+                <div class="logo-icon"><i class="fa-solid fa-pen-nib"></i></div>
+            </div>
         </div>
-        
-        <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i> العودة للمعرض</a>
-    </div>
-</header>
+    </header>
+
     <section class="hero">
         <div class="container">
-            <span class="tag">Revenue Engineering & Strategy</span>
-            <h1>مشاريع هندسة الأرباح والاستشارات</h1>
-            <p>نماذج من المحتوى البيعي والاستراتيجي المصمم لتحويل مهارة كتابة المحتوى إلى نظام دخل مستقر ومتنوع عبر بناء
-                البراند الشخصي.</p>
+            <span class="tag">نموذج أعمال: كتابة محتوى استراتيجي وسرد قصصي (Storytelling)</span>
+            <h1>محتوى محمد عدوي (محتوى بيعي وقصصي)</h1>
+            <p>سلسلة نصوص تسويقية احترافية مصممة لبناء البراند الشخصي، تنويع مصادر الدخل للفريلانسرز، وتطوير تكنيكات الإعلانات باستخدام سيكولوجية السرد القصصي.</p>
         </div>
     </section>
 
-    <section class="stats">
+    <section class="portfolio-section">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <h3>Revenue</h3>
-                    <p>هندسة أنظمة الدخل</p>
-                </div>
-                <div class="stat-box">
-                    <h3>Strategy</h3>
-                    <p>استراتيجيات التسعير الذكي</p>
-                </div>
-                <div class="stat-box">
-                    <h3>Personal Brand</h3>
-                    <p>بناء الصورة الذهنية</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h2 class="section-title">نماذج الحملة الإعلانية والاستشارية</h2>
 
-    <section>
-        <div class="container">
-            <h2 class="section-title">المحتوى البيعي والاستشارات</h2>
-            <div class="cards">
+            <div class="cards-grid">
+
+                <!-- تاسك 1 -->
                 <div class="card">
-                    <div class="card-content">
-                        <span class="card-type">Consulting Content</span>
-                        <h3>مشكلتك مش إنك كاتب شاطر</h3>
-                        <p class="card-desc">محتوى يهدف لتغيير عقلية الفريلانسر من "مؤدي خدمة" إلى "مهندس أرباح".</p>
-                        <div class="copy-box">
-                            <p class="premium-text-block">
-                                مشكلتك مش إنك كاتب محتوى شاطر😅
-                                <br><br>
-                                مشكلتك إن دخلك معتمد على طريق واحد بس
-                                <br><br>
-                                وده أخطر شيء على أي فريلانسر
-                                <br><br>
-                                لو مهارتك هي كتابة المحتوى
-                                <br>
-                                تقدر تبني حواليها نظام دخل متنوع ومستقر
-                                <br><br>
-                                مش شغل متقطع ولا انتظار عميل ييجي ويمشي😃
-                                <br><br>
-                                📌 <strong>خلينا نبسطها عملي أول حاجة:</strong>
-                                <br><br>
-                                <strong>Service & Product Engineering</strong>
-                                <br>
-                                يعني متشتغلش بخدمة واحدة وخلاص
-                                <br><br>
-                                مثال بسيط بدل ما تكتب بوستات بس تقدر تعمل باكدجات، تقدم استشارات،
-                                <br>
-                                تصمم منتج رقمي بسيط <strong>Template</strong> أو <strong>Guide</strong>
-                                <br>
-                                يعني نفس المهارة لكن أكتر من مدخل دخل
-                                <br><br>
-                                📌 <strong>تاني حاجة:</strong>
-                                <br><br>
-                                <strong>Audience Base Building</strong>
-                                <br>
-                                مش أي جمهور ولا أرقام على الشاشة
-                                <br><br>
-                                إنت محتاج ناس فاهمة قيمتك، مصدقة كلامك وشايفة إنك مرجع لهم
-                                <br><br>
-                                وده بييجي من محتوى تعليمي حقيقي بيحل مشاكل
-                                <br>
-                                وبيجاوب عن أسئلة بتيجي في دماغ العميل قبل ما يسأل
-                                <br><br>
-                                📌 <strong>تالت حاجة:</strong>
-                                <br><br>
-                                <strong>Personal Branding</strong>
-                                <br>
-                                وده مش لوجو ولا ألوان دي صورتك الذهنية لما حد يفكر في حل مشكلة معينة أسمك ييجي في باله
-                                <br><br>
-                                أسلوبك، طريقة شرحك، مواقفك، ثباتك
-                                <br>
-                                كل ده بيحول المتابع لعميل والعميل لشخص واثق فيك
-                                <br><br>
-                                <strong>الخلاصة:</strong> الدخل المتنوع مش بييجي من شغل أكتر، بييجي من نظام أذكى حوالين
-                                نفس المهارة
-                                <br><br>
-                                وده بالظبط اللي بنشتغل عليه بشكل عملي في الإستشارات
-                                <br><br>
-                                لو حابب تفهم إزاي تطبق الكلام ده على شغلك أنت تحديدًا ومن غير عشوائية
-                                <br><br>
-                                اكتب <strong>"استشارة"</strong> في الكومنت وهقولك التفاصيل المناسبة ليك📈💡
-                            </p>
+                    <div class="card-header">
+                        <span class="card-type">محتوى بيعي (استشارات)</span>
+                        <h3>1. مشكلتك مش إنك كاتب محتوى شاطر😅</h3>
+                        <p class="card-desc">منشور يركز على أهمية بناء نظام دخل متنوع ومستقر للفريلانسر وتجنب الاعتماد على مصدر واحد.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مع</div>
+                                <div class="author-info">
+                                    <h5>محمد عدوي</h5>
+                                    <span>صناعة المحتوى والاستشارات الرقمية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">مشكلتك مش إنك كاتب محتوى شاطر😅
+
+مشكلتك إن دخلك معتمد على طريق واحد بس وده أخطر شيء على أي فريلانسر.
+
+لو مهاراتك هي كتابة المحتوى تقدر تبني حواليها نظام دخل متنوع ومستقر، مش شغل متقطع ولا انتظار عميل ييجي ويمشي😃
+
+📌خلينا نبسطها عملي أول حاجة:
+Service & Product Engineering: يعني متشتغلش بخدمة واحدة وخلاص. مثال بسيط بدل ما تكتب بوستات بس تقدر تعمل باكدجات، تقدم استشارات، تصمم منتج رقمي بسيط Template أو Guide، يعني نفس المهارة لكن أكتر من مدخل دخل.
+
+📌تاني حاجة:
+Audience Base Building: مش أي جمهور ولا أرقام على الشاشة. إنت محتاج ناس فاهمة قيمتك، مصدقة كلامك وشايفة إنك مرجع لهم. وده بييجي من محتوى تعليمي حقيقي بيحل مشاكل وبيجاوب عن أسئلة بتيجي في دماغ العميل قبل ما يسأل.
+
+📌تالت حاجة:
+Personal Branding: وده مش لوجو ولا ألوان دي صورتك الذهنية لما حد يفكر في حل مشكلة معينة أسمك ييجي في باله. أسلوبك، طريقتك، مواقفك، ثباتك.. كل ده بيحول المتابع لعميل والعميل لشخص واثق فيك.
+
+الخلاصة: الدخل المتنوع مش بييجي من شغل أكتر، بييجي من نظام أذكى حوالين نفس المهارة. وده بالظبط اللي بنشتغل عليه بشكل عملي في الإستشارات.
+
+لو حابب تفهم إزاي تطبق الكلام ده على شغلك أنت تحديدًا ومن غير عشوائية، اكتب استشارة في الكومنت وهقولك التفاصيل المناسبة ليك📈💡</div>
                         </div>
-                        <ul class="features">
-                            <li><i class="fa-solid fa-circle-check"></i> استراتيجية الـ Service & Product Engineering.
-                            </li>
-                            <li><i class="fa-solid fa-circle-check"></i> التركيز على بناء الـ Audience Base.</li>
-                        </ul>
+
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> تفكيك مشكلة الدخل المتأرجح وتقديم الحل عبر هندسة الخدمات، بناء الجمهور، والبراند الشخصي.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>النبرة:</strong> عملية، توجيهية، وذكية تمنح القارئ خارطة طريق واقعية لحل مشكلته المالية.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الـ CTA الإعلاني:</strong> حث القارئ على التعليق بكلمة "استشارة" لتسهيل الفلترة ورفع ريتش التفاعل.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <!-- تاسك 2 -->
                 <div class="card">
-                    <div class="card-content">
-                        <span class="card-type">Pricing System</span>
-                        <h3>ليه دخلك مش ثابت؟</h3>
-                        <p class="card-desc">تحليل لمشاكل الدخل لدى كتاب المحتوى وتقديم الحل عبر معادلة البراند
-                            والتسعير.</p>
-                        <div class="copy-box">
-                            <p class="premium-text-block">
-                                ليه في كتاب محتوى شاطرين ودخلهم مش ثابت؟ 🤔
-                                <br><br>
-                                لأن المشكلة مش في المهارة
-                                <br>
-                                لكن في النظام اللي حواليها
-                                <br><br>
-                                كتير من الكتب والمدربين العالميين
-                                <br>
-                                زي Seth Godin وDonald Miller
-                                <br>
-                                بيأكدوا إن الدخل المستقر
-                                <br>
-                                مش نتيجة الشطارة بس
-                                <br><br>
-                                لكن نتيجة معادلة واضحة
-                                <br>
-                                <strong>Personal Branding + Pricing Strategy</strong>
-                                <br><br>
-                                يعني ممكن تكتب كويس
-                                <br>
-                                بس لو صورتك الذهنية مش واضحة وتسعيرك مش مبني على نظام
-                                <br>
-                                هتفضل في دايرة شغل ييجي ويقف
-                                <br><br>
-                                اللي بنشوفه في السوق إن أي كاتب ناجح بيشتغل على محورين:
-                                <br><br>
-                                • يبني براند شخصي: يخلي اسمه مرتبط بحل مشكلة معينة
-                                <br>
-                                • ويحط تسعير ذكي: يعتمد على نظام دخل متنوع، مش خدمة واحدة ولا عميل واحد
-                                <br><br>
-                                وده بالظبط اللي بنطبقه
-                                <br>
-                                بشكل عملي في الإستشارات
-                                <br><br>
-                                تحويل نفس المهارة لنظام شغل أوضح ودخل أكتر استقرار
-                                <br><br>
-                                السؤال هنا :
-                                <br>
-                                هل أنت مطبق <strong>Personal Branding</strong> و <strong>Pricing Strategy</strong> على
-                                شغلك؟
-                                <br><br>
-                                لو حابب تفهم إزاي تطبق ده عمليًا اكتب استشارة في الكومنت أو احجز جلسة
-                                <br>
-                                ونمشي معاك خطوة بخطوة💡👀
-                            </p>
-                        </div>
-                        <ul class="features">
-                            <li><i class="fa-solid fa-circle-check"></i> ربط الاسم بحل مشكلة معينة (Authority).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> نظام التسعير الذكي بدلاً من السعر العشوائي.
-                            </li>
-                        </ul>
+                    <div class="card-header">
+                        <span class="card-type">محتوى بيعي (سلطة معرفية)</span>
+                        <h3>2. ليه في كتاب محتوى شاطرين ودخلهم مش ثابت؟ 🤔</h3>
+                        <p class="card-desc">منشور يربط بين المهارة والنظام مع الاستشهاد بمدارس وعمالقة التسويق العالميين لتعزيز الموثوقية.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مع</div>
+                                <div class="author-info">
+                                    <h5>محمد عدوي</h5>
+                                    <span>صناعة المحتوى والاستشارات الرقمية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">ليه في كتاب محتوى شاطرين ودخلهم مش ثابت؟ 🤔
 
-    <section>
-        <div class="container">
-            <h2 class="section-title">محتوى السرد القصصي (Ads)</h2>
-            <div class="cards">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-type">Storytelling Ads</span>
-                        <h3>الإعلان بيتشاف ومش بيبيع!</h3>
-                        <p class="card-desc">سرد قصصي يشرح لماذا تفشل الإعلانات التقليدية وتنجح القصص في البيع.</p>
-                        <div class="copy-box">
-                            <p class="premium-text-block">
-                                الإعلان بيتشاف ومش بيبيع! 🫣
-                                <br><br>
-                                كنت فاكر إن المشكلة في الكتابة، وكل مرة الإعلان مايوصلش أراجع الكوبي كلمة كلمة.
-                                <br><br>
-                                وأحيانًا أقول يمكن الميزانية قليلة، يمكن العيب في الميديا باير، يمكن السوق زحمة 🤷‍♀️
-                                <br><br>
-                                بس الحقيقة إن الإعلان كان شغال وبيتشاف والناس بتتفاعل.. بس في لحظة القرار كان بيقف!
-                                <br><br>
-                                التحول الحقيقي حصل لما سألت نفسي: هو أنا بحاول أبيع ولا بحكي حكاية تفيد؟
-                                <br><br>
-                                ووقتها اكتشفت إن الإعلان كان بيشرح كويس بس ما كانش بيحكي.
-                                <br><br>
-                                ما كانش واخد العميل من إيده خطوة خطوة، ولا مديه سبب حقيقي يحس إن الرسالة دي معمولة
-                                عشانه.
-                                <br><br>
-                                ساعتها فهمت إن الفرق مش إعلان ضعيف وإعلان قوي..
-                                <br>
-                                الفرق بين محتوى الناس تعدي عليه، وإعلان يخلي العميل ينجذب للحكاية ويسمع.
-                                <br><br>
-                                <strong>السرد القصصي مش إضافة لطيفة للإعلان.. السرد القصصي هو الإعلان نفسه!</strong>
-                                <br><br>
-                                هو اللي بيحول الكلام من معلومات لتجربة، ومن مجرد عرض لقصة العميل يشوف نفسه فيها.
-                                <br><br>
-                                ومن هنا اتغير المفهوم؛ الإعلان اللي مش بيبيع غالبًا مش ناقصه أفكار ولا ميزانية ولا شغل
-                                تقني أكتر..
-                                <br>
-                                غالبًا ناقصه قصة تتحكي صح وتخدم فئتك.
-                                <br><br>
-                                تابع معايا البوست اللي جاي؛ هيوضح ليه الحكاية أهم من أي تكنيك 🔥😁
-                            </p>
+لأن المشكلة مش في المهارة لكن في النظام اللي حواليها.
+
+كتير من الكتب والمدربين العالميين زي Seth Godin وDonald Miller بيأكدوا إن الدخل المستقر مش نتيجة الشطارة بس، لكن نتيجة معادلة واضحة:
+Personal Branding + Pricing Strategy
+
+يعني ممكن تكتب كويس بس لو صورتك الذهنية مش واضحة وتسعيرك مش مبني على نظام، هتفضل في دايرة شغل ييجي ويقف.
+
+اللي بنشوفه في السوق إن أي كاتب ناجح بيشتغل على محورين: يبني براند شخصي يخلي اسمه مرتبط بحل مشكلة معينة، ويحط تسعير ذكي يعتمد على نظام دخل متنوع، مش خدمة واحدة ولا عميل واحد.
+
+وده بالظبط اللي بنطبقه بشكل عملي في الإستشارات؛ تحويل نفس المهارة لنظام شغل أوضح ودخل أكتر استقرار.
+
+السؤال هنا: هل أنت مطبق Personal Branding و Pricing Strategy على شغلك؟
+لو حابب تفهم إزاي تطبق ده عمليًا اكتب استشارة في الكومنت أو احجز جلسة ونمشي معاك خطوة بخطوة💡👀</div>
                         </div>
-                        <ul class="features">
-                            <li><i class="fa-solid fa-circle-check"></i> تحويل المعلومات إلى تجربة (Experience).</li>
-                            <li><i class="fa-solid fa-circle-check"></i> استخدام الـ Storytelling كأداة بيع أساسية.</li>
-                        </ul>
+
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التسويق بالسلطة المعرفية (Authority Marketing) عبر دمج أسماء عالمية لإثبات صحة المعادلة المطروحة.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>المحفز النفسي:</strong> وضع القارئ أمام سؤال تقييمي ذاتي مباشر يخلق لديه الرغبة الفورية في سد الثغرات.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الـ CTA الإعلاني:</strong> خيارين مرنين (كتابة تعليق أو حجز جلسة مباشرة) لضمان تحويل كافة مستويات المهتمين.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <!-- تاسك 3 -->
                 <div class="card">
-                    <div class="card-content">
-                        <span class="card-type">Ads Psychology</span>
-                        <h3>إعلانك بيفشل عشان شكله وحش!</h3>
-                        <p class="card-desc">تحليل تقني لـ 3 أسباب أساسية تجعل الإعلان غير فعال (صراع، رحلة، نهاية).</p>
-                        <div class="copy-box">
-                            <p class="premium-text-block">
-                                إعلانك بيفشل عشان شكله وحش!! 🫣
-                                <br><br>
-                                أغلب الإعلانات اللي بتفشل مش مشكلتها في التصميم، ولا حتى في الصياغة..
-                                <br>
-                                مشكلتها في الحكاية نفسها.
-                                <br><br>
-                                خلينا نقولها ببساطة في 3 أسباب أساسية تخلي إعلانك يفشل 👇:
-                                <br><br>
-                                1️⃣ <strong>مفيش صراع (Conflict)</strong>
-                                <br>
-                                الإعلان اللي مفيهوش مشكلة حقيقية القارئ يحس إنها شبه مشكلته عمره ما هيشد انتباهه.
-                                <br><br>
-                                لو العميل مش حاسس بألم، مش شايف حاجة ناقصة، مش متضايق من وضعه الحالي.. مش هيكمل قراءة.
-                                <br><br>
-                                الصراع هو الشرارة، هو اللي بيخلي الشخص يقول: "آه ده بيتكلم عني".
-                                <br><br>
-                                2️⃣ <strong>مفيش رحلة واضحة</strong>
-                                <br>
-                                إعلان بيقول المشكلة وبعدين يقفز للحل على طول من غير ما ياخد العميل في رحلة!
-                                <br><br>
-                                الرحلة هي التحول من وضع لوضع.. من حيرة لفهم.. ومن تعب لحل.
-                                <br>
-                                من غير الرحلة المحتوى يبقى مجرد كلام مش تجربة.
-                                <br><br>
-                                3️⃣ <strong>مفيش نهاية تقفل القرار</strong>
-                                <br>
-                                في إعلانات تشرح كويس وتوصل فكرة وبعدين تسيب القارئ واقف..
-                                <br>
-                                لا هو عارف يعمل إيه، ولا ياخد قرار، ولا حتى يحس إن القصة اكتملت.
-                                <br><br>
-                                النهاية = <strong>CTA</strong>
-                                <br>
-                                يعني إن آه كده الصورة وضحت وهاخد قرار.
-                                <br><br>
-                                الإعلان اللي بيبيع هو الإعلان اللي فيه: <strong>صراع، رحلة، نهاية تقفل القرار</strong>.
-                                <br><br>
-                                وده الفرق بين محتوى بيتشاف، وإعلان بنتائج واضحة.
-                                <br><br>
-                                استنى اللي جاي أقوي 🤌🔥
-                            </p>
+                    <div class="card-header">
+                        <span class="card-type">محتوى بيعي (ترويج للخدمة)</span>
+                        <h3>3. محتاج تشتغل بطريقة أذكى 🤌</h3>
+                        <p class="card-desc">منشور تسويقي مباشر ومخصص لبيع "الجلسة الاستشارية" من خلال إبراز الطابع الشخصي والعملي البعيد عن التنظير.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مع</div>
+                                <div class="author-info">
+                                    <h5>محمد عدوي</h5>
+                                    <span>صناعة المحتوى والاستشارات الرقمية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">محتاج تشتغل بطريقة أذكى 🤌
+
+لو عندك مهارة وبتشتغل بيها لكن دخلك مش ثابت ومش حاسس إنك ماشي على نظام واضح، فالجلسة الاستشارية دي معمولـة علشانك.
+
+في الجلسة مش بنديك كلام تحفيزي ولا نصايح عامة تنفع أي حد، إحنا بنشتغل على حالتك أنت: مهارتك، طريقتك، وهدفك الحقيقي.
+
+هنطلع بخطة واضحة وإزاي تبني براند شخصي قوي وإزاي تسعر شغلك بطريقة عادلة ليك، وتحول مجهودك لنتيجة مستقرة.
+
+وعن تجربة أكتر تغيير حقيقي بيحصل لما يبقى عندك رؤية واضحة ونظام ماشي عليه مش اجتهاد وخلاص.
+
+لو حابب تبدأ خطوة عملية وواضحة اكتب استشارة في الكومنت وهيتم التواصل معك بالتفاصيل المناسبة ليك👀✨</div>
                         </div>
-                        <ul class="features">
-                            <li><i class="fa-solid fa-circle-check"></i> شرح مفهوم الـ Conflict & Journey.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> ربط المحتوى بنتائج واضحة وملموسة.</li>
-                        </ul>
+
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التخصيص الفردي (Tailored Solution) عبر نفي صفة "العمومية والتنظير" عن الخدمة وتأكيد تفصيلها لكل حالة.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>النبرة:</strong> نبرة صادقة، جادة، وداعمة تعد بالاستقرار المالي والتنظيمي بدلاً من الوعود الوهمية.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الـ CTA الإعلاني:</strong> دعوة واضحة تضمن الخصوصية والمتابعة اللاحقة بمجرد كتابة التعليق المستهدف.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section>
-        <div class="container">
-            <h2 class="section-title">الاستراتيجيات المستخدمة</h2>
-            <div class="tags">
-                <span>Revenue Systems</span>
-                <span>Pricing Strategy</span>
-                <span>Personal Branding</span>
-                <span>Ads Storytelling</span>
-                <span>Consulting</span>
-                <span>Audience Building</span>
-                <span>Marketing Psychology</span>
+                <!-- تاسك 4 -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-type">محتوى سرد قصصي (Storytelling)</span>
+                        <h3>4. الإعلان بيتشاف ومش بيبيع! 🫣</h3>
+                        <p class="card-desc">قصة شخصية تلمس صانعي المحتوى والمعلنين لتشرح أهمية الانتقال من مرحلة الشرح التقني إلى رواية الحكاية.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مع</div>
+                                <div class="author-info">
+                                    <h5>محمد عدوي</h5>
+                                    <span>صناعة المحتوى والاستشارات الرقمية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">الإعلان بيتشاف ومش بيبيع! 🫣
+
+كنت فاكر إن المشكلة في الكتابة، وكل مرة الإعلان مايوصلش أراجع الكوبي كلمة كلمة. وأحيانًا أقول يمكن الميزانية قليلة يمكن العيب في الميديا باير يمكن السوق زحمة 🤷‍♀️
+
+بس الحقيقة إن الإعلان كان شغال وبيتشاف والناس بتتفاعل، بس في لحظة القرار كان بيقف.
+
+بس التحول الحقيقي حصل لما سألت نفسي: هو أنا بحاول أبيع ولا بحكي حكاية تفيد؟
+
+ووقتها اكتشفت إن الإعلان كان بيشرح كويس بس ما كانش بيحكي، ما كانش واخد العميل من إيده خطوة خطوة ولا مديه سبب حقيقي يحس إن الرسالة دي معمولة عشانه. ساعتها فهمت إن الفرق مش إعلان ضعيف وإعلان قوي، الفرق بين محتوى الناس تعدي عليه وإعلان يخلي العميل ينجذب للحكاية ويسمع.
+
+السرد القصصي مش إضافة لطيفة للإعلان.. السرد القصصي هو الإعلان نفسه، هو اللي بيحول الكلام من معلومات لتجربة ومن عرض لقصة العميل يشوف نفسه فيها.
+
+ومن هنا اتغير مفهوم الإعلان؛ اللي مش بيبيع غالبًا مش ناقصه أفكار ولا ميزانية ولا شغل تقني أكتر.. غالبًا ناقصه قصة تتحكي صح وتخدم فئتك.
+
+تابع معايا البوست اللي جاي هيوضح ليه الحكاية أهم من أي تكنيك 🔥😁</div>
+                        </div>
+
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التسويق عبر مشاركة نقاط الضعف والتعلم (Vulnerability & Epiphany Bridge) لجذب الثقة.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>النبرة:</strong> سردية، مشوقة، وحوارية تأخذ القارئ داخل عقل الكاتب وتجاربه السابقة وتصنع الفضول الممتد للبوست القادم.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الـ CTA الإعلاني:</strong> ناعم وتشويقي (Soft CTA) يركز على تفعيل المتابعة والترقب للجرعة المعرفية القادمة.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تاسك 5 -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-type">محتوى تعليمي هيكلي (Framework)</span>
+                        <h3>5. إعلانك بيفشل عشان شكله وحش!! 🫣</h3>
+                        <p class="card-desc">تفكيك علمي لأسباب فشل الإعلانات وتوضيح الركائز الثلاث الأساسية لبناء إعلان قصصي ناجح.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مع</div>
+                                <div class="author-info">
+                                    <h5>محمد عدوي</h5>
+                                    <span>صناعة المحتوى والاستشارات الرقمية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">إعلانك بيفشل عشان شكله وحش!! 🫣
+
+أغلب الإعلانات اللي بتفشل مش مشكلتها في التصميم ولا حتى في الصياغة، مشكلتها في الحكاية نفسها. خلينا نقولها ببساطة في 3 أسباب أساسية تخلي إعلانك يفشل 👇:
+
+1️⃣ مفيش صراع (Conflict): الإعلان اللي مفيهوش مشكلة حقيقية القارئ يحس إنها شبه مشكلته عمره ما هيشد انتباهه. لو العميل مش حاسس بألم، مش شايف حاجة ناقصة، مش متضايق من وضعه الحالي مش هيكمل قراءة. الصراع هو الشرارة وهو اللي بيخلي الشخص يقول “آه ده بيتكلم عني”.
+
+2️⃣ مفيش رحلة واضحة: إعلان بيقول المشكلة وبعدين يقفز للحل على طول من غير ما ياخد العميل في رحلة. الرحلة هي التحول من وضع لوضع، من حيرة لفهم، من تعب لحل. من غير الرحلة المحتوى يبقى مجرد كلام مش تجربة.
+
+3️⃣ مفيش نهاية تقفل القرار: في إعلانات تشرح كويس وتوصل فكرة وبعدين تسيب القارئ واقف، لا هو عارف يعمل إيه ولا ياخد قرار ولا حتى يحس إن القصة اكتملت. النهاية = CTA إن آه كده الصورة وضحت وهاخد قرار.
+
+الإعلان اللي بيبيع هو الإعلان اللي فيه صراع، رحلة، نهاية تقفل القرار. وده الفرق بين محتوى بيتشاف وإعلان بنتائج واضحة.
+
+استنى اللي جاي أقوي 🤌🔥</div>
+                        </div>
+
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> استخدام أسلوب العناوين الصادمة لكسر الأنماط (Pattern Interrupt) متبوعاً بتقسيم هيكلي ثلاثي واضح.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>المحفز النفسي:</strong> اللعب على عاطفة تجنب الخسارة والفشل عبر وضع معايير منضبطة لقياس نجاح الإعلان.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الـ CTA الإعلاني:</strong> تشويقي يعزز الولاء للبراند الشخصي ويضمن بقاء الجمهور في انتظار المحتوى القادم.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تاسك 6 -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-type">محتوى دعم بالمصادر (Curated Content)</span>
+                        <h3>6. مدارس التسويق العالمية بتأكد إن الإعلان من غير قصة بيعدي</h3>
+                        <p class="card-desc">محتوى غني بالمصادر الأجنبية والعربية لتعزيز المرجعية وتوجيه المتابعين لمقالات ودراسات تثبت قوة الـ Storytelling.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="phone-mockup">
+                            <div class="phone-header">
+                                <div class="avatar">مع</div>
+                                <div class="author-info">
+                                    <h5>محمد عدوي</h5>
+                                    <span>صناعة المحتوى والاستشارات الرقمية</span>
+                                </div>
+                            </div>
+                            <div class="phone-content">مدارس التسويق العالمية بتأكد إن الإعلان اللي من غير قصة بيعدي، لكن الإعلان اللي فيه Story حقيقية بيفضل ويبيع اكتر. 
+
+المصادر اللي تحت بتشرح ليه الناس بتشتري بالقصة وازاي السرد بيحول إعلان عادي لقرار شراء خصوصًا لو عرفت تطبقه صح في Ads عربي. ذاكرهم وهتفهم الفرق بين محتوى بيتشاف وإعلان بيبيع.
+
+👇 المصادر في أول كومنت:
+
+🔗 Why Stories Sell (Storytelling in Marketing)
+https://typeandtale.com/blog/why-stories-sell-the-science-behind-storytelling-in-marketing
+👉 بيشرح علميًا ليه السرد القصصي بيحوّل الحقائق لمشاعر وبيحفّز الجمهور على التفاعل والشراء، وبيأكد إن القصص بتخلي الناس تشوف نفسها في الإعلان. 
+
+🔗 Storytelling Advertising Investment & Consumer Purchase Intention
+https://www.mdpi.com/2227-7390/8/10/1704
+👉 دراسة بتوضّح إن الإعلانات اللي فيها قصة بتثير مشاعر الجمهور وبتؤثر في نية الشراء أكتر من الإعلانات العادية. 
+
+🔗 التسويق بالقصة: حوّل محتواك إلى قصة تبيع
+https://www.annajah.net/%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82-%D8%A8%D8%A7%D9%84%D9%82%D8%B5%D8%A9-%D8%AD%D9%88%D9%84-%D9%85%D8%AD%D8%AA%D9%88%D8%A7%D9%83-%D8%A5%D9%84%D9%89-%D9%82%D8%B5%D8%A9-%D8%AA%D8%A8%D9%8A%D8%B9-article-47924
+👉 مقال عملي يوضّح خطوات استخدام السرد القصصي لتحويل المحتوى العادي لإعلان مؤثر يلامس المشاعر ويحوّل القارئ لعميل.</div>
+                        </div>
+
+                        <div class="marketing-strategy">
+                            <div class="strategy-title"><i class="fa-solid fa-brain"></i> الأبعاد التسويقية والنفسية</div>
+                            <ul class="strategy-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الاستراتيجية:</strong> التسويق ببناء القيمة المجانية العالية (Lead Magnet / Value Bomb) عبر فلترة وتلخيص أهم الدراسات العالمية.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>النبرة:</strong> احترافية، أكاديمية مبسطة، وتوجيهية تضع صانع المحتوى في مكانة الخبير المطلع على العلوم الحديثة.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <strong>الروابط المدمجة:</strong> إضافة روابط علمية حقيقية لتوثيق جودة المادة التسويقية المعروضة بالبورتفوليو.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1082,11 +316,12 @@
         <div class="footer-container">
             <div class="footer-logo">
                 <span>Habiba Sayed</span>
-                <img src="../imgs/logo_Habiba.jpg" alt="logo" class="logo-image">
+                <img src="../imgs/logo_Habiba.jpg" alt="logo" class="logo-image"> 
             </div>
 
             <div class="footer-links">
                 <a href="#contact">Contact</a>
+                <a href="#work">Work</a>
                 <a href="#services">Services</a>
                 <a href="#about">About</a>
                 <a href="#home">Home</a>
@@ -1094,27 +329,22 @@
 
             <div class="footer-social">
                 <a href="https://wa.me/201501180309" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://www.linkedin.com/in/habiba-sayed-21835b338" target="_blank"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/habibasaid4414" target="_blank"><i
-                        class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/share/1c21qKUL6o/" target="_blank"><i
-                        class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/habiba-sayed-21835b338" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/habibasaid4414" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1c21qKUL6o/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
 
         <p class="footer-bottom">
             © 2026 All Rights Reserved Coach Habiba Sayed | Prepared by
             <span class="tooltip">
-                <a href="https://wa.me/201007359722?text=%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%D9%83%20%D9%8A%D8%A7%20%D8%A8%D8%B4%D9%85%D9%87%D9%86%D8%AF%D8%B3%D8%A9%20%D8%B1%D8%B6%D9%88%D9%89%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%B4%D8%BA%D9%84%D9%83%20%D9%81%D9%8A%20%D9%85%D9%88%D9%82%D8%B9%20%D9%83%D9%84%D9%8A%D9%86%D8%AA%20%D9%85%D9%85%D9%83%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A5%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D9%88%D9%82%D8%B9%D8%9F"
-                    target="_blank" class="radwa-whatsapp-link">
+                <a href="https://wa.me/201007359722?text=%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%D9%83%20%D9%8A%D8%A7%20%D8%A8%D8%B4%D9%85%D9%87%D9%86%D8%AF%D8%B3%D8%A9%20%D8%B1%D8%B6%D9%8وف%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%B4%D8%BA%D9%84%D9%83%20%D9%81%D9%8A%20%D9%85%D9%88%D9%8%D8%B9%20%D9%83%D9%84%D9%8A%D9%8ين%20%D9%85%D9%85%D9%83%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A5%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D9%88%D9%82%D8%B9%D8%AF" target="_blank" class="radwa-whatsapp-link">
                     Eng. Radwa Mohamed <i class="fa-brands fa-whatsapp radwa-ws-icon"></i>
                 </a>
                 <span class="tooltip-text">تواصل معي لإنشاء موقعك 💬</span>
             </span>
         </p>
     </footer>
-
 
 </body>
 
