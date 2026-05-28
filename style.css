@@ -970,7 +970,7 @@ h1 span {
   line-height: 1.9;
   margin-bottom: 15px;
   opacity: 0.9;
-  color: var(--dark-blue);
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
