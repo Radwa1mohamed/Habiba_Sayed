@@ -2,980 +2,24 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خارطة طريق كتابة المحتوى - البداية الصحيحة</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --dark-bg: #07161e;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-hover: rgba(255, 255, 255, 0.06);
-            --blue: #62BEAC;
-            --accent-pink: #E056A0;
-            --text-white: #ffffff;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --neon-shadow: rgba(224, 86, 160, 0.3);
-            --dark-blue: #0a222e;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Habiba Sayed | خارطة طريق كتابة المحتوى</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <meta name="description"
+    content="كوتش كونتنت ماركتنج لمساعدتك في بناء حضور رقمي قوي. خدماتنا تشمل: خطط محتوى شهرية، سكريبتات ريلز، كتابة محتوى بيعي وإعلاني، وزيادة الـ Organic Reach. احجز سيشنك الآن.">
+  <meta name="keywords"
+    content="كوتش محتوى، كونتنت ماركتنج، كتابة محتوى، سكريبتات ريلز، خطة محتوى، زيادة الأورجانيك ريتش، محتوى بيعي، إعلانات تسويقية، صناعة محتوى إبداعي، كورس كتابة محتوى، استشارات تسويقية، تحليل الجمهور، Content Marketing، Copywriting، Organic Reach.">
+  <meta name="author" content="ُEng: Radwa Mohamed">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="shortcut icon" href="imgs/logo_Habiba.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="course.css">
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Cairo', sans-serif;
-            background: radial-gradient(circle at 0% 0%, rgba(224, 86, 160, 0.12), transparent 40%),
-                radial-gradient(circle at 100% 100%, rgba(98, 190, 172, 0.12), transparent 40%),
-                linear-gradient(135deg, #050f14 0%, #0a222e 50%, #07161e 100%);
-            background-attachment: fixed;
-            color: var(--text-white);
-            line-height: 1.7;
-            padding-top: 80px;
-        }
-
-        .container {
-            max-width: 1050px;
-            margin: auto;
-            padding: 40px 20px;
-            box-sizing: border-radius;
-        }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: rgba(7, 22, 30, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-container {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-white);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-logo span {
-            color: var(--accent-pink);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-white);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: 0.3s ease;
-            opacity: 0.8;
-        }
-
-        .nav-links a:hover {
-            color: var(--blue);
-            opacity: 1;
-        }
-
-        .nav-btn {
-            background: linear-gradient(135deg, var(--accent-pink), #c9458b);
-            color: white !important;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 700;
-            box-shadow: 0 4px 15px var(--neon-shadow);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(224, 86, 160, 0.5);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            color: var(--text-white);
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            text-align: center;
-            padding: 60px 20px;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        .badge {
-            background: rgba(224, 86, 160, 0.1);
-            border: 1px solid var(--accent-pink);
-            color: var(--accent-pink);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .main-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .main-title span {
-            color: var(--accent-pink);
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            opacity: 0.85;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-
-        .hero-ctas {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--blue), #4fa393);
-            color: #07161e;
-            padding: 14px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 20px rgba(98, 190, 172, 0.3);
-            transition: 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(98, 190, 172, 0.5);
-        }
-
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            color: var(--blue);
-            margin-bottom: 30px;
-            font-size: 1.75rem;
-            font-weight: 700;
-            border-right: 4px solid var(--accent-pink);
-            padding-right: 15px;
-        }
-
-        /* Course Details Grid */
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .detail-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 25px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .detail-card:hover {
-            transform: translateY(-4px);
-            background: var(--card-hover);
-            border-color: rgba(98, 190, 172, 0.3);
-        }
-
-        .detail-icon {
-            width: 55px;
-            height: 55px;
-            background: rgba(98, 190, 172, 0.1);
-            border: 1px solid rgba(98, 190, 172, 0.2);
-            border-radius: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.4rem;
-            color: var(--blue);
-            flex-shrink: 0;
-        }
-
-        .detail-info {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .detail-label {
-            font-size: 0.85rem;
-            opacity: 0.6;
-        }
-
-        .detail-value {
-            font-size: 1.05rem;
-            font-weight: 700;
-        }
-
-        /* Roadmap Modules */
-        .grid-modules {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .module-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .module-card:hover {
-            transform: translateY(-5px);
-            background: var(--card-hover);
-            border-color: rgba(98, 190, 172, 0.3);
-        }
-
-        .module-card h3 {
-            color: var(--blue);
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .module-card h3 i {
-            color: var(--accent-pink);
-        }
-
-        .module-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .module-card ul li {
-            font-size: 0.95rem;
-            opacity: 0.85;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .module-card ul li i {
-            color: var(--blue);
-            margin-top: 6px;
-            font-size: 0.75rem;
-        }
-
-        /* Benefits Grid */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .benefit-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            transition: 0.3s;
-        }
-
-        .benefit-card:hover {
-            border-color: var(--blue);
-            background: var(--card-hover);
-        }
-
-        .benefit-card i {
-            font-size: 2rem;
-            color: var(--accent-pink);
-            margin-bottom: 15px;
-        }
-
-        .benefit-card h3 {
-            color: var(--text-white);
-            margin: 10px 0;
-            font-size: 1.2rem;
-        }
-
-        .benefit-card p {
-            opacity: 0.75;
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        /* Pricing Card */
-        .pricing-section {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .price-card {
-            background: linear-gradient(145deg, rgba(224, 86, 160, 0.08) 0%, rgba(98, 190, 172, 0.02) 100%);
-            border: 2px solid var(--blue);
-            border-radius: 24px;
-            padding: 40px;
-            max-width: 480px;
-            margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .price-tag {
-            font-size: 3.5rem;
-            color: var(--accent-pink);
-            font-weight: 900;
-            margin: 20px 0;
-        }
-
-        .price-features {
-            list-style: none;
-            padding: 0;
-            margin: 30px 0;
-            text-align: right;
-        }
-
-        .price-features li {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .price-features li i {
-            color: var(--blue);
-        }
-
-        /* FAQ Accordion Styles */
-        .faq-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .faq-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            background: var(--card-hover);
-            border-color: rgba(98, 190, 172, 0.2);
-        }
-
-        .faq-question {
-            padding: 22px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .faq-question h3 {
-            margin: 0;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-white);
-        }
-
-        .faq-toggle-icon {
-            font-size: 1rem;
-            color: var(--blue);
-            transition: transform 0.3s ease;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
-            padding: 0 25px;
-            opacity: 0;
-        }
-
-        /* Active States */
-        .faq-item.active {
-            border-color: rgba(98, 190, 172, 0.4);
-            background: rgba(255, 255, 255, 0.04);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .faq-item.active .faq-toggle-icon {
-            transform: rotate(180deg);
-            color: var(--accent-pink);
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 1000px;
-            transition: max-height 0.5s cubic-bezier(1, 0, 1, 0), padding 0.3s ease;
-            padding-bottom: 22px;
-            opacity: 0.85;
-            font-size: 0.98rem;
-            line-height: 1.8;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            padding-top: 15px;
-        }
-
-        /* Footer */
-        .main-footer {
-            background: #040d12;
-            border-top: 1px solid var(--border-color);
-            padding: 60px 20px 20px 20px;
-            margin-top: 60px;
-        }
-
-        .footer-grid {
-            max-width: 1050px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            text-align: right;
-            margin-bottom: 40px;
-        }
-
-        .footer-about .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--text-white);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .footer-about .footer-logo span {
-            color: var(--accent-pink);
-        }
-
-        .footer-about p {
-            opacity: 0.7;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .footer-links h4 {
-            color: var(--blue);
-            font-size: 1.1rem;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links ul li a {
-            color: var(--text-white);
-            opacity: 0.7;
-            text-decoration: none;
-            transition: 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .footer-links ul li a:hover {
-            opacity: 1;
-            color: var(--accent-pink);
-            padding-right: 5px;
-        }
-
-        .footer-socials {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .footer-socials a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            color: var(--text-white);
-            border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .footer-socials a:hover {
-            background: var(--accent-pink);
-            border-color: var(--accent-pink);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 20px;
-            text-align: center;
-        }
-
-        .footer-text {
-            opacity: 0.5;
-            font-size: 0.85rem;
-            margin: 0;
-        }
-
-        /* Floating Buttons */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: #25d366;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-3px);
-            background: #128C7E;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 100px;
-            left: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--blue), #4fa393);
-            color: #07161e;
-            border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(98, 190, 172, 0.4);
-            z-index: 1000;
-            transition: all 0.4s ease;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(98, 190, 172, 0.6);
-            background: linear-gradient(135deg, var(--accent-pink), #c9458b);
-            color: #fff;
-        }
-
-        .back-to-home {
-            position: fixed;
-            bottom: 170px;
-            left: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--dark-blue), #1a3545);
-            color: var(--blue);
-            border: 1.5px solid var(--blue);
-            border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            transition: all 0.4s ease;
-        }
-
-        .back-to-home:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(98, 190, 172, 0.4);
-            background: linear-gradient(135deg, var(--blue), #4fa393);
-            color: #07161e;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* 📱 التحديثات الجديدة والتحسينات للموبايل */
-        @media (max-width: 768px) {
-
-            /* زيادة طول الناف بار ومساحة الـ Body العلوية لتفادي التداخل */
-            body {
-                padding-top: 95px;
-            }
-
-            .navbar {
-                height: 95px;
-            }
-
-            .menu-toggle {
-                display: block;
-                z-index: 2001;
-            }
-
-            /* تعديل نقطة بداية نزول القائمة الجانبية لتتوافق مع الطول الجديد */
-            .nav-links {
-                position: fixed;
-                top: 95px;
-                right: -100%;
-                width: 280px;
-                height: calc(100vh - 95px);
-                background: #07161e;
-                flex-direction: column;
-                padding: 40px 24px;
-                gap: 25px;
-                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                border-left: 1px solid var(--border-color);
-                align-items: flex-start;
-                z-index: 1999;
-                box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links li {
-                width: 100%;
-            }
-
-            .nav-btn {
-                display: block;
-                text-align: center;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .hero-ctas {
-                flex-direction: column;
-                gap: 12px;
-                padding: 0 10px;
-            }
-
-            .btn-primary {
-                width: 100%;
-                box-sizing: border-box;
-                text-align: center;
-            }
-
-            /* تظبيط البادينج للكروت لتناسب الشاشات الصغيرة */
-            .glass-card {
-                padding: 25px 20px;
-                border-radius: 16px;
-            }
-
-            .price-card {
-                padding: 30px 20px;
-            }
-
-            .price-tag {
-                font-size: 2.8rem;
-            }
-
-            /* منع خروج النصوص الطويلة */
-            .detail-card {
-                padding: 15px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 35px;
-                text-align: center;
-            }
-
-            .footer-about .footer-logo,
-            .footer-socials {
-                justify-content: center;
-            }
-
-            /* تعديل الأزرار العائمة للموبايل لتفادي تداخلها */
-            .whatsapp-float {
-                padding: 12px 20px;
-                font-size: 0.95rem;
-                bottom: 20px;
-                left: 20px;
-            }
-
-            .back-to-top {
-                bottom: 85px;
-                left: 25px;
-                width: 45px;
-                height: 45px;
-            }
-
-            .back-to-home {
-                bottom: 145px;
-                left: 25px;
-                width: 45px;
-                height: 45px;
-            }
-        }
-
-        /* --- تنسيق الـ Tooltip ليظهر من (جوة الشاشة / جهة اليمين) --- */
-        .custom-tooltip {
-            position: fixed;
-        }
-
-        /* صندوق النص (يمتد جهة اليمين داخل الشاشة) */
-        .custom-tooltip::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 50%;
-            right: -10px;
-            /* جعل نقطة البداية من حافة الزر اليمين */
-            transform: translateY(50%) translateX(calc(100% + 15px));
-            /* دفع الصندوق بالكامل لليمين خارج الزر */
-            background: rgba(7, 22, 30, 0.95);
-            color: var(--text-white);
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-family: 'Cairo', sans-serif;
-            font-weight: 600;
-            white-space: nowrap;
-            border: 1px solid var(--blue);
-            box-shadow: 0 4px 15px rgba(98, 190, 172, 0.2);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none;
-        }
-
-        /* السهم الصغير (موجّه ليسار الزرار، ويشير إلى الزر) */
-        .custom-tooltip::before {
-            content: "";
-            position: absolute;
-            bottom: 50%;
-            right: -15px;
-            /* تموضعه بين الزر والصندوق */
-            transform: translateY(50%);
-            border-width: 5px;
-            border-style: solid;
-            /* سهم يشير جهة اليسار نحو حافة الزرار */
-            border-color: transparent transparent transparent rgba(98, 190, 172, 1);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none;
-        }
-
-        /* تأثير الظهور السلس والانزلاق الخفيف لجوة الشاشة */
-        .custom-tooltip:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(50%) translateX(calc(100% + 5px));
-            /* حركة انسيابية ناعمة عند الظهور */
-        }
-
-        .custom-tooltip:hover::before {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .radwa-whatsapp-link {
-            color: #25D366;
-            /* اللون الأخضر الأساسي */
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            /* مسافة صغيرة بين الاسم والأيقونة */
-            transition: all 0.3s ease;
-        }
-
-        /* تنسيق أيقونة الواتساب الخاصة بها */
-        .radwa-ws-icon {
-            font-size: 1.1rem;
-            /* حجم الأيقونة متناسق مع السطر */
-            transition: transform 0.3s ease;
-        }
-
-        /* تأثير تفاعلي عند تمرير الماوس (Hover) */
-        .radwa-whatsapp-link:hover {
-            color: #20ba5a;
-            /* درجة أخضر أغمق قليلاً عند الوقوف بالماوس */
-        }
-
-        .radwa-whatsapp-link:hover .radwa-ws-icon {
-            transform: scale(1.2) rotate(15deg);
-            /* تكبير الأيقونة ولفها قليلاً بشكل جمالي */
-        }
-
-        /* تجهيز العنصر الحاضن */
-        .tooltip {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        /* تصميم الرسالة العربية الصغيرة بشكل عصري واحترافي */
-        .tooltip .tooltip-text {
-            visibility: hidden;
-            width: 180px;
-            /* زيادة العرض لتناسب النص العربي */
-            background: rgba(30, 41, 59, 0.95);
-            /* خلفية داكنة فاخرة متناسقة مع الموقع */
-            color: #ffffff;
-            /* لون النص أبيض ناصع */
-            text-align: center;
-            border-radius: 8px;
-            /* حواف ناعمة */
-            padding: 8px 12px;
-            /* مساحات داخلية مريحة للعين */
-            position: absolute;
-            z-index: 99;
-            bottom: 135%;
-            /* رفعها قليلاً لتكون مريحة فوق الاسم */
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            /* إزاحة بسيطة للأسفل لتأثير الحركة */
-            opacity: 0;
-            font-family: 'Cairo', sans-serif;
-            /* استخدام نفس خط الموقع الاحترافي */
-            font-size: 0.8rem;
-            font-weight: 500;
-            line-height: 1.4;
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            /* إطار ناعم جداً بلون الواتساب الأخضر */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(37, 211, 102, 0.1);
-            /* ظل فخم مع توهج خفيف */
-            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.3s ease;
-            /* حركة انسيابية مرنة للظهور */
-            white-space: nowrap;
-            /* يمنع انقسام النص على سطرين */
-        }
-
-        /* السهم الصغير أسفل الرسالة */
-        .tooltip .tooltip-text::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 6px;
-            border-style: solid;
-            border-color: rgba(30, 41, 59, 0.95) transparent transparent transparent;
-        }
-
-        /* التأثير التفاعلي عند تمرير أو وقوف الماوس (Hover) */
-        .tooltip:hover .tooltip-text {
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-
-        .arabic-welcome {
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #ff4a9e;
-            margin-bottom: 15px;
-            letter-spacing: 0;
-            display: block;
-        }
-
-        /* إخفاء الـ Tooltip تماماً على الموبايل */
-        @media (max-width: 768px) {
-
-            .custom-tooltip::after,
-            .custom-tooltip::before {
-                display: none !important;
-            }
-        }
-    </style>
 </head>
-
 <body>
 
-    <!-- شريط التنقل -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo"><i class="fa-solid fa-pen-fancy"></i> احتراف <span>الكونتنت</span></a>
@@ -987,7 +31,10 @@
                 <li><a href="#target">لمن هذا الكورس؟</a></li>
                 <li><a href="#roadmap">خارطة الطريق</a></li>
                 <li><a href="#system">نظام المتابعة</a></li>
+                
                 <li><a href="#pricing">الاستثمار</a></li>
+                                <li><a href="#feedbacks">آراء المشتركين</a></li>
+
                 <li><a href="#faq">أسئلة شائعة</a></li>
                 <li><a href="https://wa.me/201501180309" target="_blank" class="nav-btn">سجل الآن</a></li>
             </ul>
@@ -996,7 +43,6 @@
 
     <main class="container">
 
-        <!-- قسم الـ Hero الجاذب -->
         <section class="hero-section">
             <span class="badge">🌿 أهلًا بك في رحلتك الجديدة</span>
             <h1 class="main-title">هل تشعر بالتشتت في صناعة المحتوى؟<br>ابدأ بـ استراتيجية <span>واضحة</span></h1>
@@ -1085,6 +131,128 @@
             </div>
         </section>
 
+
+
+     <section class="glass-card" id="feedbacks" style="margin-top: 40px;">
+    <h2>ماذا يقولون عن تجربتهم؟ 💬</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">آراء وتقييمات بعض المشتركين الذين بدأوا معنا رحلة احتراف المحتوى:</p>
+    
+    <div class="feedback-grid">
+        <div class="feedback-card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="feedback-header">
+                <div class="feedback-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="feedback-user-info">
+                    <h4>أحمد خالد</h4>
+                    <span>صانع محتوى مبتدئ</span>
+                    <div class="feedback-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="feedback-text">الكورس رائع جداً وضبط لي الصورة كاملة. قبل كنت أكتب بعشوائية لكن الآن أتحرك بناءً على خطوات تسويقية واضحة ومدروسة.</p>
+        </div>
+
+        <div class="feedback-card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="feedback-header">
+                <div class="feedback-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="feedback-user-info">
+                    <h4>سارة ممدوح</h4>
+                    <span>كاتبة محتوى حرة</span>
+                    <div class="feedback-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="feedback-text">أكثر ما أعجبني هو التبسيط الشديد في الشرح، صيغ الكتابة أصبحت واضحة وعملية بالنسبة لي، ونظام المتابعة ساعدني ألتزم.</p>
+        </div>
+
+        <div class="feedback-card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="feedback-header">
+                <div class="feedback-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="feedback-user-info">
+                    <h4>محمد عبد الرحمن</h4>
+                    <span>صاحب مشروع ناشئ</span>
+                    <div class="feedback-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="feedback-text">أنصح به بشدة لكل شخص يريد فهم الـ Organic Reach وبناء أساس قوي، الكورس وفر عليّ وقت طويل جداً من التشتت.</p>
+        </div>
+
+        <div class="feedback-card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="feedback-header">
+                <div class="feedback-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="feedback-user-info">
+                    <h4>أحمد كريم</h4>
+                    <span>صانع محتوى رقمي</span>
+                    <div class="feedback-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="feedback-text">الكورس غير نظرتي تماماً لصناعة المحتوى، من أول أسبوع بدأت أطبق الاستراتيجيات والنتائج ظهرت فوراً في تفاعل الجمهور والمبيعات.</p>
+        </div>
+
+        <div class="feedback-card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="feedback-header">
+                <div class="feedback-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="feedback-user-info">
+                    <h4>سارة المهدي</h4>
+                    <span>مستشارة أعمال</span>
+                    <div class="feedback-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="feedback-text">التنظيم والعملي في الكورس ممتاز. نموذج الحجز والاستشارات سهل عليا جداً الوصول للعملاء المستهدفين وتكبير مشروعي الشخصي.</p>
+        </div>
+
+        <div class="feedback-card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="feedback-header">
+                <div class="feedback-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="feedback-user-info">
+                    <h4>محمود أشرف</h4>
+                    <span>مدير تسويق</span>
+                    <div class="feedback-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="feedback-text">أفضل استثمار عملته السنة دي. الشرح مبسط والأسلوب احترافي جداً، وفهمت إزاي أبني خطة محتوى متكاملة من الصفر.</p>
+        </div>
+    </div>
+</section>
 
         <!-- كارت السعر والاشتراك -->
         <section class="pricing-section" id="pricing">
