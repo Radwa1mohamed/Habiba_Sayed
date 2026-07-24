@@ -444,8 +444,16 @@
         </a>
     </section>
 
+           
+
+      
+
+
+                
     <main class="feedback-full-grid">
         <div class="screenshot-card" onclick="openModal('imgs/Feedbeak/F9.jpg')">
+
+            
             <div class="img-wrapper">
                 <img src="imgs/Feedbeak/F9.jpg" alt="Client Testimonial">
                 <div class="hover-overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
@@ -535,7 +543,7 @@
         </div>
 
         <div class="screenshot-card" onclick="openModal('imgs/Feedbeak/F10.jpg')">
-            <div class="img-wrapper">
+            <div class="img-wrapper ">
                 <img src="imgs/Feedbeak/F10.jpg" alt="Client Testimonial">
                 <div class="hover-overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
             </div>
@@ -595,8 +603,8 @@
     </section>
 
     <!-- Modal للصور -->
-    <div id="imageModal" class="modal" onclick="openModal()">
-        <span class="close-modal">&times;</span>
+    <div id="imageModal" class="modal" onclick="closeModalOnBackground(event)">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="imgFull">
     </div>
 
@@ -618,6 +626,8 @@
     </div>
 
     <script>
+       
+       
         function openModal(src) {
             const modal = document.getElementById('imageModal');
             const fullImg = document.getElementById('imgFull');
@@ -631,6 +641,12 @@
             document.body.style.overflow = 'auto'; 
         }
 
+        // الدالة الجديدة اللي أضفناها عشان تقفل الخلفية بأمان
+        function closeModalOnBackground(event) {
+            if (event.target.id === 'imageModal') {
+                closeModal();
+            }
+        }
         function closeSuccessModal() {
             document.getElementById('successModal').style.display = 'none';
             document.body.style.overflow = 'auto';
